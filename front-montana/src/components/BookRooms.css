@@ -1,0 +1,36 @@
+.div-basket-settings {
+  /* margin-top: 1.5em; */
+  grid-area: profile;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "navBar block29 block29 block29 block29 block29 ";
+}
+
+.div-basket-sett-block3 {
+  min-height: 57em;
+  grid-area: block29;
+  height: 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+    "rooms rooms rooms rooms rooms"  
+  ;
+}
+
+.div-profile-tickets{
+  margin-top: 2.1em;
+  padding-left: 1.1em;
+  grid-area: rooms;
+  /* background-color: pink; */
+}
+
+.nav-basket{
+  margin-top: 1.5em;
+  grid-area: navBar;
+}
+
+.card-ticket-profile{
+  width: 18rem; 
+  margin: 0.9em;
+}
