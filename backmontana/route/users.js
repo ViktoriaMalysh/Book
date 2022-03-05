@@ -3,10 +3,10 @@ const router = express.Router()
 const usersPoint = require('../controllers/usersPoint')
 
 //localhost:8000/users/auth
-// router.post('/auth', usersPoint.authentication)
+router.post('/auth', usersPoint.authentication)
 
 //localhost:8000/users/login
-router.post('/login', usersPoint.authorization)
+// router.post('/login', usersPoint.authorization)
 
 //localhost:8000/users/changeProfile
 // router.post('/changeProfile', usersPoint.changeProfile)

@@ -6,101 +6,109 @@ const sequelize = require("../sequelize");
 
 // User, Emails, PhoneNumbers, PaymentCards, HotelRooms, SaleRooms
 
-// module.exports.authentication = async function (req, ress) {
-//   let candidat = {
-//     name: req.body.name,
-//     surname: req.body.surname,
-//     email: req.body.email,   
-//     password: req.body.password,    
-//     role: 1,
-//   };
-//   await User.sequelize.sync({ alter: true });
-//   try {
-//     const flagCheckEmail = await checkEmail(candidat.email);
-//     if (!flagCheckEmail) {
-//       if (candidat.email === "admin@gmail.com") {
-//         candidat = {
-//           name: req.body.name,
-//           surname: req.body.surname,
-//           email: req.body.email,
-//           password: req.body.password,
-//           role: 2,
-//         };
-//       }
-//       const salt = bcrypt.genSaltSync(10);
-//       const pass = bcrypt.hashSync(candidat.password, salt);
-//       let user = await User.build({
-//         name: candidat.name,
-//         surname: candidat.surname,
-//         email: candidat.email,
-//         password: pass,
-//         role: candidat.role,
-//       });
-//       await user.save();
-//       const check_email_login = await checkEmail(candidat.email);
-//       const token = jwt.sign(
-//         {
-//           email: candidat.email,
-//           password: pass,
-//           role: candidat.role,
-//           id: check_email_login.id,
-//         },
-//         keys.jwt,
-//         { expiresIn: 300 }
-//       );
-//       ress.status(200).json({
-//         token: token,
-//         id: check_email_login.id,
-//         name: check_email_login.name,
-//         surname: check_email_login.surname,
-//         gender: check_email_login.gender,
-//         age: check_email_login.age,
-//         country: check_email_login.country,
-//         phone: check_email_login.phone,
-//         email: check_email_login.email,
-//         role: check_email_login.role,
-//       });
-//     } else ress.status(404).json({ flag: false });
-//   } catch (err) {
-//     console.log("Error: " + err);
-//   }
-// };
-
-module.exports.authorization = async function (req, ress) {
-  const candidat = { email: req.body.email, password: req.body.password };
-  console.log("candidat", candidat);
+module.exports.authentication = async function (req, ress) {
+  console.log('auth')
+  let candidat = {
+    name: req.body.name,
+    surname: req.body.surname,
+    gender: req.body.gender,
+    country: req.body.country,
+    email: req.body.email,   
+    password: req.body.password,    
+    role: 1,
+  };
+  await User.sequelize.sync({ alter: true });
   try {
-    const check_email_login = await checkEmail(candidat.email);
-    console.log("check_email_login", check_email_login);
-    if (check_email_login) {
-      const pass = await checkPassword(candidat);
-      const flag = bcrypt.compareSync(candidat.password, pass);
-      if (flag) {
-        const rol = await checkRole(candidat);
-        const id = await setIdUser(candidat);
-        const token = jwt.sign(
-          { email: candidat.email, password: pass, role: rol, id: id },
-          keys.jwt,
-          { expiresIn: 300 }
-        );
-        ress.status(200).json({
-          token: token,
-          id: id,
-          name: check_email_login.name,
-          surname: check_email_login.surname,
-          email: check_email_login.email,
-          role: check_email_login.role,
-          gender: check_email_login.gender,
-          age: check_email_login.age,
-          country: check_email_login.country,
-          phone: check_email_login.phone,
-        });
-      } else ress.status(404).json({ flag: false });
+    const flagCheckEmail = await checkEmail(candidat.email);
+    if (!flagCheckEmail) {
+      if (candidat.email === "admin@gmail.com") {
+        candidat = {
+          name: req.body.name,
+          surname: req.body.surname,
+          gender: req.body.gender,
+          country: req.body.country,
+          email: req.body.email,
+          password: req.body.password,
+          role: 2,    
+        };
+      }
+      const salt = bcrypt.genSaltSync(10);
+      const pass = bcrypt.hashSync(candidat.password, salt);
+      let user = await User.build({
+        name: candidat.name,
+        surname: candidat.surname,
+        gender: req.body.gender,
+        country: req.body.country,
+        email: candidat.email,
+        password: pass,
+        role: candidat.role,
+      });
+      await user.save();
+      const check_email_login = await checkEmail(candidat.email);
+      const token = jwt.sign(
+        {
+          email: candidat.email,
+          password: pass,
+          role: candidat.role,
+          id: check_email_login.id,
+        },
+        keys.jwt,
+        { expiresIn: 300 }
+      );
+      ress.status(200).json({
+        token: token,
+        id: check_email_login.id,
+        name: check_email_login.name,
+        surname: check_email_login.surname,
+        gender: check_email_login.gender,
+        age: check_email_login.age,
+        country: check_email_login.country,
+        id_phone_number: check_email_login.id_phone_number,
+        id_payment_card: check_email_login.id_payment_card,
+        email: check_email_login.email,
+        role: check_email_login.role,
+      });
     } else ress.status(404).json({ flag: false });
   } catch (err) {
     console.log("Error: " + err);
   }
 };
+
+// module.exports.authorization = async function (req, ress) {
+//   const candidat = { email: req.body.email, password: req.body.password };
+//   console.log("candidat", candidat);
+//   try {
+//     const check_email_login = await checkEmail(candidat.email);
+//     console.log("check_email_login", check_email_login);
+//     if (check_email_login) {
+//       const pass = await checkPassword(candidat);
+//       const flag = bcrypt.compareSync(candidat.password, pass);
+//       if (flag) {
+//         const rol = await checkRole(candidat);
+//         const id = await setIdUser(candidat);
+//         const token = jwt.sign(
+//           { email: candidat.email, password: pass, role: rol, id: id },
+//           keys.jwt,
+//           { expiresIn: 300 }
+//         );
+//         ress.status(200).json({
+//           token: token,
+//           id: id,
+//           name: check_email_login.name,
+//           surname: check_email_login.surname,
+//           email: check_email_login.email,
+//           role: check_email_login.role,
+//           gender: check_email_login.gender,
+//           age: check_email_login.age,
+//           country: check_email_login.country,
+//           phone: check_email_login.phone,
+//         });
+//       } else ress.status(404).json({ flag: false });
+//     } else ress.status(404).json({ flag: false });
+//   } catch (err) {    
+//     console.log("Error: " + err);
+//   }
+// };
 
 // module.exports.logout = async function (req, ress) {
 //   try {
