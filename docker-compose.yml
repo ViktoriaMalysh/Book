@@ -35,7 +35,7 @@ services:
     container_name: booking_db
     working_dir: /app
     environment:
-      - POSTGRES_PASSWORD=admin
+      - POSTGRES_PASSWORD=admin  
       - POSTGRES_USER=admin
       - POSTGRES_DB=booking_db
     volumes:

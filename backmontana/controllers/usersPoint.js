@@ -1,5 +1,5 @@
 const keys = require("../keys/keys");
-const { User, Emails, PhoneNumbers, PaymentCards, HotelRooms, SaleRooms } = require("../sequelize");
+const { User, Emails, Payment, PhoneNumbers, PaymentCards, HotelRooms, SaleRooms } = require("../sequelize");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const sequelize = require("../sequelize");
@@ -7,9 +7,14 @@ const sequelize = require("../sequelize");
 
 module.exports.authentication = async function (req, ress) {
   // const query = await User.findAll({
-  //   include: { model: PhoneNumbers
-  //  }
+  //   include: [{ 
+  //     model: PaymentCards,
+  //     // as: 'payment_cards',
+  //   }]
   // })
+
+  // console.log('query', query)
+
   try{
 
   let candidat = {
@@ -38,6 +43,32 @@ module.exports.authentication = async function (req, ress) {
       }
       const salt = bcrypt.genSaltSync(10);
       const pass = bcrypt.hashSync(candidat.password, salt);
+      // let user = await User.create({
+      //   name: candidat.name,
+      //   surname: candidat.surname,
+      //   gender: req.body.gender,
+      //   country: req.body.country,
+      //   email: candidat.email,
+      //   password: pass,
+      //   role: candidat.role,
+      //   payment: {
+      //     cnn: 587
+      //   }
+      // }
+      // // {
+      // //   include: [ Payment ] 
+      // // }
+      // );
+
+      const Payment1 = User.hasMany(PaymentCards, {
+        foreignKey: {
+            name: 'id_user',
+            allowNull: false,
+            onDelete: 'CASCADE',
+            as: 'payment',
+        }
+      });
+
       let user = await User.create({
         name: candidat.name,
         surname: candidat.surname,
@@ -45,19 +76,31 @@ module.exports.authentication = async function (req, ress) {
         country: req.body.country,
         email: candidat.email,
         password: pass,
-        role: candidat.role,
-        phone: {
-          phone_number: 123456789
-        }
-      }, 
-      {
-        include: [{
-          model: PhoneNumbers,
-        }]
-      }
-    
-      );
+        role: candidat.role, 
+        payment: [
+          { cnn: 123 }
+        ]  
+        // paymentCnn: 123
+
+      }, {
+        include: [{ association: Payment1, as: 'payment'}]
+      })
+
       await user.save();
+
+
+      console.log('user', user)
+
+// let card = await PaymentCards.create({
+//   cnn: 123,
+//   MM_YY: 1225,
+//   zip: 12546,
+//   number: 1252,
+//   usersId_user: 3,
+//   // usersName: 'vika'
+// })
+//  console.log()
+      // await card.save();
       const check_email_login = await checkEmail(candidat.email);
       const token = jwt.sign(
         {
@@ -88,13 +131,13 @@ module.exports.authentication = async function (req, ress) {
 
 
   // const [result, metadata] = await sequelize.query('SELECT * FROM users')
-  const result = await User.findAll({ 
-    include: PhoneNumbers,
-    through: {
-      attributes: ['id_phone_number']
-    },
-    raw: true
-  })
+  // const result = await User.findAll({ 
+  //   include: PhoneNumbers,
+  //   through: {
+  //     attributes: ['id_phone_number']
+  //   },
+  //   raw: true
+  // })
 
   console.log('query: ', result)
   ress.status(200).json({ flag: false });

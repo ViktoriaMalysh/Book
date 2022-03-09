@@ -19,12 +19,11 @@ const sequelize = new Sequelize("booking_db", "admin", "admin", {
 module.exports = sequelize;
 
 const HotelRooms = sequelize.define("hotel_rooms", {
-  id_room: {
+  id: {
     type: DataTypes.INTEGER,
-    // autoIncrement: true,
-    // allowNull: false,
-    unique: 'compositeIndex' 
-  },
+    autoIncrement: true,
+    primaryKey: true
+},
   id_user: {
     type: DataTypes.INTEGER,
     unique: 'compositeIndex' 
@@ -34,26 +33,22 @@ const HotelRooms = sequelize.define("hotel_rooms", {
   locality: DataTypes.TEXT,
   price: DataTypes.INTEGER,
   url: DataTypes.TEXT,
-});
+}, 
+{ 
+  // indexes: [{unique: true,  fields: ['someUnique']}], 
+  timestamps: false
+}
+);
 
-const User = sequelize.define("users", {  
+// module.exports = (sequelize, Sequelize) => {
+const User = sequelize.define("users", { 
   id_user: {
-    type: DataTypes.INTEGER, 
-    unique: 'compositeIndex',
-    // unique: true,
-    // allowNull: false,
-    // autoIncrement: true,
-    references: {
-      model: HotelRooms,
-      key: 'id_phone_number',
-    }
-  },
-  email: DataTypes.TEXT,
-  id_payment_card: {
     type: DataTypes.INTEGER,
-    unique: 'compositeIndex' 
-    // unique: true, 
-  },
+    autoIncrement: true,
+    primaryKey: true
+  }, 
+  email: DataTypes.TEXT,
+  phone_number: DataTypes.INTEGER,
   name: DataTypes.TEXT,
   surname: DataTypes.TEXT,
   gender: DataTypes.TEXT,
@@ -64,22 +59,24 @@ const User = sequelize.define("users", {
     type: DataTypes.INTEGER,
     defaultValue: 1,
   },
-  id_phone_number: {
-    type: DataTypes.INTEGER,
-    // unique: true, 
-    unique: 'compositeIndex' 
-  }, 
+  // id_payment_card: {
+  //   type: DataTypes.INTEGER,
+  //   // unique: true, 
+  //   unique: 'compositeIndex' 
+  // }, 
 },  
 { 
-  indexes: [{unique: true,  fields: ['someUnique']}], 
+  // indexes: [{unique: true,  fields: ['someUnique']}], 
   timestamps: false
 });
-
+// return User;
+// };
 
 const SaleRooms = sequelize.define("sale_rooms", {
-  id_room: {
+  id: {
     type: DataTypes.INTEGER,
-    unique: 'compositeIndex' 
+    autoIncrement: true,
+    primaryKey: true
   },
   country: DataTypes.TEXT,
   address: DataTypes.TEXT,
@@ -88,54 +85,49 @@ const SaleRooms = sequelize.define("sale_rooms", {
   priceAfter: DataTypes.INTEGER,
   discount: DataTypes.INTEGER,
   url: DataTypes.TEXT,
-});
-
-const Emails = sequelize.define("emails", {
-  id_email: {
-    type: DataTypes.INTEGER,
-    unique: 'compositeIndex' 
-  },
-  email: DataTypes.TEXT,
-});
-
-const PhoneNumbers = sequelize.define("phone_numbers", {
-  id_phone_number: {
-    type: DataTypes.INTEGER,   
-    references: {
-      model: User,
-      key: 'id_phone_number',
-    }
-  },
-  phone_number: DataTypes.INTEGER,
-},  { timestamps: false });
+}, 
+{
+  // indexes: [{unique: true,  fields: ['someUnique']}],
+timestamps: false }
+);
 
 const PaymentCards = sequelize.define("payment_cards", {
-  id_payment_card: {
+  id_user: {
     type: DataTypes.INTEGER,
-    unique: 'compositeIndex', 
-    references: {
-      model: User,
-      key: 'id_payment_card',
-    }
+    // autoIncrement: true,
+    // primaryKey: true
   },
   number: DataTypes.INTEGER,
   MM_YY: DataTypes.INTEGER,
   cnn: DataTypes.INTEGER,
   zip: DataTypes.INTEGER,
+}, 
+{   
+  // indexes: [{unique: true,  fields: ['someUnique']}],
+timestamps: false }
+);     
+
+
+// User.hasMany(PaymentCards, {foreignKey: 'id_payment_card', sourceKey: 'id_payment_card'});
+// PaymentCards.belongsTo(User, {foreignKey: 'id_payment_card', targetKey: 'id'});
+
+
+const Payment = User.hasMany(PaymentCards, {
+  foreignKey: {
+      name: 'id_user',
+      allowNull: false,
+      onDelete: 'CASCADE',
+      as: 'payment',
+  }
 });
+//  User.belongsTo(PaymentCards, { foreignKey: 'id_user',
+// // as: 'payment',
+// onDelete: 'CASCADE' });
 
-
-
-
-
-User.hasMany(PhoneNumbers, {foreignKey: 'id_phone_number', sourceKey: 'id_phone_number'});
-PhoneNumbers.belongsTo(User, {foreignKey: 'id_phone_number', targetKey: 'id_phone_number'});
-
+module.exports = { Payment }
 
 module.exports = {
   User: User,
-  Emails: Emails,
-  PhoneNumbers: PhoneNumbers,
   PaymentCards: PaymentCards,
   HotelRooms: HotelRooms,   
   SaleRooms: SaleRooms,
