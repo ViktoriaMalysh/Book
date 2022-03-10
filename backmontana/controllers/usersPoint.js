@@ -1,215 +1,70 @@
 const keys = require("../keys/keys");
-const { User, Emails, Payment, PhoneNumbers, PaymentCards, HotelRooms, SaleRooms } = require("../sequelize");
+const { User, Emails, UserRooms, Payment, PhoneNumbers, PaymentCards, HotelRooms, SaleRooms } = require("../sequelize");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const sequelize = require("../sequelize");
-// User, Emails, PhoneNumbers, PaymentCards, HotelRooms, SaleRooms
 
-module.exports.authentication = async function (req, ress) {
-  // const query = await User.findAll({
-  //   include: [{ 
-  //     model: PaymentCards,
-  //     // as: 'payment_cards',
-  //   }]
-  // })
-
-  // console.log('query', query)
-
+module.exports.authentication = async function (req, res) {
   try{
+    let candidat = {
+      name: req.body.name,
+      surname: req.body.surname,
+      gender: req.body.gender,
+      country: req.body.country,
+      email: req.body.email,   
+      password: req.body.password,    
+      role: 1,
+    };
+    await User.sequelize.sync({ alter: true });
+    await HotelRooms.sequelize.sync({ alter: true });
 
-  let candidat = {
-    name: req.body.name,
-    surname: req.body.surname,
-    gender: req.body.gender,
-    country: req.body.country,
-    email: req.body.email,   
-    password: req.body.password,    
-    role: 1,
-  };
-  // await User.sequelize.sync({ alter: true });
+    const salt = bcrypt.genSaltSync(10);
+    const pass = bcrypt.hashSync(candidat.password, salt);
 
-    const flagCheckEmail = await checkEmail(candidat.email);
-    if (!flagCheckEmail) {
-      if (candidat.email === "admin@gmail.com") {
-        candidat = {
-          name: req.body.name,
-          surname: req.body.surname,
-          gender: req.body.gender,
-          country: req.body.country,
-          email: req.body.email,
-          password: req.body.password,
-          role: 2,    
-        };
-      }
-      const salt = bcrypt.genSaltSync(10);
-      const pass = bcrypt.hashSync(candidat.password, salt);
-      // let user = await User.create({
-      //   name: candidat.name,
-      //   surname: candidat.surname,
-      //   gender: req.body.gender,
-      //   country: req.body.country,
-      //   email: candidat.email,
-      //   password: pass,
-      //   role: candidat.role,
-      //   payment: {
-      //     cnn: 587
-      //   }
-      // }
-      // // {
-      // //   include: [ Payment ] 
-      // // }
-      // );
+    // let room = await HotelRooms.create({
+    //   country: 'Turkey'
+    // })
+    // await room.save();  
 
-      const Payment1 = User.hasMany(PaymentCards, {
-        foreignKey: {
-            name: 'id_user',
-            allowNull: false,
-            onDelete: 'CASCADE',
-            as: 'payment',
-        }
-      });
+    let user = await User.create({
+      name: candidat.name,
+      surname: candidat.surname,  
+      gender: req.body.gender,
+      country: req.body.country,
+      email: candidat.email,
+      password: pass,
+      role: candidat.role,  
+    })
+console.log('-------user---------', user)
 
-      let user = await User.create({
-        name: candidat.name,
-        surname: candidat.surname,
-        gender: req.body.gender,
-        country: req.body.country,
-        email: candidat.email,
-        password: pass,
-        role: candidat.role, 
-        payment: [
-          { cnn: 123 }
-        ]  
-        // paymentCnn: 123
+    if(await user.save()){
+      // await room.addUser(user)
 
-      }, {
-        include: [{ association: Payment1, as: 'payment'}]
-      })
-
-      await user.save();
-
-
-      console.log('user', user)
-
-// let card = await PaymentCards.create({
-//   cnn: 123,
-//   MM_YY: 1225,
-//   zip: 12546,
-//   number: 1252,
-//   usersId_user: 3,
-//   // usersName: 'vika'
-// })
-//  console.log()
-      // await card.save();
-      const check_email_login = await checkEmail(candidat.email);
-      const token = jwt.sign(
+      const token = jwt.sign(  
         {
           email: candidat.email,
           password: pass,
           role: candidat.role,
-          id: check_email_login.id,
+          id: user.dataValues.id
         },
-        keys.jwt,
-        { expiresIn: 300 }
-      );
-      ress.status(200).json({
-        token: token,
-        id: check_email_login.id,
-        name: check_email_login.name,
-        surname: check_email_login.surname,
-        gender: check_email_login.gender,
-        age: check_email_login.age,
-        country: check_email_login.country,
-        id_phone_number: check_email_login.id_phone_number,
-        id_payment_card: check_email_login.id_payment_card,
-        email: check_email_login.email,
-        role: check_email_login.role,
-      });
+          keys.jwt,
+          { expiresIn: 300 }
+        );
+        res.status(200).json({
+          token: token,
+        });
     }
+    // else{
+    //   res.status(404).json({flag:false})
+    // }
+      // const user = await User.findByPk(42);
 
+   
+  }catch(err){
+    console.log('err', err)
+    res.status(404).json({flag:false})
 
-
-
-  // const [result, metadata] = await sequelize.query('SELECT * FROM users')
-  // const result = await User.findAll({ 
-  //   include: PhoneNumbers,
-  //   through: {
-  //     attributes: ['id_phone_number']
-  //   },
-  //   raw: true
-  // })
-
-  console.log('query: ', result)
-  ress.status(200).json({ flag: false });
-
-}catch(err){
-  console.log('err', err)
-}
-  // console.log('auth')
-  // let candidat = {
-  //   name: req.body.name,
-  //   surname: req.body.surname,
-  //   gender: req.body.gender,
-  //   country: req.body.country,
-  //   email: req.body.email,   
-  //   password: req.body.password,    
-  //   role: 1,
-  // };
-  // await User.sequelize.sync({ alter: true });
-  // try {
-  //   const flagCheckEmail = await checkEmail(candidat.email);
-  //   if (!flagCheckEmail) {
-  //     if (candidat.email === "admin@gmail.com") {
-  //       candidat = {
-  //         name: req.body.name,
-  //         surname: req.body.surname,
-  //         gender: req.body.gender,
-  //         country: req.body.country,
-  //         email: req.body.email,
-  //         password: req.body.password,
-  //         role: 2,    
-  //       };
-  //     }
-  //     const salt = bcrypt.genSaltSync(10);
-  //     const pass = bcrypt.hashSync(candidat.password, salt);
-  //     let user = await User.build({
-  //       name: candidat.name,
-  //       surname: candidat.surname,
-  //       gender: req.body.gender,
-  //       country: req.body.country,
-  //       email: candidat.email,
-  //       password: pass,
-  //       role: candidat.role,
-  //     });
-  //     await user.save();
-  //     const check_email_login = await checkEmail(candidat.email);
-  //     const token = jwt.sign(
-  //       {
-  //         email: candidat.email,
-  //         password: pass,
-  //         role: candidat.role,
-  //         id: check_email_login.id,
-  //       },
-  //       keys.jwt,
-  //       { expiresIn: 300 }
-  //     );
-  //     ress.status(200).json({
-  //       token: token,
-  //       id: check_email_login.id,
-  //       name: check_email_login.name,
-  //       surname: check_email_login.surname,
-  //       gender: check_email_login.gender,
-  //       age: check_email_login.age,
-  //       country: check_email_login.country,
-  //       id_phone_number: check_email_login.id_phone_number,
-  //       id_payment_card: check_email_login.id_payment_card,
-  //       email: check_email_login.email,
-  //       role: check_email_login.role,
-  //     });
-  //   } else ress.status(404).json({ flag: false });
-  // } catch (err) {
-  //   console.log("Error: " + err);
-  // }
+  }
 };
 
 // module.exports.authorization = async function (req, ress) {

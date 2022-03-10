@@ -1,5 +1,4 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
-const db ={}
 
 const sequelize = new Sequelize("booking_db", "admin", "admin", {
  host: "db",
@@ -23,26 +22,20 @@ const HotelRooms = sequelize.define("hotel_rooms", {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
-},
-  id_user: {
-    type: DataTypes.INTEGER,
-    unique: 'compositeIndex' 
   },
   country: DataTypes.TEXT,
   address: DataTypes.TEXT,
   locality: DataTypes.TEXT,
   price: DataTypes.INTEGER,
   url: DataTypes.TEXT,
-}, 
-{ 
-  // indexes: [{unique: true,  fields: ['someUnique']}], 
-  timestamps: false
-}
+  }, 
+  { 
+    timestamps: false
+  }
 );
 
-// module.exports = (sequelize, Sequelize) => {
 const User = sequelize.define("users", { 
-  id_user: {
+  id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
@@ -59,18 +52,35 @@ const User = sequelize.define("users", {
     type: DataTypes.INTEGER,
     defaultValue: 1,
   },
-  // id_payment_card: {
-  //   type: DataTypes.INTEGER,
-  //   // unique: true, 
-  //   unique: 'compositeIndex' 
-  // }, 
 },  
 { 
-  // indexes: [{unique: true,  fields: ['someUnique']}], 
   timestamps: false
 });
-// return User;
-// };
+
+
+const UserRooms = sequelize.define('UserRooms', {
+  // UserId: {
+  //   type: DataTypes.INTEGER,
+  //   references: {
+  //     model: User, 
+  //     key: 'id'
+  //   }
+  // },
+  // RoomId: {
+  //   type: DataTypes.INTEGER,
+  //   references: {
+  //     model: HotelRooms, 
+  //     key: 'id'
+  //   }
+  // }
+}, {  timestamps: false
+});
+
+User.belongsToMany(HotelRooms, { through: UserRooms });
+HotelRooms.belongsToMany(User, { through: UserRooms });
+
+// user.addHotelRooms(house);
+// house.setUsers([user1, user2])
 
 const SaleRooms = sequelize.define("sale_rooms", {
   id: {
@@ -85,17 +95,17 @@ const SaleRooms = sequelize.define("sale_rooms", {
   priceAfter: DataTypes.INTEGER,
   discount: DataTypes.INTEGER,
   url: DataTypes.TEXT,
-}, 
-{
-  // indexes: [{unique: true,  fields: ['someUnique']}],
-timestamps: false }
+  }, 
+  {
+    timestamps: false 
+  }
 );
 
 const PaymentCards = sequelize.define("payment_cards", {
-  id_user: {
+  id: {
     type: DataTypes.INTEGER,
-    // autoIncrement: true,
-    // primaryKey: true
+    autoIncrement: true,
+    primaryKey: true
   },
   number: DataTypes.INTEGER,
   MM_YY: DataTypes.INTEGER,
@@ -103,33 +113,51 @@ const PaymentCards = sequelize.define("payment_cards", {
   zip: DataTypes.INTEGER,
 }, 
 {   
-  // indexes: [{unique: true,  fields: ['someUnique']}],
-timestamps: false }
+  timestamps: false }
 );     
 
-
-// User.hasMany(PaymentCards, {foreignKey: 'id_payment_card', sourceKey: 'id_payment_card'});
-// PaymentCards.belongsTo(User, {foreignKey: 'id_payment_card', targetKey: 'id'});
-
-
-const Payment = User.hasMany(PaymentCards, {
-  foreignKey: {
-      name: 'id_user',
-      allowNull: false,
-      onDelete: 'CASCADE',
-      as: 'payment',
+const UserPaymentCards = sequelize.define('UserPaymentCards', {
+  UserId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: User, 
+      key: 'id'
+    }
+  },
+  PaymentId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: PaymentCards, 
+      key: 'id'
+    }
   }
-});
-//  User.belongsTo(PaymentCards, { foreignKey: 'id_user',
-// // as: 'payment',
-// onDelete: 'CASCADE' });
 
-module.exports = { Payment }
+});
+
+User.belongsToMany(PaymentCards, { through: UserPaymentCards });
+PaymentCards.belongsToMany(User, { through: UserPaymentCards });
+
+
+// const Payment = User.hasMany(PaymentCards, {
+//   foreignKey: {
+//       name: 'id_user',
+//       allowNull: false,
+//       onDelete: 'CASCADE',
+//       as: 'payment',
+//   }
+// });
+//  User.sequelize.sync({ alter: true });
+//  UserRooms.sequelize.sync({ alter: true });
+//  HotelRooms.sequelize.sync({ alter: true });
+
+// module.exports = { Payment }
 
 module.exports = {
-  User: User,
+  User: User,   
   PaymentCards: PaymentCards,
   HotelRooms: HotelRooms,   
   SaleRooms: SaleRooms,
+  UserRooms: UserRooms,
+  UserPaymentCards: UserPaymentCards,
 };
        
