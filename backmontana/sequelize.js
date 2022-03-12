@@ -28,6 +28,7 @@ const HotelRooms = sequelize.define("hotel_rooms", {
   locality: DataTypes.TEXT,
   price: DataTypes.INTEGER,
   url: DataTypes.TEXT,
+  status: DataTypes.TEXT,
   }, 
   { 
     timestamps: false
@@ -41,46 +42,24 @@ const User = sequelize.define("users", {
     primaryKey: true
   }, 
   email: DataTypes.TEXT,
-  phone_number: DataTypes.INTEGER,
+  phone_number: DataTypes.BIGINT,
   name: DataTypes.TEXT,
   surname: DataTypes.TEXT,
   gender: DataTypes.TEXT,
   country: DataTypes.TEXT,
   dateOfBirth: DataTypes.TEXT,
   password: DataTypes.TEXT,
-  role: {
-    type: DataTypes.INTEGER,
-    defaultValue: 1,
-  },
+  isAdmin: DataTypes.BOOLEAN,
 },  
 { 
   timestamps: false
 });
 
 
-const UserRooms = sequelize.define('UserRooms', {
-  // UserId: {
-  //   type: DataTypes.INTEGER,
-  //   references: {
-  //     model: User, 
-  //     key: 'id'
-  //   }
-  // },
-  // RoomId: {
-  //   type: DataTypes.INTEGER,
-  //   references: {
-  //     model: HotelRooms, 
-  //     key: 'id'
-  //   }
-  // }
-}, {  timestamps: false
-});
+const UserRooms = sequelize.define('UserRooms', {}, { timestamps: false });
 
 User.belongsToMany(HotelRooms, { through: UserRooms });
 HotelRooms.belongsToMany(User, { through: UserRooms });
-
-// user.addHotelRooms(house);
-// house.setUsers([user1, user2])
 
 const SaleRooms = sequelize.define("sale_rooms", {
   id: {
@@ -116,41 +95,11 @@ const PaymentCards = sequelize.define("payment_cards", {
   timestamps: false }
 );     
 
-const UserPaymentCards = sequelize.define('UserPaymentCards', {
-  UserId: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: User, 
-      key: 'id'
-    }
-  },
-  PaymentId: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: PaymentCards, 
-      key: 'id'
-    }
-  }
-
-});
+const UserPaymentCards = sequelize.define('UserPaymentCards', {}, { timestamps: false });
 
 User.belongsToMany(PaymentCards, { through: UserPaymentCards });
 PaymentCards.belongsToMany(User, { through: UserPaymentCards });
 
-
-// const Payment = User.hasMany(PaymentCards, {
-//   foreignKey: {
-//       name: 'id_user',
-//       allowNull: false,
-//       onDelete: 'CASCADE',
-//       as: 'payment',
-//   }
-// });
-//  User.sequelize.sync({ alter: true });
-//  UserRooms.sequelize.sync({ alter: true });
-//  HotelRooms.sequelize.sync({ alter: true });
-
-// module.exports = { Payment }
 
 module.exports = {
   User: User,   
