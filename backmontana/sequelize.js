@@ -86,7 +86,7 @@ const PaymentCards = sequelize.define("payment_cards", {
     autoIncrement: true,
     primaryKey: true
   },
-  number: DataTypes.INTEGER,
+  number: DataTypes.BIGINT,
   MM_YY: DataTypes.INTEGER,
   cnn: DataTypes.INTEGER,
   zip: DataTypes.INTEGER,

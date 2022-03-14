@@ -8,17 +8,17 @@ router.post('/sign_up', usersPoint.sign_up)
 //localhost:8000/users/sign_in
 router.post('/sign_in', usersPoint.sign_in)
 
-//localhost:8000/users/changeProfile
+//localhost:8000/users/change_profile
 router.post('/change_profile', usersPoint.changeProfile)
 
-//localhost:8000/users/changeEmail
-// router.post('/changeEmail', usersPoint.changeEmail)
+//localhost:8000/users/change_email
+router.post('/change_email', usersPoint.changeEmail)
    
-//localhost:8000/users/changeEmail
-// router.post('/changePhone', usersPoint.changePhone)
+//localhost:8000/users/change_phone
+router.post('/change_phone', usersPoint.changePhone)
 
-//localhost:8000/users/changeEmail
-// router.post('/changePassword', usersPoint.changePassword)
+//localhost:8000/users/change_password
+router.post('/change_password', usersPoint.changePassword)
 
 //localhost:8000/users/verify_token
 router.post('/verify_token', usersPoint.verifyToken)
@@ -26,11 +26,13 @@ router.post('/verify_token', usersPoint.verifyToken)
 //localhost:8000/users/deleteAccount
 router.post('/delete_account', usersPoint.deleteAccount)
 
-//localhost:8000/users/setId
-// router.post('/setId', usersPoint.setId)
+//localhost:8000/users/set_id
+router.post('/set_id', usersPoint.setId)
 
-//localhost:8000/users/pass
-// router.post('/pass', usersPoint.validatePassword)
+//localhost:8000/users/validate_password
+router.post('/validate_password', usersPoint.validatePassword)
 
+//localhost:8000/users/add_payment_card
+router.post('/add_payment_card', usersPoint.addPaymentCard)
 
 module.exports = router 

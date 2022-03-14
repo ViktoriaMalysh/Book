@@ -17,7 +17,7 @@ app.use(require('morgan')('dev'))
 
 
 app.use(express.static(__dirname + "/public"));
-const tickets = require('./route/tickets')
+const rooms = require('./route/rooms')
 const users = require('./route/users')
 const admin = require('./route/admin')
 
@@ -50,7 +50,7 @@ app.post("/payment", async (req, res) => {
 
 // app.use(require('cors')())
 
-app.use('/tickets', tickets)
+app.use('/rooms', rooms)
 app.use('/users', users)
 app.use('/admin', admin)
    
