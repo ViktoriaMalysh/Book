@@ -1,6 +1,5 @@
-const { UserRooms, HotelRooms, User } = require("../sequelize");
+const { UserRooms, HotelRooms, SaleRooms, User } = require("../sequelize");
 const sequelize = require("../sequelize");
-// const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
 
 module.exports.bookingRoom = async function (req, res) {
   try {
@@ -84,79 +83,50 @@ module.exports.cancelBooking = async function (req, res) {
   }
 };
 
-module.exports.showMyBookedRooms = async function (req, res) {
+module.exports.showMyRoomsWithStatus = async function (req, res) {
   try {
     const id = req.body.id;
+    const status = req.body.status;
 
-    const result = await User.findOne({
-      where: { id: id }, raw: true,
-      include: HotelRooms
+    const rooms = await User.findAll({
+      where: { id: id }, attributes: [], raw: true,
+      include: [{
+        model: HotelRooms,
+        where: {
+          status: status
+        }
+      }]
     });
 
-    console.log('result', result)
-
-    // await HotelRooms.sync({ alter: true });
-
-    // await UserRooms.findAll({ where: { id_user: id }, raw: true })
-    //   .then((result) => {
-    //     res.send(result);
-    //   })
-    //   .catch((err) => console.log(err));
+    if(rooms.length === 0){
+      res.status(404).json({ 
+        message: `You do not have any ${status} rooms`,  
+      })
+    }else{
+      res.status(200).json({ 
+        rooms: rooms
+      })
+    }
   } catch (err) {
     console.log("Error: " + err);
-    res.status(404).json({ flag: true });
+    res.status(500).json({ message: 'Server have some problem' });
   }
 };
 
-// module.exports.showMyBoughtRooms = async function (req, res) {
-//   try {
-//     await HotelTicket.sequelize.sync({ alter: true });
-//     const id = req.body.id;
-//     await HotelTicket.findAll({ where: { id_user: id }, raw: true })
-//       .then((result) => {
-//         res.send(result);
-//       })
-//       .catch((err) => console.log(err));
-//   } catch (err) {
-//     console.log("Error: " + err);
-//     res.status(404).json({ flag: true });
-//   }
-// };
-
-// module.exports.showSaleTicket = async function (req, res) {
-//   try {
-//     await SaleHotelTicket.sequelize.sync({ alter: true });
-//     await SaleHotelTicket.findAll({ raw: true })
-//       .then((result) => {
-//         res.send(result);
-//       })
-//       .catch((err) => console.log(err));
-//   } catch (err) {
-//     console.log("Error: " + err);
-//     res.status(404).json({ flag: true });
-//   }
-// };
-
-// module.exports.payment = async function (req, res) {
-//   let { amount, id } = req.body;
-//   try {
-//     const payment = await stripe.paymentIntents.create({
-//       amount,
-//       currency: "USD",
-//       description: "Spatula company",
-//       payment_method: id,
-//       confirm: true,
-//     });
-//     console.log("Payment", payment);
-//     res.json({
-//       message: "Payment successful",
-//       success: true,
-//     });
-//   } catch (error) {
-//     console.log("Error", error);
-//     res.json({
-//       message: "Payment failed",
-//       success: false,
-//     });
-//   }
-// };
+module.exports.showSaleRooms = async function (req, res) {
+  try {
+    const saleRooms = await SaleRooms.findAll({ raw: true })
+    if(saleRooms.length === 0){
+      res.status(404).json({ 
+        message: 'No any promotional offers',  
+      })
+    }else{
+      res.status(200).json({ 
+        saleRooms: saleRooms,  
+      })
+    }
+  } catch (err) {
+    console.log("Error: " + err);
+    res.status(500).json({ message: 'Server have some problem' });
+  }
+};

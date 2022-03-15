@@ -52,8 +52,8 @@ export default function AppNav() {
         <Route path="/country/spain" element={<CountrySpain />} />
         <Route path="/country/germany" element={<CountryGermany />} />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/auth" element={<Auth />} />
+        <Route path="/sign_in" element={<Login />} />
+        <Route path="/sign_up" element={<Auth />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/deleteAccount" element={<DeleteAccount />} />
 

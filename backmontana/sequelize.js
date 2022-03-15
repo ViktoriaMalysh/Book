@@ -72,7 +72,7 @@ const SaleRooms = sequelize.define("sale_rooms", {
   locality: DataTypes.TEXT,
   priceBefore: DataTypes.INTEGER,
   priceAfter: DataTypes.INTEGER,
-  discount: DataTypes.INTEGER,
+  discount: DataTypes.INTEGER,   
   url: DataTypes.TEXT,
   }, 
   {

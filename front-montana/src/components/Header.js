@@ -208,14 +208,24 @@ function Header() {
                   </Nav.Link>
                 </>
               ) : (
-                <Nav.Link>
-                  <Link
-                    style={{ textDecoration: "none", color: "white" }}
-                    to={"/login"}
-                  >
-                    Sing In
-                  </Link>
-                </Nav.Link>
+                <>
+                  <Nav.Link>
+                    <Link
+                      style={{ textDecoration: "none", color: "white" }}
+                      to={"/sign_in"}
+                    >
+                      Sing In
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <Link
+                      style={{ textDecoration: "none", color: "white" }}
+                      to={"/sign_up"}
+                    >
+                      Sing up
+                    </Link>
+                  </Nav.Link>
+                </>
               )}
             </Nav>
           </Navbar.Collapse>
