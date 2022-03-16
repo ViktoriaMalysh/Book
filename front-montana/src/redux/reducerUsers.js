@@ -5,7 +5,7 @@ import {
   ERROR,
   USER_EMAIL,
   USER_PASSWORD,
-  USER_ROLE,
+  USER_IS_ADMIN,
   USER_ID,
   CLEAR_USER,
   REQUESTED_USER,
@@ -38,7 +38,7 @@ const initialState = {
   userPhone: 0,
   userEmail: "",
   userPassword: "",
-  userRole: 0,
+  isAdmin: false,
   userId: 0,
   currentPrice: 0,
   flag: "",
@@ -74,8 +74,8 @@ export const reducerUsers = (state = initialState, action) => {
       return { ...state, userEmail: action.payload };
     case USER_PASSWORD:
       return { ...state, userPassword: action.payload };
-    case USER_ROLE:
-      return { ...state, userRole: action.payload };
+    case USER_IS_ADMIN:
+      return { ...state, isAdmin: action.payload };
     case USER_ID:
       return { ...state, userId: action.payload };
     case CURRENT_PRICE:
@@ -92,7 +92,7 @@ export const reducerUsers = (state = initialState, action) => {
       return { ...state, err: true };
 
     case SUCCESS:
-      return { ...state, flagSuccess: action.payload };
+      return { ...state, success: action.payload };
     case CHANGE:
       return { ...state, change: action.payload };
     case ERROR:

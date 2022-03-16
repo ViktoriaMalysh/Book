@@ -21,11 +21,6 @@ module.exports.sign_up = async function (req, res) {
     const salt = bcrypt.genSaltSync(10);
     const pass = bcrypt.hashSync(candidat.password, salt);
 
-    // let room = await HotelRooms.create({
-    //   country: 'Turkey'
-    // })
-    // await room.save();  
-
     const user = await User.create({
       name: candidat.name,
       surname: candidat.surname,  

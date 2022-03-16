@@ -9,12 +9,12 @@ import CountryFrance from "./pages/countries/france";
 import CountryEgypt from "./pages/countries/egypt";
 import CountryGreece from "./pages/countries/greece";
 import CountrySpain from "./pages/countries/spain";
-import Login from "./pages/Login";
-import Logout from "./pages/Logout";
-import Auth from "./pages/Auth";
+import Login from "./user/Login";
+import Logout from "./user/Logout";
+import Auth from "./user/Auth";
 import Tickets from "./pages/HotelTicket";
 import Profile from "./pages/Profile";
-import DeleteAccount from "./pages/DeleteAccount";
+import DeleteAccount from "./user/DeleteAccount";
 import ProfileSettings from "./pages/ProfileSettings";
 import FirstPage from "./pages/FirstPage";
 import HomePage from "./pages/HomePage";
@@ -41,7 +41,7 @@ export default function AppNav() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter>   
       <Header />
       <Routes>
         <Route path="/country/turkey" element={<CountryTurkey />} />
@@ -52,21 +52,21 @@ export default function AppNav() {
         <Route path="/country/spain" element={<CountrySpain />} />
         <Route path="/country/germany" element={<CountryGermany />} />
 
-        <Route path="/sign_in" element={<Login />} />
-        <Route path="/sign_up" element={<Auth />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/deleteAccount" element={<DeleteAccount />} />
+        {/* <Route path="/sign_in" element={<Login />} /> */}
+        <Route path="/sign_up" element={<Auth />} />  
+        {/* <Route path="/logout" element={<Logout />} /> */}
+        {/* <Route path="/deleteAccount" element={<DeleteAccount />} /> */}
 
-        <Route path="/settings/*" element={<ProfileSettings />} />
+        {/* <Route path="/settings/*" element={<ProfileSettings />} /> */}
   
         {/* profileSettings */}
         {/* <Route path="/ticket/hotelTicket" element={<HotelTicket />} /> */}
         {/* <Route path="/ticket/aviaTicket" element={<AviaTicket />} /> */}
 
-        <Route path="/tickets" element={<Tickets />} />
-        <Route path="/profile" element={<Profile />} />
+        {/* <Route path="/tickets" element={<Tickets />} /> */}
+        {/* <Route path="/profile" element={<Profile />} /> */}
 
-        <Route path="/basket/*" element={<Basket />} />
+        {/* <Route path="/basket/*" element={<Basket />} /> */}
 
 
         

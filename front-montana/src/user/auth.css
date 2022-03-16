@@ -1,0 +1,108 @@
+.div-sign-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "imgFon imgFon imgFon imgFon formSignUp formSignUp formSignUp formSignUp";
+}
+
+.div-sign-up-left {
+  grid-area: imgFon;
+}
+
+.div-sign-up-right {
+  grid-area: formSignUp;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "signUp signUp signUp signUp signUp .";
+}
+
+.div-sign-up-right-form {
+  margin-top: 0em;
+  grid-area: signUp;
+  padding-top: 3.5em;
+}
+
+.div-sign-up-right-form-block{
+  margin-left: 4em;
+  margin-top: 3em;
+  background-color: rgba(139, 85, 190, 0.514);
+}
+
+.button-auth {
+  background-color: white;
+  border-color: rgb(248, 200, 41);
+  color: rgb(255, 136, 0);
+  height: 2.8em;
+  width: 10em;
+  font-weight: 300;
+}
+
+.button-auth:hover {
+  background-color: rgb(252, 174, 59);
+  border-color: rgb(255, 196, 0);
+  color: rgb(255, 255, 255);
+  height: 2.8em;
+  width: 10em;
+  font-weight: 300;
+}
+
+.img-sign-up {
+  height: 900px;
+  width: 900px;
+}
+
+/* .option-style{
+  font-weight: 300;
+  font-size: 1.1em;
+  font-family: "Raleway";
+} */
+
+.span-back{
+  font-size: 2em;
+  position: relative;
+}
+
+.div-inline{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "block1 block1 block2 block2";
+}
+
+.div-inline-block1{
+  grid-area: block1;
+}
+
+.div-inline-block2{
+  grid-area: block2;
+}
+
+.p-sign-up{
+  font-size: 25px;
+  margin-bottom: 0;
+  margin-top: 1em;
+  font-family: "URW Chancery L, cursive";
+  /* letter-spacing: 0.1px; */
+}
+
+.input-sign-up{
+  width: 20em;
+  height: 2.5em;
+  border: 1px solid grey;
+}
+
+.button-back{
+  height: 4em;
+  width: 4em;
+  background-color: white;
+  border: 2px solid rgb(248, 200, 41);
+  border-radius: 50%;
+  color: rgb(255, 136, 0);
+  text-decoration: none;
+}
+
+.button-back:hover{
+  height: 4em;
+  width: 4em;
+  background-color: rgb(252, 174, 59);
+  border-color: rgb(255, 196, 0);
+  color: rgb(255, 255, 255);
+}

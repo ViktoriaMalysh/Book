@@ -4,7 +4,6 @@ require("dotenv").config()
 const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST)
 const bodyParser = require("body-parser")
 const cors = require("cors")
-// const corsMiddleware = require('./middleware/cors.middleware')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.urlencoded());
@@ -12,11 +11,10 @@ app.use(express.urlencoded());
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors())
-// app.use(corsMiddleware)
 app.use(require('morgan')('dev'))
 
 
-app.use(express.static(__dirname + "/public"));
+// app.use(express.static(__dirname + "/public"));
 const rooms = require('./route/rooms')
 const users = require('./route/users')
 const admin = require('./route/admin')
