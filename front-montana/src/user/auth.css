@@ -11,25 +11,27 @@
 .div-sign-up-right {
   grid-area: formSignUp;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "signUp signUp signUp signUp signUp .";
+  grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". signUp signUp signUp signUp .";
 }
 
 .div-sign-up-right-form {
   margin-top: 0em;
   grid-area: signUp;
   padding-top: 3.5em;
+  margin-top: 15%;
 }
 
 .div-sign-up-right-form-block{
   margin-left: 4em;
-  margin-top: 3em;
-  background-color: rgba(139, 85, 190, 0.514);
+  margin-top: 5%;
+  /* background-color: rgba(139, 85, 190, 0.514); */
 }
 
 .button-auth {
   background-color: white;
-  border-color: rgb(248, 200, 41);
+  border: 2px solid rgb(248, 200, 41);
+  border-radius: 4px;
   color: rgb(255, 136, 0);
   height: 2.8em;
   width: 10em;
@@ -38,7 +40,8 @@
 
 .button-auth:hover {
   background-color: rgb(252, 174, 59);
-  border-color: rgb(255, 196, 0);
+  border: 2px solid rgb(252, 174, 59);
+  border-radius: 4px;
   color: rgb(255, 255, 255);
   height: 2.8em;
   width: 10em;
@@ -61,32 +64,96 @@
   position: relative;
 }
 
-.div-inline{
+.div-inline-1{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "block1 block1 block2 block2";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "block11 block11 block11 block12 block12 block12";
+  margin-bottom: 1em;
 }
 
-.div-inline-block1{
-  grid-area: block1;
+.div-inline-block11{
+  grid-area: block11;
 }
 
-.div-inline-block2{
-  grid-area: block2;
+.div-inline-block12{
+  grid-area: block12;
+}
+
+.div-inline-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "block21 block21 block22 block22 block23 block23";
+  margin-bottom: 1em;
+}
+
+.div-inline-block21{
+  grid-area: block21;
+}
+
+.div-inline-block22{
+  grid-area: block22;
+}
+
+.div-inline-block23{
+  grid-area: block23;
 }
 
 .p-sign-up{
-  font-size: 25px;
+  font-size: 18px;
   margin-bottom: 0;
   margin-top: 1em;
-  font-family: "URW Chancery L, cursive";
-  /* letter-spacing: 0.1px; */
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.input-sign-up{
-  width: 20em;
+.input-sign-up-block2{
+  padding-left: 1em;
+  font-size: 1em;
+  width: 10em;
   height: 2.5em;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.418);
+  border-radius: 4px;
+}
+
+.input-sign-up-name{
+  font-size: 1em;
+  padding-left: 2em;
+  width: 17.5em;
+  height: 2.5em;
+  border: 1px solid rgba(128, 128, 128, 0.418);
+  border-radius: 4px;}
+
+.input-sign-up-block3{
+  padding-left: 1em;
+  font-size: 1em;
+  width: 17.5em;
+  height: 2.5em;
+  border: 1px solid rgba(128, 128, 128, 0.418);
+  border-radius: 4px;
+}
+
+.label-text{
+  font-size: 18px;
+  padding-left: 0.5em;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.div-text-footer{
+  margin-bottom: 1em;
+}
+
+.checkbox-title{
+  /* margin-bottom: 1em; */
+}
+
+.option{
+  width: 17.5em;
+  height: 2.5em;
+}
+
+.p-sign-up-title{
+  font-size: 10px;
+  padding-right: 1em;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .button-back{
@@ -103,6 +170,6 @@
   height: 4em;
   width: 4em;
   background-color: rgb(252, 174, 59);
-  border-color: rgb(255, 196, 0);
+  border: 2px solid rgb(252, 174, 59);
   color: rgb(255, 255, 255);
 }

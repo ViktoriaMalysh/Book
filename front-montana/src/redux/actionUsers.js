@@ -70,7 +70,6 @@ export const fetchSignUp = (user) => {
         surname: user.surname,
         gender: user.gender,
         country: user.country,
-        phone_number: user.phone_number,
         email: user.email,
         dateOfBirth: "dvhdvb",
         password: user.password,
@@ -89,7 +88,6 @@ export const fetchSignUp = (user) => {
           type: USER_DATE_OF_BIRTH,
           payload: result.data.dateOfBirth,
         });
-        dispatch({ type: USER_PHONE, payload: result.data.phone });
         dispatch({ type: USER_EMAIL, payload: result.data.email });
         dispatch({ type: USER_IS_ADMIN, payload: result.data.isAdmin });
         dispatch({ type: SUCCESS, payload: true });

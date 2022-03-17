@@ -11,7 +11,6 @@ module.exports.sign_up = async function (req, res) {
       surname: req.body.surname,
       gender: req.body.gender,
       country: req.body.country,
-      phone_number: req.body.phone_number,
       email: req.body.email, 
       dateOfBirth: req.body.dateOfBirth,  
       password: req.body.password,    
@@ -27,7 +26,6 @@ module.exports.sign_up = async function (req, res) {
       gender: candidat.gender,
       country: candidat.country,
       dateOfBirth: candidat.dateOfBirth,
-      phone_number: candidat.phone_number,
       email: candidat.email,
       password: pass,
       isAdmin: isAdmin,  
@@ -54,7 +52,6 @@ module.exports.sign_up = async function (req, res) {
         gender: user.dataValues.gender,
         country: user.dataValues.country,
         dateOfBirth: user.dataValues.dateOfBirth,
-        phone_number: user.dataValues.phone_number,
         email: user.dataValues.email,
         isAdmin: user.dataValues.isAdmin,  
       });
