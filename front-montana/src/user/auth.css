@@ -104,7 +104,7 @@
   margin-top: 1em;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+/* 
 .input-sign-up-block2{
   padding-left: 1em;
   font-size: 1em;
@@ -112,9 +112,9 @@
   height: 2.5em;
   border: 1px solid rgba(128, 128, 128, 0.418);
   border-radius: 4px;
-}
+} */
 
-.input-sign-up-name{
+/* .input-sign-up-name{
   font-size: 1em;
   padding-left: 2em;
   width: 17.5em;
@@ -129,6 +129,15 @@
   height: 2.5em;
   border: 1px solid rgba(128, 128, 128, 0.418);
   border-radius: 4px;
+} */
+
+.input-sign-up{
+  padding-left: 1em;
+  font-size: 1em;
+  width: 17.5em;
+  height: 2.4em;
+  border: 1px solid rgba(128, 128, 128, 0.418);
+  border-radius: 4px;
 }
 
 .label-text{
@@ -139,10 +148,6 @@
 
 .div-text-footer{
   margin-bottom: 1em;
-}
-
-.checkbox-title{
-  /* margin-bottom: 1em; */
 }
 
 .option{
