@@ -3,7 +3,7 @@ import { Container, Nav, Navbar, NavDropdown, Figure } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch, connect } from "react-redux";
-// import { fetchVerifyToken } from "../redux/actionUsers";
+import { fetchVerifyToken } from "../redux/actionUsers";
 // import { showMyTickets } from "../redux/actionTickets";
 // import { showSaleTickets } from "../redux/actionTickets";
 
@@ -14,7 +14,7 @@ function Header() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    // dispatch(fetchVerifyToken(token));
+    dispatch(fetchVerifyToken(token));
     // dispatch(showMyTickets(store.users.userId));
     // dispatch(showSaleTickets());
 
@@ -218,7 +218,7 @@ function Header() {
                       style={{ textDecoration: "none", color: "white" }}
                       to={"/sign_up"}
                     >
-                      Sing up
+                      Sing Up
                     </Link>
                   </Nav.Link>
                 </>

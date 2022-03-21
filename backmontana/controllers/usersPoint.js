@@ -7,8 +7,8 @@ const sequelize = require("../sequelize");
 module.exports.sign_up = async function (req, res) {
   try{
     const candidat = {
-      name: req.body.name,
-      surname: req.body.surname,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       gender: req.body.gender,
       country: req.body.country,
       email: req.body.email, 
@@ -21,8 +21,8 @@ module.exports.sign_up = async function (req, res) {
     const pass = bcrypt.hashSync(candidat.password, salt);
 
     const user = await User.create({
-      name: candidat.name,
-      surname: candidat.surname,  
+      firstName: candidat.firstName,
+      lastName: candidat.lastName,  
       gender: candidat.gender,
       country: candidat.country,
       dateOfBirth: candidat.dateOfBirth,
@@ -47,8 +47,8 @@ module.exports.sign_up = async function (req, res) {
         message: `${user.dataValues.name} successfully registered!`,
         token: token,
         id: user.dataValues.id,
-        name: user.dataValues.name,
-        surname: user.dataValues.surname,  
+        firstName: user.dataValues.firstName,
+        lastName: user.dataValues.lastName,  
         gender: user.dataValues.gender,
         country: user.dataValues.country,
         dateOfBirth: user.dataValues.dateOfBirth,
@@ -143,8 +143,8 @@ module.exports.sign_in = async function (req, res) {
         message: "Login was successful!",
         token: token,
         id: user.id,
-        name: user.name,
-        surname: user.surname,  
+        firstName: user.firstName,
+        lastName: user.lastName,  
         gender: user.gender,
         country: user.country,
         dateOfBirth: user.dateOfBirth,
@@ -210,11 +210,11 @@ module.exports.verifyToken = async function (req, res) {
         res.status(200).json({
           token: err ? newToken : token,
           id: check_user.id,   
-          name: check_user.name, 
-          surname: check_user.surname,
+          firstName: check_user.firstName, 
+          lastName: check_user.lastName,
           gender: check_user.gender,
-          age: check_user.age,
           country: check_user.country,
+          dateOfBirth: check_user.dateOfBirth,
           phone: check_user.phone,
           email: check_user.email,
           isAdmin: check_user.isAdmin,
@@ -231,8 +231,8 @@ module.exports.changeProfile = async function (req, res) {
   try {
     const user = {
       id: req.body.id,
-      name: req.body.name,
-      surname: req.body.surname,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       gender: req.body.gender,
       dateOfBirth: req.body.dateOfBirth,
       country: req.body.country,
@@ -247,8 +247,8 @@ module.exports.changeProfile = async function (req, res) {
       });
     }else{
       const update = await User.update({
-        name: user.name,
-        surname: user.surname,
+        firstName: user.firstName,
+        lastName: user.lastName,
         gender: user.gender,
         dateOfBirth: user.dateOfBirth,
         country: user.country,
@@ -307,9 +307,9 @@ module.exports.changeEmail = async function (req, res) {
           { expiresIn: 600 }
         );
         res.status(200).json({ 
-          message: "Emaol has been successfully updated!",
+          message: "Email has been successfully updated!",
           token: newToken, 
-          flag: true 
+          update: true 
         });
     }
   } catch (err) {

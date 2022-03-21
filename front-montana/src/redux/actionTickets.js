@@ -1,38 +1,17 @@
 import axios from "axios";
 import { API_URL } from "../config";
 import {
-  DELETE,
-  FIND,
   HIDE_LOADER,
-  REQUESTED_FAILED_TICKET,
-  REQUESTED_SUCCEEDED_CLOSE_TICKET,
-  REQUESTED_SUCCEEDED_TICKET,
-  REQUESTED_TICKET,
-  RESERVED,
   SHOW_ALERT,
   SHOW_LOADER,
-  SHOW_MY_TICKETS,
-  SHOW_TICKETS,
-  SHOW_SALE
+  SHOW_SALE,
+  BOOK,
+  CANCEL,
+  SHOW_MY_BOOKED_ROOMS,
+  SHOW_MY_BOUGHT_ROOMS,
+  SHOW_ROOMS,
+  SHOW,
 } from "./types";
-
-const requestTickets = () => {
-  return { type: REQUESTED_TICKET };
-};
-
-const requestSuccessTickets = () => {
-  return (dispatch) => {
-    dispatch({ type: REQUESTED_SUCCEEDED_TICKET });
-  };
-};
-
-const requestErrorTickets = (err, message) => {
-  return (dispatch) => {
-    console.log("Error:", err);
-    dispatch({ type: REQUESTED_FAILED_TICKET });
-    dispatch(alert(message));
-  };
-};
 
 export const alert = (message) => {
   return (dispatch) => {
@@ -43,116 +22,102 @@ export const alert = (message) => {
   };
 };
 
-export const addTicket = (id, name, address, locality, price, url) => {
-  console.log(id,name )
-  const message = 'Success'
+export const bookRoom = (id, name, address, locality, price, url) => {
   return (dispatch) => {
-    dispatch(requestTickets());
-    axios
-    .post(`${API_URL}tickets/booking`, {
-      id_user: id,
-      name: name,
-      address: address,
-      locality: locality,
-      price: price,
-      url: url
-    })
-    .then(
-      (data) => dispatch(requestSuccessTickets()),
-      dispatch(alert(message)),
-      setTimeout(() => {
-        dispatch({ type: RESERVED, payload: "reserved" });
-      }, 600),
-      (err) => dispatch(requestErrorTickets(err))
-    );
-  };
-};
-
-
-
-export const showTickets = (options) => {
-  return (dispatch) => {
-    dispatch(requestTickets());
-    axios
-      .request(options)
-      .then((res) =>
-        dispatch({
-          type: SHOW_TICKETS,
-          payload: res.data.data.body.searchResults.results,
-        })
-      )
-      .then(
-        (data) => dispatch(requestSuccessTickets()),
-        dispatch({ type: SHOW_LOADER }),
-        setTimeout(() => {
-          dispatch({ type: HIDE_LOADER });
-        }, 1500),
-        (err) => dispatch(requestErrorTickets(err))
-      );
-  };
-};
-
-export const showMyTickets = (id) => {
-  return (dispatch) => {
-    dispatch(requestTickets());
-    dispatch({ type: FIND, payload: false })
-    axios
-      .post(`${API_URL}tickets/showMyBookingTicket`, {
+    try {
+      const result = axios.post(`${API_URL}rooms/booking_room`, {
         id: id,
-      })
-      .then((res) => {
-        if(res.data.length===0) dispatch({ type: FIND, payload: true })   
-        else {
-          dispatch({ type: SHOW_MY_TICKETS, payload: res.data })
-          console.log('res', res.data)
-        }
-      })
-      .then(
-        (data) => dispatch(requestSuccessTickets()),
+        name: name,
+        address: address,
+        locality: locality,
+        price: price,
+        url: url,
+        status: "booked",
+      });
+      if (result.status === 200) {
+        dispatch(alert(result.data.message));
+        dispatch({ type: BOOK, payload: result.data.book });
+      }
+    } catch (err) {
+      console.log("Error", err);
+      dispatch(alert("Hotel room not booked"));
+    }
+  };
+};
+
+export const cancelBook = (id) => {
+  return (dispatch) => {
+    try {
+      const result = axios.post(`${API_URL}rooms/cancel_book`, {
+        id: id,
+      });
+      if (result.status === 200) {
+        dispatch({ type: CANCEL, payload: result.data.cancel });
+        dispatch(alert(result.data.message));
+      }
+    } catch (err) {
+      console.log("Error", err);
+      dispatch(alert("Room reservation wasn`t canceled!"));
+    }
+  };
+};
+
+export const showRooms = (options) => {
+  return (dispatch) => {
+    try {
+      const result = axios.request(options);
+      if (result.status === 200) {
+        dispatch({
+          type: SHOW_ROOMS,
+          payload: result.data.data.body.searchResults.results,
+        });
+        dispatch({ type: SHOW, payload: true });
         dispatch({ type: SHOW_LOADER }),
-        setTimeout(() => {
-          dispatch({ type: HIDE_LOADER });
-        }, 300),
-        dispatch({ type: REQUESTED_SUCCEEDED_CLOSE_TICKET }),
-        (err) => dispatch(requestErrorTickets(err, 'Project not found'))
-      );
+          setTimeout(() => {
+            dispatch({ type: HIDE_LOADER });
+          }, 300);
+      }
+    } catch (err) {
+      console.log("Error", err);
+    }
+  };
+};
+
+export const showMyRoomsWithStatus = (id, status) => {
+  return (dispatch) => {
+    try {
+      const result = axios.post(`${API_URL}rooms/show_my_rooms`, {
+        id: id,
+        status: status,
+      });
+      if (result.status === 200) {
+        if (status === "booked") {
+          dispatch({ type: SHOW_MY_BOOKED_ROOMS, payload: result.data });
+        } else if (status === "bought") {
+          dispatch({ type: SHOW_MY_BOUGHT_ROOMS, payload: result.data });
+        }
+        dispatch({ type: SHOW_LOADER }),
+          setTimeout(() => {
+            dispatch({ type: HIDE_LOADER });
+          }, 300);
+      }
+    } catch (err) {
+      console.log("Error", err);
+      dispatch(alert(`You do not have any ${status} rooms`));
+    }
   };
 };
 
 export const showSaleTickets = () => {
   return (dispatch) => {
-    dispatch(requestTickets());
-    axios
-      .post(`${API_URL}tickets/showSaleTicket`, {})
-      .then((res) => {
-        dispatch({ type: SHOW_SALE, payload: res.data })
-      })
-      .then(
-        (data) => dispatch(requestSuccessTickets()),
-        dispatch({ type: SHOW_LOADER }),
-        setTimeout(() => {
-          dispatch({ type: HIDE_LOADER });
-        }, 300),
-        dispatch({ type: REQUESTED_SUCCEEDED_CLOSE_TICKET }),
-        (err) => dispatch(requestErrorTickets(err, 'Project not found'))
-      );
-  };
-};
-
-export const deleteTickets = (id) => {
-  return (dispatch) => {
-    dispatch(requestTickets());
-    axios
-      .post(`${API_URL}tickets/cancelBooking`, {
-        id: id,
-      })
-      .then((res) => {
-        dispatch({ type: DELETE, payload: res.data.delete })
-      })
-      .then(
-        (data) => dispatch(requestSuccessTickets()),
-        dispatch({ type: REQUESTED_SUCCEEDED_CLOSE_TICKET }),
-        (err) => dispatch(requestErrorTickets(err, 'Error. Try again'))
-      );
+    try {
+      const result = axios.get(`${API_URL}rooms/show_sale`);
+      if (result.status === 200) {
+        dispatch({ type: SHOW_SALE, payload: result.data });
+      }
+    } catch (err) {
+      console.log("Error", err);
+      dispatch(alert("No any promotional offers"));
+    }
   };
 };

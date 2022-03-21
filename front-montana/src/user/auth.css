@@ -102,8 +102,8 @@
   .div-sign-up-right {
     grid-area: formSignUp;
     display: grid;
-    grid-template-columns: 10% 1fr 1fr 1fr;
-    grid-template-areas: ". signUp signUp signUp";
+    grid-template-columns: 5% 1fr 1fr 10%;
+    grid-template-areas: ". signUp signUp .";
   }
 }
 
@@ -116,8 +116,8 @@
   .div-sign-up-right {
     grid-area: formSignUp;
     display: grid;
-    grid-template-columns: 20% 1fr 1fr 1fr;
-    grid-template-areas: ". signUp signUp signUp";
+    grid-template-columns: 15% 1fr 1fr 10%;
+    grid-template-areas: ". signUp signUp .";
   }
 }
 
@@ -133,8 +133,8 @@
   .div-sign-up-right {
     grid-area: formSignUp;
     display: grid;
-    grid-template-columns: 10% 1fr 1fr 1fr;
-    grid-template-areas: ". signUp signUp signUp";
+    grid-template-columns: 4% 1fr 1fr 15%;
+    grid-template-areas: ". signUp signUp .";
   }
 }
 
@@ -157,7 +157,7 @@
   .div-sign-up-right {
     grid-area: formSignUp;
     display: grid;
-    grid-template-columns: 15% 1fr 1fr 1fr 1fr 5%;
+    grid-template-columns: 15% 1fr 1fr 1fr 1fr 10%;
     grid-template-areas: ". signUp signUp signUp signUp .";
   }
   

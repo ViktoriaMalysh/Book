@@ -98,7 +98,7 @@ function Tickets() {
 
       dispatch(showTickets(options));
       setTimeout(() => {
-        dispatch({ type: REQUESTED_SUCCEEDED_CLOSE_TICKET });
+        // dispatch({ type: REQUESTED_SUCCEEDED_CLOSE_TICKET });
       }, 1000);
     }
   }, [search]);

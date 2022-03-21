@@ -24,9 +24,14 @@ import {
   PRICE,
   DELETE,
   SHOW_SALE,
+  BOOK,
 } from "./types";
 
 const initialState = {
+  book: false,
+
+
+
   nameCountry: "",
   showTickets: [{}],
   showMyTickets: [{}],
@@ -47,6 +52,13 @@ const initialState = {
 
 export const reducerTickets = (state = initialState, action) => {
   switch (action.type) {
+    case BOOK:
+      return { ...state, book: action.payload };
+
+
+
+
+
     case NAME_COUNTRY:
       return { ...state, nameCountry: action.payload };
     case SHOW_TICKETS:

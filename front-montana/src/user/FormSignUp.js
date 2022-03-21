@@ -11,31 +11,15 @@ function FormSignUp() {
   const dispatch = useDispatch();
   const store = useSelector((state) => state);
   const navigate = useNavigate();
-  const [check, setCheck] = useState(false);
 
   useEffect(() => {
     if (store.users.success) {
       setTimeout(() => {
-        navigate("/home");
+        navigate("/");
         dispatch({ type: SUCCESS, payload: false });
       }, 1000);
     }
   }, [store.users.success]);
-
-  const handleSignUp = () => {
-    console.log("handleSignUp", formik.values);
-
-    // const user = {
-    //   name: name,
-    //   surname: surname,
-    //   dateOfBirth: dataOfBirth,
-    //   gender: gender,
-    //   country: country,
-    //   email: email,
-    //   password: password,
-    // };
-    // dispatch(fetchSignUp(user));
-  };
 
   const formik = useFormik({
     initialValues: {
@@ -98,8 +82,8 @@ function FormSignUp() {
       alert(JSON.stringify(values, null, 2));
       console.log("values", values);
       const user = {
-        name: values.firstName,
-        surname: values.lastName,
+        firstName: values.firstName,
+        lastName: values.lastName,
         dateOfBirth: values.dataOfBirth,
         gender: values.gender,
         country: values.country,
@@ -114,7 +98,12 @@ function FormSignUp() {
     <div>
       <Form noValidate onSubmit={formik.handleSubmit}>
         <Row className="mb-3">
-          <Form.Group as={Col} xl="4" sm="4" xs={{ span: 8, offset: 2 }}  controlId="validationFormik01">
+          <Form.Group
+            as={Col}
+            md={{ span: 4, offset: 0 }}
+            xs={{ span: 8, offset: 2 }}
+            controlId="validationFormik01"
+          >
             <Form.Label>First name</Form.Label>
             <Form.Control
               type="text"
@@ -129,7 +118,12 @@ function FormSignUp() {
               {formik.errors.firstName}
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} xl="4" sm="4" xs={{ span: 8, offset: 2 }} controlId="validationFormik02">
+          <Form.Group
+            as={Col}
+            md={{ span: 4, offset: 0 }}
+            xs={{ span: 8, offset: 2 }}
+            controlId="validationFormik02"
+          >
             <Form.Label>Last name</Form.Label>
             <Form.Control
               type="text"
@@ -144,8 +138,13 @@ function FormSignUp() {
               {formik.errors.lastName}
             </Form.Control.Feedback>
           </Form.Group>
-          
-          <Form.Group as={Col} xl="4" sm="4" xs={{ span: 8, offset: 2 }} controlId="validationFormikUsername">
+
+          <Form.Group
+            as={Col}
+            md={{ span: 4, offset: 0 }}
+            xs={{ span: 8, offset: 2 }}
+            controlId="validationFormikUsername"
+          >
             <Form.Label>Country</Form.Label>
             <InputGroup hasValidation>
               <Form.Control
@@ -164,52 +163,54 @@ function FormSignUp() {
             </InputGroup>
           </Form.Group>
         </Row>
-
         <Row className="mb-3">
-        <Col xl={{ span: 4, offset: 1 }} sm={{ span: 5 }} xs={{ span: 8, offset: 2 }} >
+          <Col md={{ span: 4, offset: 2 }} xs={{ span: 8, offset: 2 }}>
+            <Form.Group controlId="validationFormik03">
+              <Form.Label>Gender</Form.Label>
 
-          <Form.Group controlId="validationFormik03">
-            <Form.Label>Gender</Form.Label>
-
-            <Form.Select
-              aria-label="Default select example"
-              isValid={formik.touched.gender && !formik.errors.gender}
-              isInvalid={!!formik.errors.gender}
-              onChange={formik.handleChange}
-              name="gender"
-              value={formik.values.country}
-            >
-              <option>Choose gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </Form.Select>
-            <Form.Control.Feedback type="invalid">
-              {formik.errors.gender}
-            </Form.Control.Feedback>
-          </Form.Group>
+              <Form.Select
+                aria-label="Default select example"
+                isValid={formik.touched.gender && !formik.errors.gender}
+                isInvalid={!!formik.errors.gender}
+                onChange={formik.handleChange}
+                name="gender"
+                value={formik.values.country}
+              >
+                <option>Choose gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                {formik.errors.gender}
+              </Form.Control.Feedback>
+            </Form.Group>
           </Col>
-          <Col xl={{ span: 4, offset: 2 }} sm={{ span: 5 }} xs={{ span: 8, offset: 2 }}>
-
-          <Form.Group controlId="validationFormik03">
-            <Form.Label>Date of birth</Form.Label>
-            <Form.Control
-              type="date"
-              name="dataOfBirth"
-              selected={formik.values.dataOfBirth}
-              isInvalid={!!formik.errors.dataOfBirth}
-              isValid={formik.touched.dataOfBirth && !formik.errors.dataOfBirth}
-              onChange={formik.handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              {formik.errors.dataOfBirth}
-            </Form.Control.Feedback>
-          </Form.Group>
+          <Col md={{ span: 4, offset: 0 }} xs={{ span: 8, offset: 2 }}>
+            <Form.Group controlId="validationFormik03">
+              <Form.Label>Date of birth</Form.Label>
+              <Form.Control
+                type="date"
+                name="dataOfBirth"
+                selected={formik.values.dataOfBirth}
+                isInvalid={!!formik.errors.dataOfBirth}
+                isValid={
+                  formik.touched.dataOfBirth && !formik.errors.dataOfBirth
+                }
+                onChange={formik.handleChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                {formik.errors.dataOfBirth}
+              </Form.Control.Feedback>
+            </Form.Group>
           </Col>
-
         </Row>
-
         <Row className="mb-3">
-          <Form.Group  as={Col} xl="6" xs={{ span: 8, offset: 2 }} controlId="validationFormik03">
+          <Form.Group
+            as={Col}
+            md={{ span: 6, offset: 0 }}
+            xs={{ span: 8, offset: 2 }}
+            controlId="validationFormik03"
+          >
             <Form.Label>Email</Form.Label>
             <Form.Control
               type="email"
@@ -225,7 +226,12 @@ function FormSignUp() {
             </Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group as={Col} xl="6" xs={{ span: 8, offset: 2 }} controlId="validationFormik04">
+          <Form.Group
+            as={Col}
+            md={{ span: 6, offset: 0 }}
+            xs={{ span: 8, offset: 2 }}
+            controlId="validationFormik04"
+          >
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
@@ -246,12 +252,20 @@ function FormSignUp() {
             </Form.Text>
           </Form.Group>
         </Row>
+        <Form.Group className="mb-3">
+          <Form.Check
+            required
+            label="Agree to terms and conditions"
+            feedback="You must agree before submitting."
+            feedbackType="invalid"
+          />
+        </Form.Group>
         <button
           className="button-auth"
           type="submit"
           disabled={formik.errors.lastName}
         >
-          Authorization
+          Sign Up
         </button>{" "}
       </Form>
     </div>

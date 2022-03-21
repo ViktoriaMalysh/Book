@@ -1,54 +1,41 @@
 import {
-  USER_NAME,
   IS_AUTH,
-  USER_SURNAME,
-  ERROR,
   USER_EMAIL,
   USER_PASSWORD,
   USER_IS_ADMIN,
   USER_ID,
   CLEAR_USER,
-  REQUESTED_USER,
-  REQUESTED_SUCCEEDED_USER,
-  REQUESTED_SUCCEEDED_CLOSE_USER,
-  REQUESTED_FAILED_USER,
-  SHOW_ALERT_USER,
-  HIDE_ALERT_USER,
   SUCCESS,
-  FLAG,
-  CHANGE,
   USER_GENDER,
-  USER_AGE,
   USER_COUNTRY,
   USER_PHONE,
-  COUNT_TICKET,
   COUNT_HOTEL_TICKET,
   USER_DATE_OF_BIRTH,
   CURRENT_PRICE,
+  USER_FIRST_NAME,
+  USER_LAST_NAME,
+  UPDATE,
+  VALIDATE,
+  DELETE,
 } from "./types";
 
 const initialState = {
   isAuth: false,
-  userName: "",
-  userSurname: "",
+  userId: 0,
+  userFirstName: "",
+  userLastName: "",
   userGender: "",
   userCountry: "",
   userDateOfBirth: "",
-  userDate: "",
   userPhone: 0,
   userEmail: "",
   userPassword: "",
   isAdmin: false,
-  userId: 0,
   currentPrice: 0,
-  flag: "",
-  err: false,
-  error: "",
+  validate: "",
   success: false,
-  loading: false,
-  change: false,
-  text: false,
-  flagSuccess: false,
+  update: false,
+  delete: false,
   countHotelTickets: 0,
 };
 
@@ -56,10 +43,12 @@ export const reducerUsers = (state = initialState, action) => {
   switch (action.type) {
     case IS_AUTH:
       return { ...state, isAuth: action.payload };
-    case USER_NAME:
-      return { ...state, userName: action.payload };
-    case USER_SURNAME:
-      return { ...state, userSurname: action.payload };
+    case USER_ID:
+      return { ...state, userId: action.payload };
+    case USER_FIRST_NAME:
+      return { ...state, userFirstName: action.payload };
+    case USER_LAST_NAME:
+      return { ...state, userLastName: action.payload };
     case USER_GENDER:
       return { ...state, userGender: action.payload };
     case USER_DATE_OF_BIRTH:
@@ -76,29 +65,18 @@ export const reducerUsers = (state = initialState, action) => {
       return { ...state, userPassword: action.payload };
     case USER_IS_ADMIN:
       return { ...state, isAdmin: action.payload };
-    case USER_ID:
-      return { ...state, userId: action.payload };
     case CURRENT_PRICE:
       return { ...state, currentPrice: action.payload };
     case CLEAR_USER:
       return initialState;
-    case REQUESTED_USER:
-      return { ...state };
-    case REQUESTED_SUCCEEDED_USER:
-      return { ...state, success: true };
-    case REQUESTED_SUCCEEDED_CLOSE_USER:
-      return { ...state, success: false };
-    case REQUESTED_FAILED_USER:
-      return { ...state, err: true };
-
     case SUCCESS:
       return { ...state, success: action.payload };
-    case CHANGE:
-      return { ...state, change: action.payload };
-    case ERROR:
-      return { ...state, error: action.payload };
-    case FLAG:
-      return { ...state, flag: action.payload };
+    case UPDATE:
+      return { ...state, update: action.payload };
+    case VALIDATE:
+      return { ...state, validate: action.payload };
+    case DELETE:
+      return { ...state, delete: action.payload };
 
     default:
       return state;

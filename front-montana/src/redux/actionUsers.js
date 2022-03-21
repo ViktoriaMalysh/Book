@@ -1,26 +1,22 @@
 import axios from "axios";
 import { API_URL } from "../config";
 import {
-  CHANGE,
   CLEAR_USER,
-  ERROR,
-  FLAG,
   IS_AUTH,
-  REQUESTED_FAILED_USER,
-  REQUESTED_SUCCEEDED_USER,
-  REQUESTED_USER,
   SHOW_ALERT,
-  USER_AGE,
   USER_COUNTRY,
   USER_DATE_OF_BIRTH,
   USER_EMAIL,
   USER_GENDER,
   USER_ID,
-  USER_NAME,
   USER_PHONE,
   USER_IS_ADMIN,
-  USER_SURNAME,
   SUCCESS,
+  USER_FIRST_NAME,
+  USER_LAST_NAME,
+  UPDATE,
+  VALIDATE,
+  DELETE,
 } from "./types";
 
 const alert = (message) => {
@@ -32,42 +28,43 @@ const alert = (message) => {
   };
 };
 
-// export const fetchVerifyToken = (token) => {
-//   return (dispatch) => {
-//     dispatch(requestUser());
-//     axios
-//       .post(
-//         `${API_URL}users/verifyToken`,
-//         {},
-//         { headers: { authorization: token } }
-//       )
-//       .then((res) => {
-//         console.log(res);
-//         localStorage.setItem("token", res.data.token);
-//         dispatch({ type: IS_AUTH, payload: true });
-//         dispatch({ type: USER_ID, payload: res.data.id });
-//         dispatch({ type: USER_NAME, payload: res.data.name });
-//         dispatch({ type: USER_SURNAME, payload: res.data.surname });
-//         dispatch({ type: USER_EMAIL, payload: res.data.email });
-//         dispatch({ type: USER_ROLE, payload: res.data.role });
-//         dispatch({ type: USER_GENDER, payload: res.data.gender });
-//         dispatch({ type: USER_DATE_OF_BIRTH, payload: res.data.dataOfBirth });
-//         dispatch({ type: USER_PHONE, payload: res.data.phone });
-//         dispatch({ type: USER_COUNTRY, payload: res.data.country });
-//       })
-//       .then(
-//         (data) => dispatch(requestSuccessUser(data)),
-//         (err) => dispatch(requestErrorUser(err))
-//       );
-//   };
-// };
+export const fetchVerifyToken = (token) => {
+  return (dispatch) => {
+    try {
+      const result = axios.post(
+        `${API_URL}users/verify_token`,
+        {},
+        { headers: { authorization: token } }
+      );
+      if (result.status === 200) {
+        localStorage.setItem("token", result.data.token);
+        dispatch({ type: IS_AUTH, payload: true });
+        dispatch({ type: USER_ID, payload: result.data.id });
+        dispatch({ type: USER_FIRST_NAME, payload: result.data.firstName });
+        dispatch({ type: USER_LAST_NAME, payload: result.data.lastName });
+        dispatch({ type: USER_EMAIL, payload: result.data.email });
+        dispatch({ type: USER_IS_ADMIN, payload: result.data.isAdmin });
+        dispatch({ type: USER_GENDER, payload: result.data.gender });
+        dispatch({
+          type: USER_DATE_OF_BIRTH,
+          payload: result.data.dataOfBirth,
+        });
+        dispatch({ type: USER_PHONE, payload: result.data.phone });
+        dispatch({ type: USER_COUNTRY, payload: result.data.country });
+      }
+    } catch (err) {
+      console.log("Error", err);
+      dispatch(alert("Unable to extend session, log in again"));
+    }
+  };
+};
 
 export const fetchSignUp = (user) => {
   return async (dispatch) => {
     try {
       const result = await axios.post(`${API_URL}users/sign_up`, {
-        name: user.name,
-        surname: user.surname,
+        firstName: user.firstName,
+        lastName: user.lastName,
         gender: user.gender,
         country: user.country,
         email: user.email,
@@ -76,12 +73,11 @@ export const fetchSignUp = (user) => {
       });
 
       if (result.status === 200) {
-        console.log(result.status);
         localStorage.setItem("token", result.data.token);
         dispatch({ type: IS_AUTH, payload: true });
         dispatch({ type: USER_ID, payload: result.data.id });
-        dispatch({ type: USER_NAME, payload: result.data.name });
-        dispatch({ type: USER_SURNAME, payload: result.data.surname });
+        dispatch({ type: USER_FIRST_NAME, payload: result.data.firstName });
+        dispatch({ type: USER_LAST_NAME, payload: result.data.lastName });
         dispatch({ type: USER_GENDER, payload: result.data.gender });
         dispatch({ type: USER_COUNTRY, payload: result.data.country });
         dispatch({
@@ -102,8 +98,8 @@ export const fetchSignUp = (user) => {
   };
 };
 
-export const fetchLogin = (user) => {
-  return async(dispatch) => {
+export const fetchSignIn = (user) => {
+  return async (dispatch) => {
     try {
       const result = await axios.post(`${API_URL}users/sign_in`, {
         email: user.email,
@@ -114,8 +110,8 @@ export const fetchLogin = (user) => {
         localStorage.setItem("token", result.data.token);
         dispatch({ type: IS_AUTH, payload: true });
         dispatch({ type: USER_ID, payload: result.data.id });
-        dispatch({ type: USER_NAME, payload: result.data.name });
-        dispatch({ type: USER_SURNAME, payload: result.data.surname });
+        dispatch({ type: USER_FIRST_NAME, payload: result.data.firstName });
+        dispatch({ type: USER_LAST_NAME, payload: result.data.lastName });
         dispatch({ type: USER_GENDER, payload: result.data.gender });
         dispatch({ type: USER_COUNTRY, payload: result.data.country });
         dispatch({
@@ -125,6 +121,7 @@ export const fetchLogin = (user) => {
         dispatch({ type: USER_PHONE, payload: result.data.phone });
         dispatch({ type: USER_EMAIL, payload: result.data.email });
         dispatch({ type: USER_IS_ADMIN, payload: result.data.isAdmin });
+        dispatch({ type: SUCCESS, payload: true });
         dispatch(alert(result.data.message));
       }
     } catch (err) {
@@ -136,141 +133,120 @@ export const fetchLogin = (user) => {
   };
 };
 
-// export const fetchDelete = (token) => {
-//   return (dispatch) => {
-//     dispatch(requestUser());
-//     axios
-//       .post(
-//         `${API_URL}users/deleteAccount`,
-//         {},
-//         { headers: { authorization: token } }
-//       )
-//       .then((res) => {
-//         localStorage.clear();
-//         dispatch({ type: IS_AUTH, payload: false });
-//         dispatch({ type: CLEAR_USER });
-//         dispatch(alert("Account has been deleted!"));
-//       })
-//       .then(
-//         (data) => dispatch(requestSuccessUser(data)),
-//         (err) =>
-//           dispatch(requestErrorUser(err, "Error! Account has not been deleted"))
-//       );
-//   };
-// };
+export const fetchDeleteAccount = (token) => {
+  return (dispatch) => {
+    try {
+      const result = axios.post(
+        `${API_URL}users/delete_account`,
+        {},
+        { headers: { authorization: token } }
+      );
+      if (result.status === 200) {
+        localStorage.clear();
+        dispatch({ type: DELETE, payload: result.data.delete });
+        dispatch({ type: IS_AUTH, payload: false });
+        dispatch({ type: CLEAR_USER });
+        dispatch(alert(result.data.message));
+      }
+    } catch (err) {
+      console.log("Error", err.message);
+      dispatch(alert("Account has not been deleted"));
+    }
+  };
+};
 
-// export const fetchChange = (user) => {
-//   return (dispatch) => {
-//     dispatch(requestUser());
-//     axios
-//       .post(`${API_URL}users/changeProfile`, {
-//         id: user.id,
-//         name: user.name,
-//         surname: user.surname,
-//         gender: user.gender,
-//         dateOfBirth: user.dateOfBirth,
-//         country: user.country,
-//       })
-//       .then((res) => {
-//         if (res.data.error) dispatch({ type: ERROR, payload: res.data.error });
-//         else {
-//           localStorage.setItem("token", res.data.token);
-//           dispatch({ type: CHANGE, payload: true });
-//         }
-//         dispatch(alert("Success!"));
-//       })
-//       .then(
-//         (data) => dispatch(requestSuccessUser(data)),
-//         (err) => dispatch(requestErrorUser(err, "User not found"))
-//       );
-//   };
-// };
+export const fetchChangeProfile = (user) => {
+  return (dispatch) => {
+    try {
+      const result = axios.post(`${API_URL}users/change_profile`, {
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        gender: user.gender,
+        dateOfBirth: user.dateOfBirth,
+        country: user.country,
+      });
+      if (result.status === 200) {
+        localStorage.setItem("token", result.data.token);
+        dispatch({ type: UPDATE, payload: result.data.update });
+        dispatch(alert(result.data.message));
+      }
+    } catch (err) {
+      console.log("Error", err.message);
+      dispatch(alert("User not found"));
+    }
+  };
+};
 
-// export const fetchChangeEmail = (user) => {
-//   return (dispatch) => {
-//     dispatch(requestUser());
-//     axios
-//       .post(`${API_URL}users/changeEmail`, {
-//         id: user.id,
-//         email: user.email,
-//       })
-//       .then((res) => {
-//         if (res.data.error) dispatch({ type: ERROR, payload: res.data.error });
-//         else {
-//           localStorage.setItem("token", res.data.token);
-//           dispatch({ type: CHANGE, payload: true });
-//         }
-//         dispatch(alert("Success!"));
-//       })
-//       .then(
-//         (data) => dispatch(requestSuccessUser(data)),
-//         (err) => dispatch(requestErrorUser(err, "User not found"))
-//       );
-//   };
-// };
+export const fetchChangeEmail = (user) => {
+  return (dispatch) => {
+    try {
+      const result = axios.post(`${API_URL}users/change_email`, {
+        id: user.id,
+        email: user.email,
+      });
+      if (result.status === 200) {
+        localStorage.setItem("token", result.data.token);
+        dispatch({ type: UPDATE, payload: result.data.update });
+        dispatch(alert(result.data.message));
+      }
+    } catch (err) {
+      console.log("Error", err.message);
+      dispatch(alert("User not found"));
+    }
+  };
+};
 
-// export const fetchChangePhone = (user) => {
-//   return (dispatch) => {
-//     dispatch(requestUser());
-//     axios
-//       .post(`${API_URL}users/changePhone`, {
-//         id: user.id,
-//         phone: user.phone,
-//       })
-//       .then((res) => {
-//         if (res.data.error) dispatch({ type: ERROR, payload: res.data.error });
-//         else {
-//           dispatch({ type: CHANGE, payload: true });
-//         }
-//         dispatch(alert("Success!"));
-//       })
-//       .then(
-//         (data) => dispatch(requestSuccessUser(data)),
-//         (err) => dispatch(requestErrorUser(err, "User not found"))
-//       );
-//   };
-// };
+export const fetchChangePhone = (user) => {
+  return (dispatch) => {
+    try {
+      const result = axios.post(`${API_URL}users/change_phone`, {
+        id: user.id,
+        phone: user.phone,
+      });
+      if (result.status === 200) {
+        dispatch({ type: UPDATE, payload: true });
+        dispatch(alert(result.data.message));
+      }
+    } catch (err) {
+      console.log("Error", err.message);
+      dispatch(alert("User not found"));
+    }
+  };
+};
 
-// export const fetchChangePass = (id, password) => {
-//   return (dispatch) => {
-//     dispatch(requestUser());
-//     axios
-//       .post(`${API_URL}users/pass`, {
-//         id: id,
-//         password: password,
-//       })
-//       .then((res) => {
-//         console.log("res.data.flag ", res.data.flag);
-//         dispatch({ type: FLAG, payload: res.data.flag });
+export const fetchChangePass = (id, password) => {
+  return (dispatch) => {
+    try {
+      const result = axios.post(`${API_URL}users/validate_password`, {
+        id: id,
+        password: password,
+      });
+      if (result.status === 200) {
+        dispatch({ type: VALIDATE, payload: result.data.validate });
+      }
+    } catch (err) {
+      console.log("Error", err.message);
+      dispatch(alert("Incorrect password"));
+    }
+  };
+};
 
-//         dispatch(alert("Success!"));
-//       })
-//       .then(
-//         (data) => dispatch(requestSuccessUserPass(data)),
-//         (err) => dispatch(requestErrorUserPass(err))
-//       );
-//   };
-// };
-
-// export const fetchChangePassword = (user) => {
-//   return (dispatch) => {
-//     dispatch(requestUser());
-//     axios
-//       .post(`${API_URL}users/changePassword`, {
-//         id: user.id,
-//         password: user.password,
-//       })
-//       .then((res) => {
-//         if (res.data.error) dispatch({ type: ERROR, payload: res.data.error });
-//         else {
-//           localStorage.setItem("token", res.data.token);
-//           dispatch({ type: CHANGE, payload: true });
-//         }
-//         // dispatch(alert("Success!"));
-//       })
-//       .then(
-//         (data) => dispatch(requestSuccessUser(data)),
-//         (err) => dispatch(requestErrorUser(err, "User not found"))
-//       );
-//   };
-// };
+export const fetchChangePassword = (user) => {
+  return (dispatch) => {
+    try {
+      const result = axios.post(`${API_URL}users/change_password`, {
+        id: user.id,
+        password: user.password,
+      });
+      if (result.status === 200) {
+        localStorage.setItem("token", result.data.token);
+        dispatch({ type: UPDATE, payload: result.data.update });
+        dispatch(alert(result.data.message));
+      }
+    } catch (err) {
+      console.log("Error", err.message);
+      dispatch(alert("User not found"));
+    }
+  };
+};

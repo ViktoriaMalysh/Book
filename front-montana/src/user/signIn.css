@@ -1,0 +1,293 @@
+.div-sign-in {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "imgFon1 imgFon1 imgFon1 imgFon1 formSignIn formSignIn formSignIn formSignIn";
+}
+
+.div-sign-in-left {
+  grid-area: imgFon1;
+}
+
+.div-sign-in-right {
+  grid-area: formSignIn;
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-areas: ". signIn signIn signIn signIn signIn";
+}
+
+.div-sign-in-right-form {
+  margin-top: 0em;
+  grid-area: signIn;
+  margin-top: 25%;
+}
+
+.div-sign-in-right-form-block{
+  margin-left: 2%;
+  margin-top: 5%;
+}
+
+
+.button-sign-in:hover {
+  background-color: white;
+  border: 2px solid rgb(248, 200, 41);
+  border-radius: 4px;
+  color: rgb(255, 136, 0);
+  height: 2.8em;
+  width: 10em;
+  font-weight: 300;
+  margin-bottom: 3em;
+}
+
+.button-sign-in {
+  background-color: rgb(252, 174, 59);
+  border: 2px solid rgb(252, 174, 59);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  height: 2.8em;
+  width: 10em;
+  margin-bottom: 3em;
+  font-weight: 300;
+}
+
+.form-login{
+  margin-bottom: 2em;
+}
+
+.button-sign-up-reference{
+  background-color: white;
+  border: 2px solid rgb(248, 200, 41);
+  border-radius: 4px;
+  color: rgb(255, 136, 0);
+  height: 2.8em;
+  width: 10em;
+  font-weight: 300;
+}
+
+.button-sign-up-reference:hover {
+  background-color: rgb(252, 174, 59);
+  border: 2px solid rgb(252, 174, 59);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  height: 2.8em;
+  width: 10em;
+  font-weight: 300;
+}
+
+.img-sign-in {
+  height: 900px;
+  width: 900px;
+}
+
+
+@media only screen and (max-width: 1800px) {
+  .img-sign-in {
+    height: 800px;
+    width: 800px;
+  }
+  .div-sign-in-right {
+    grid-area: formSignIn;
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 1fr 1fr 3%;
+    grid-template-areas: ". signIn signIn signIn signIn .";
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .img-sign-in {
+    height: 750px;
+    width: 750px;
+  }
+
+}
+
+@media only screen and (max-width: 1500px) {
+  .img-sign-in {
+    height: 700px;
+    width: 700px;
+  }
+  .div-sign-in-right {
+    grid-area: formSignIn;
+    display: grid;
+    grid-template-columns: 15% 1fr 1fr 1fr 1fr 3%;
+    grid-template-areas: ". signIn signIn signIn signIn signIn";
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .img-sign-in {
+    height: 600px;
+    width: 600px;
+  }
+  .div-sign-in-right-form {
+    grid-area: signIn;
+    margin-top: 20%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .img-sign-in {
+    height: 550px;
+    width: 550px;
+  }
+  .div-sign-in-right-form {
+    grid-area: signIn;
+    margin-top: 20%;
+  }
+  .div-sign-in-right {
+    grid-area: formSignIn;
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 15%;
+    grid-template-areas: ". signIn signIn .";
+  }
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .img-sign-in {
+    height: 500px;
+    width: 500px;
+  }
+  .div-sign-in-right {
+    grid-area: formSignIn;
+    display: grid;
+    grid-template-columns: 5% 1fr 1fr 15%;
+    grid-template-areas: ". signIn signIn .";
+  }
+  .div-sign-in-right-form {
+    grid-area: signIn;
+    margin-top: 20%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .img-sign-in {
+    height: 450px;
+    width: 440px;
+  }
+  .div-sign-in-right-form {
+    grid-area: signIn;
+    margin-top: 17%;
+  }
+  .div-sign-in-right {
+    grid-area: formSignIn;
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 2%;
+    grid-template-areas: ". signIn signIn .";
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .img-sign-in {
+    height: 0px;
+    width: 0px;
+  }
+
+  .div-sign-in {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "formSignIn formSignIn formSignIn formSignIn";
+  }
+  
+  .div-sign-in-left {
+    grid-area: imgFon1;
+  }
+  
+  .div-sign-in-right {
+    grid-area: formSignIn;
+    display: grid;
+    grid-template-columns: 30% 1fr 1fr 1fr 1fr 15%;
+    grid-template-areas: ". signIn signIn signIn signIn .";
+  }
+  
+  .div-sign-in-right-form {
+    /* margin-top: 0em; */
+    grid-area: signIn;
+    margin-top: 6%;
+  }
+  
+  .div-sign-in-right-form-block{
+    /* margin-left: 2%; */
+    margin-top: 5%;
+  }
+
+  .button-sign-in {
+    background-color: white;
+    border: 2px solid rgb(248, 200, 41);
+    border-radius: 4px;
+    color: rgb(255, 136, 0);
+    height: 2.8em;
+    margin-left: 17%;
+    width: 10em;
+    font-weight: 300;
+  }
+  
+  .button-sign-in:hover {
+    background-color: rgb(252, 174, 59);
+    border: 2px solid rgb(252, 174, 59);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    height: 2.8em;
+    width: 10em;
+    margin-left: 17%;
+    font-weight: 300;
+  }
+
+  .button-sign-up-reference {
+    background-color: white;
+    border: 2px solid rgb(248, 200, 41);
+    border-radius: 4px;
+    color: rgb(255, 136, 0);
+    height: 2.8em;
+    margin-left: 30%;
+    width: 10em;
+    font-weight: 300;
+    margin-left: 17%;
+
+  }
+  
+  .button-sign-up-reference:hover {
+    background-color: rgb(252, 174, 59);
+    border: 2px solid rgb(252, 174, 59);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    height: 2.8em;
+    width: 10em;
+    font-weight: 300;
+    margin-left: 17%;
+  }
+  .label-sign-in{
+    margin-left: 3.3em;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .div-sign-in-right {
+    grid-area: formSignIn;
+    display: grid;
+    grid-template-columns: 28% 1fr 1fr 1fr 1fr 10%;
+    grid-template-areas: ". signIn signIn signIn signIn .";
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .div-sign-in-right {
+    grid-area: formSignIn;
+    display: grid;
+    grid-template-columns: 25% 1fr 1fr 1fr 1fr 7%;
+    grid-template-areas: ". signIn signIn signIn signIn .";
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .div-sign-in-right {
+    grid-area: formSignIn;
+    display: grid;
+    grid-template-columns: 20% 1fr 1fr 1fr 1fr 7%;
+    grid-template-areas: ". signIn signIn signIn signIn .";
+  }
+
+  .label-sign-in{
+    margin-left: 10%;
+  }
+}
