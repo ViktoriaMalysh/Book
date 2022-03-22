@@ -12,15 +12,15 @@ import CountrySpain from "./pages/countries/spain";
 import SignIn from "./user/SignIn";
 import Logout from "./user/Logout";
 import SignUp from "./user/SignUp";
-import Tickets from "./pages/HotelTicket";
-import Profile from "./pages/Profile";
+import Tickets from "./rooms/HotelTicket";
+import Profile from "./settings/Profile";
 import DeleteAccount from "./user/DeleteAccount";
-import ProfileSettings from "./pages/ProfileSettings";
+import ProfileSettings from "./settings/ProfileSettings";
 import FirstPage from "./pages/FirstPage";
 import HomePage from "./pages/HomePage";
-import Account from "./components/Account";
-import PublicEmail from "./components/PublicEmail";
-import Basket from "./pages/Basket";
+import Account from "./settings/Account";
+import PublicEmail from "./settings/PublicEmail";
+import Basket from "./settings/basket/Basket";
 // import StripeCheckoutButton from '../src/components/stripe.button.component';
 
 
@@ -54,10 +54,10 @@ export default function AppNav() {
 
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />  
-        {/* <Route path="/logout" element={<Logout />} /> */}
-        {/* <Route path="/deleteAccount" element={<DeleteAccount />} /> */}
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/delete_ccount" element={<DeleteAccount />} />
 
-        {/* <Route path="/settings/*" element={<ProfileSettings />} /> */}
+        <Route path="/settings/*" element={<ProfileSettings />} />
   
         {/* profileSettings */}
         {/* <Route path="/ticket/hotelTicket" element={<HotelTicket />} /> */}

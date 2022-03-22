@@ -5,9 +5,9 @@ import ReactPlayer from "react-player";
 import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addTicket, showSaleTickets } from "../redux/actionTickets";
-import { REQUESTED_SUCCEEDED_CLOSE_USER } from "../redux/types";
+// import { addTicket, showSaleTickets } from "../redux/actionTickets";
 import { fetchVerifyToken } from "../redux/actionUsers";
+import { showSaleRooms } from "../redux/actionTickets";
 
 export default function Home() {
   const store = useSelector((state) => state);
@@ -18,29 +18,25 @@ export default function Home() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   dispatch(fetchVerifyToken(token));
-  //   // dispatch(showMyTickets(store.users.userId));
-  //   dispatch(showSaleTickets());
-
-  //   setTimeout(() => {
-  //     dispatch({ type: REQUESTED_SUCCEEDED_CLOSE_USER });
-  //   }, 1000);
-  // }, []);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    dispatch(fetchVerifyToken(token));
+    // dispatch(showMyTickets(store.users.userId));
+    dispatch(showSaleRooms());
+  }, []);
 
   const handleBookTicket = () => {
-    dispatch(
-      addTicket(
-        store.users.userId,
-        ticket.country,
-        ticket.address,
-        ticket.locality,
-        ticket.price,
-        ticket.url
-      )
-    );
-    setShow(false);
+    // dispatch(
+    //   addTicket(
+    //     store.users.userId,
+    //     ticket.country,
+    //     ticket.address,
+    //     ticket.locality,
+    //     ticket.price,
+    //     ticket.url
+    //   )
+    // );
+    // setShow(false);
   };
 
   const handleBook = (id) => {
@@ -142,7 +138,7 @@ export default function Home() {
           </div>
 
           <div className="div-2-sale-1">
-            <img src="https://preview.colorlib.com/theme/montana/img/offers/x1.png.pagespeed.ic.CPgqevbSyX.webp"></img>
+            <img className="img-2-sale" src="https://preview.colorlib.com/theme/montana/img/offers/x1.png.pagespeed.ic.CPgqevbSyX.webp"></img>
             <p className="p-2-sale-title">
               Up to 35% savings on Club rooms and Suites
             </p>
@@ -151,13 +147,13 @@ export default function Home() {
             <p className="p-2-sale-text">&#8226; Sea view side</p>
             <p className="p-2-sale-text-2">
               Price Bofore: ${" "}
-              {store.tickets.sale[0] && store.tickets.sale[0].priceBefore}{" "}
+              {store.tickets.showSale[0] && store.tickets.showSale[0].priceBefore}{" "}
               (After ${" "}
-              {store.tickets.sale[0] && store.tickets.sale[0].priceAfter})
+              {store.tickets.showSale[0] && store.tickets.showSale[0].priceAfter})
             </p>
             <p className="p-2-sale-text">
               Discount: ${" "}
-              {store.tickets.sale[0] && store.tickets.sale[0].discount}
+              {store.tickets.showSale[0] && store.tickets.showSale[0].discount}
             </p>
             {store.users.isAuth ? (
               <button className="button-sale" onClick={() => handleBook(1)}>
@@ -168,7 +164,7 @@ export default function Home() {
             )}
           </div>
           <div className="div-2-sale-2">
-            <img src="https://preview.colorlib.com/theme/montana/img/offers/x2.png.pagespeed.ic.MbYDoANTJ3.webp"></img>
+            <img className="img-2-sale" src="https://preview.colorlib.com/theme/montana/img/offers/x2.png.pagespeed.ic.MbYDoANTJ3.webp"></img>
             <p className="p-2-sale-title">
               Up to 35% savings on Club rooms and Suites
             </p>
@@ -177,13 +173,13 @@ export default function Home() {
             <p className="p-2-sale-text">&#8226; Sea view side</p>
             <p className="p-2-sale-text-2">
               Price Bofore: ${" "}
-              {store.tickets.sale[1] && store.tickets.sale[1].priceBefore}{" "}
+              {store.tickets.showSale[1] && store.tickets.showSale[1].priceBefore}{" "}
               (After ${" "}
-              {store.tickets.sale[1] && store.tickets.sale[1].priceAfter})
+              {store.tickets.showSale[1] && store.tickets.showSale[1].priceAfter})
             </p>
             <p className="p-2-sale-text">
               Discount: ${" "}
-              {store.tickets.sale[1] && store.tickets.sale[1].discount}
+              {store.tickets.showSale[1] && store.tickets.sale[1].discount}
             </p>
             {store.users.isAuth ? (
               <button className="button-sale" onClick={() => handleBook(2)}>
@@ -194,7 +190,7 @@ export default function Home() {
             )}
           </div>
           <div className="div-2-sale-3">
-            <img src="https://preview.colorlib.com/theme/montana/img/offers/x3.png.pagespeed.ic.Y_ffhAZTDD.webp"></img>
+            <img className="img-2-sale" src="https://preview.colorlib.com/theme/montana/img/offers/x3.png.pagespeed.ic.Y_ffhAZTDD.webp"></img>
             <p className="p-2-sale-title">
               Up to 35% savings on Club rooms and Suites
             </p>
@@ -203,13 +199,13 @@ export default function Home() {
             <p className="p-2-sale-text">&#8226; Sea view side</p>
             <p className="p-2-sale-text-2">
               Price Bofore: ${" "}
-              {store.tickets.sale[2] && store.tickets.sale[2].priceBefore}{" "}
+              {store.tickets.showSale[2] && store.tickets.showSale[2].priceBefore}{" "}
               (After ${" "}
-              {store.tickets.sale[2] && store.tickets.sale[2].priceAfter})
+              {store.tickets.showSale[2] && store.tickets.showSale[2].priceAfter})
             </p>
             <p className="p-2-sale-text">
               Discount: ${" "}
-              {store.tickets.sale[2] && store.tickets.sale[2].discount}
+              {store.tickets.showSale[2] && store.tickets.showSale[2].discount}
             </p>
             {store.users.isAuth ? (
               <button className="button-sale" onClick={() => handleBook(3)}>
@@ -233,7 +229,7 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="div-4-text">
+        {/* <div className="div-4-text">
           <p className="p-4-title">Delicious Food</p>
           <p className="p-4-name">We Serve Fresh and Delicious Food</p>
           <p className="p-4-text">
@@ -242,22 +238,22 @@ export default function Home() {
             sollicitudin pede nam maecenas, dolor sem. Neque sollicitudin enim.
             Dapibus lorem feugiat facilisi faucibus et. Rhoncus.
           </p>
-        </div>
-        <img
+        </div> */}
+        {/* <img
           className="img-4-hotel1"
           src="https://preview.colorlib.com/theme/montana/img/about/x1.png.pagespeed.ic.ytFzk1qg9A.webp"
         ></img>
         <img
           className="img-4-hotel2"
           src="https://preview.colorlib.com/theme/montana/img/about/x2.png.pagespeed.ic.TMQb44M-no.webp"
-        ></img>
+        ></img> */}
 
-        <div className="div-5-title">
+        {/* <div className="div-5-title">
           <p className="p-5-title">Featured Rooms</p>
           <p className="p-5-text">Choose a Better Room</p>
-        </div>
+        </div> */}
 
-        <div className="room1 overlay1">
+        {/* <div className="room1 overlay1">
           <div className="room-text">
             <p className="room-price" id="featuredRooms">
               From $250/night
@@ -270,8 +266,8 @@ export default function Home() {
             <p className="room-price">From $250/night</p>
             <p className="room-title">Deluxe Room</p>
           </div>
-        </div>
-        <div className="room3 overlay1">
+        </div> */}
+        {/* <div className="room3 overlay1">
           <div className="room-text">
             <p className="room-price">From $250/night</p>
             <p className="room-title">Signature Room</p>
@@ -282,13 +278,13 @@ export default function Home() {
             <p className="room-price">From $250/night</p>
             <p className="room-title">Couple Room</p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="div-6-tell">
+        {/* <div className="div-6-tell">
           <p className="p-6-tell">For Reservation 0r Query?</p>
           <button className="button-6-tell">+10 576 377 4789</button>
-        </div>
-
+        </div> */}
+{/* 
         <div className="div-7-instagram">
           <div className="div-7-img1">
             <img
@@ -320,8 +316,8 @@ export default function Home() {
               src="https://preview.colorlib.com/theme/montana/img/instragram/x5.png.pagespeed.ic.gbYqEWPqMR.webp"
             ></img>
           </div>
-        </div>
-
+        </div> */}
+{/* 
         <div className="div-8-end">
           <div className="div-8-block1">
             <p className="p-8-title1">Address</p>
@@ -353,7 +349,7 @@ export default function Home() {
             Copyright ©2022 All rights reserved | This template is made with by
             Colorlib
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -8,13 +8,13 @@ import { deleteTickets, showMyTickets } from "../redux/actionTickets";
 import { DELETE } from "../redux/types";
 
 import NavBar from "../components/NavBar";
-import PublicProfile from "../components/PublicProfile";
+import PublicProfile from "./PublicProfile";
 import { Modal } from "bootstrap";
 import { Link } from "react-router-dom";
-import PublicEmail from "../components/PublicEmail";
-import PublicPassword from "../components/PublicPassword";
-import PublicPhone from "../components/PublicPhone";
-import PublicAccount from "../components/PublicAccount";
+import PublicEmail from "./PublicEmail";
+import PublicPassword from "./PublicPassword";
+import PublicPhone from "./PublicPhone";
+import PublicAccount from "./PublicAccount";
 
 function ProfileSettings() {
   let navigate = useNavigate();

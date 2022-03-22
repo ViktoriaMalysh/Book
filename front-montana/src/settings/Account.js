@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Card, Row, Spinner, Button, Form, Col } from "react-bootstrap";
 import { useSelector, connect, useDispatch } from "react-redux";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import "./profileSettings.css";
-import PublicProfile from "../components/PublicProfile";
-import HistoryTransaction from "../components/HistoryTransaction";
-import BookedRooms from "../components/BookedRooms";
-import BoughtRooms from "../components/BoughtRooms";
-import NavBarBasket from "../components/NavBarBasket";
+import { useNavigate } from "react-router-dom";
+// import "./profileSettings.css";
+import { deleteTickets, showMyTickets } from "../redux/actionTickets";
+import { DELETE } from "../redux/types";
+import "../settings/profileSettings.css"
+import NavBar from "../components/NavBar";
+// import PublicProfile from "../components/PublicProfile";
+import { Modal } from "bootstrap";
+import { Link } from "react-router-dom";
 
-function Basket() {
+function Account() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const store = useSelector((state) => state);
@@ -37,20 +41,22 @@ function Basket() {
 
       <button
         className="button-prof-sett-block1"
-        onClick={() => navigate("/tickets")}
+        onClick={() => navigate("/profile")}
       >
-        Go To Room List
+        Go to your personal profile
       </button>
-      <div className="div-basket-settings">
-        <nav className="nav-basket">
-          <NavBarBasket />
+      <div className="div-profile-settings">
+        <nav className="nav-change-profile">
+          <NavBar />
         </nav>
-        <Routes>
-          <Route path="bookedRooms" element={<BookedRooms />} />
-          <Route path="boughtRooms" element={<BoughtRooms />} />
-          <Route path="history" element={<HistoryTransaction />} />
-        </Routes>
         {/* <PublicProfile /> */}
+        {/* <button
+          variant="warning"
+          className="button-settings"
+          // onClick={() => navigate("/users/checkPass")}
+        >
+          Profile Settings
+        </button> */}
       </div>
     </div>
   );
@@ -60,4 +66,4 @@ function mapStateToProps(state) {
   return { store: state };
 }
 
-export default connect(mapStateToProps)(Basket);
+export default connect(mapStateToProps)(Account);

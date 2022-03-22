@@ -23,9 +23,9 @@ export const alert = (message) => {
 };
 
 export const bookRoom = (id, name, address, locality, price, url) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(`${API_URL}rooms/booking_room`, {
+      const result = await axios.post(`${API_URL}rooms/booking_room`, {
         id: id,
         name: name,
         address: address,
@@ -46,9 +46,9 @@ export const bookRoom = (id, name, address, locality, price, url) => {
 };
 
 export const cancelBook = (id) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(`${API_URL}rooms/cancel_book`, {
+      const result = await axios.post(`${API_URL}rooms/cancel_book`, {
         id: id,
       });
       if (result.status === 200) {
@@ -63,19 +63,19 @@ export const cancelBook = (id) => {
 };
 
 export const showRooms = (options) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.request(options);
+      const result = await axios.request(options);
       if (result.status === 200) {
         dispatch({
           type: SHOW_ROOMS,
           payload: result.data.data.body.searchResults.results,
         });
         dispatch({ type: SHOW, payload: true });
-        dispatch({ type: SHOW_LOADER }),
-          setTimeout(() => {
-            dispatch({ type: HIDE_LOADER });
-          }, 300);
+        // dispatch({ type: SHOW_LOADER }),
+        //   setTimeout(() => {
+        //     dispatch({ type: HIDE_LOADER });
+        //   }, 300);
       }
     } catch (err) {
       console.log("Error", err);
@@ -84,9 +84,9 @@ export const showRooms = (options) => {
 };
 
 export const showMyRoomsWithStatus = (id, status) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(`${API_URL}rooms/show_my_rooms`, {
+      const result = await axios.post(`${API_URL}rooms/show_my_rooms`, {
         id: id,
         status: status,
       });
@@ -96,10 +96,10 @@ export const showMyRoomsWithStatus = (id, status) => {
         } else if (status === "bought") {
           dispatch({ type: SHOW_MY_BOUGHT_ROOMS, payload: result.data });
         }
-        dispatch({ type: SHOW_LOADER }),
-          setTimeout(() => {
-            dispatch({ type: HIDE_LOADER });
-          }, 300);
+        // dispatch({ type: SHOW_LOADER }),
+        //   setTimeout(() => {
+        //     dispatch({ type: HIDE_LOADER });
+        //   }, 300);
       }
     } catch (err) {
       console.log("Error", err);
@@ -108,10 +108,10 @@ export const showMyRoomsWithStatus = (id, status) => {
   };
 };
 
-export const showSaleTickets = () => {
-  return (dispatch) => {
+export const showSaleRooms = () => {
+  return async (dispatch) => {
     try {
-      const result = axios.get(`${API_URL}rooms/show_sale`);
+      const result = await axios.get(`${API_URL}rooms/show_sale`);
       if (result.status === 200) {
         dispatch({ type: SHOW_SALE, payload: result.data });
       }

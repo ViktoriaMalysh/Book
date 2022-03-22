@@ -29,14 +29,15 @@ const alert = (message) => {
 };
 
 export const fetchVerifyToken = (token) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(
+      const result = await axios.post(
         `${API_URL}users/verify_token`,
         {},
         { headers: { authorization: token } }
       );
       if (result.status === 200) {
+        console.log('result', result)
         localStorage.setItem("token", result.data.token);
         dispatch({ type: IS_AUTH, payload: true });
         dispatch({ type: USER_ID, payload: result.data.id });
@@ -134,9 +135,9 @@ export const fetchSignIn = (user) => {
 };
 
 export const fetchDeleteAccount = (token) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(
+      const result = await axios.post(
         `${API_URL}users/delete_account`,
         {},
         { headers: { authorization: token } }
@@ -156,9 +157,9 @@ export const fetchDeleteAccount = (token) => {
 };
 
 export const fetchChangeProfile = (user) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(`${API_URL}users/change_profile`, {
+      const result = await axios.post(`${API_URL}users/change_profile`, {
         id: user.id,
         firstName: user.firstName,
         lastName: user.lastName,
@@ -179,9 +180,9 @@ export const fetchChangeProfile = (user) => {
 };
 
 export const fetchChangeEmail = (user) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(`${API_URL}users/change_email`, {
+      const result = await axios.post(`${API_URL}users/change_email`, {
         id: user.id,
         email: user.email,
       });
@@ -198,9 +199,9 @@ export const fetchChangeEmail = (user) => {
 };
 
 export const fetchChangePhone = (user) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(`${API_URL}users/change_phone`, {
+      const result = await axios.post(`${API_URL}users/change_phone`, {
         id: user.id,
         phone: user.phone,
       });
@@ -216,9 +217,9 @@ export const fetchChangePhone = (user) => {
 };
 
 export const fetchChangePass = (id, password) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(`${API_URL}users/validate_password`, {
+      const result = await axios.post(`${API_URL}users/validate_password`, {
         id: id,
         password: password,
       });
@@ -233,9 +234,9 @@ export const fetchChangePass = (id, password) => {
 };
 
 export const fetchChangePassword = (user) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      const result = axios.post(`${API_URL}users/change_password`, {
+      const result = await axios.post(`${API_URL}users/change_password`, {
         id: user.id,
         password: user.password,
       });

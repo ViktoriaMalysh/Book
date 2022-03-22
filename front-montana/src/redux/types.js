@@ -11,23 +11,11 @@ export const SHOW_MY_BOOKED_ROOMS = 'ROOMS/SHOW_MY_BOOKED_ROOMS'
 export const SHOW_MY_BOUGHT_ROOMS = 'ROOMS/SHOW_MY_BOUGHT_ROOMS'
 export const SHOW_SALE = 'ROOMS/SHOW_SALE'
 export const SHOW_ROOMS = 'ROOMS/SHOW_ROOMS'
-export const SHOW = 'TICKET/SHOW'
+export const SHOW = 'ROOMS/SHOW'
 
 
 
-export const NAME_COUNTRY = 'TICKET/NAME_COUNTRY'
-export const START_DATE = 'TICKET/START_DATE'
-export const END_DATE = 'TICKET/END_DATE'
-export const SHOW_TICKETS = 'TICKET/SHOW_TICKETS'
-export const RESERVED = 'TICKET/RESERVED'
-export const FIND = 'TICKET/FIND'
-// export const DELETE = 'TICKET/DELETE'
-export const COUNTRY = 'TICKET/COUNTRY'
-export const TICKET_NAME = 'TICKET/TICKET_NAME'
-export const ADDRESS = 'TICKET/ADDRESS'
-export const LOCALITY = 'TICKET/LOCALITY'
-export const PRICE = 'TICKET/PRICE'
-export const PHOTO_URL = 'TICKET/PHOTO_URL'
+
 
 //------------------USER---------------------
 export const IS_AUTH = 'USERS/IS_AUTH'

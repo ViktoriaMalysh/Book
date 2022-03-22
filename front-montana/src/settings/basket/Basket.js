@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, Row, Spinner, Button, Form, Col } from "react-bootstrap";
 import { useSelector, connect, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-// import "./profileSettings.css";
-import { deleteTickets, showMyTickets } from "../redux/actionTickets";
-import { DELETE } from "../redux/types";
-import "../pages/profileSettings.css"
-import NavBar from "../components/NavBar";
-// import PublicProfile from "../components/PublicProfile";
-import { Modal } from "bootstrap";
-import { Link } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import "../../settings/profileSettings.css";
+import PublicProfile from "../PublicProfile";
+import HistoryTransaction from "../../payment/HistoryTransaction";
+import BookedRooms from "./BookedRooms";
+import BoughtRooms from "./BoughtRooms";
+import NavBarBasket from "../../components/NavBarBasket";
 
-function Account() {
+function Basket() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const store = useSelector((state) => state);
@@ -41,22 +37,20 @@ function Account() {
 
       <button
         className="button-prof-sett-block1"
-        onClick={() => navigate("/profile")}
+        onClick={() => navigate("/tickets")}
       >
-        Go to your personal profile
+        Go To Room List
       </button>
-      <div className="div-profile-settings">
-        <nav className="nav-change-profile">
-          <NavBar />
+      <div className="div-basket-settings">
+        <nav className="nav-basket">
+          <NavBarBasket />
         </nav>
+        <Routes>
+          <Route path="bookedRooms" element={<BookedRooms />} />
+          <Route path="boughtRooms" element={<BoughtRooms />} />
+          <Route path="history" element={<HistoryTransaction />} />
+        </Routes>
         {/* <PublicProfile /> */}
-        {/* <button
-          variant="warning"
-          className="button-settings"
-          // onClick={() => navigate("/users/checkPass")}
-        >
-          Profile Settings
-        </button> */}
       </div>
     </div>
   );
@@ -66,4 +60,4 @@ function mapStateToProps(state) {
   return { store: state };
 }
 
-export default connect(mapStateToProps)(Account);
+export default connect(mapStateToProps)(Basket);

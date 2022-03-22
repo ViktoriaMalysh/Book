@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PublicEmail from "./PublicEmail";
+import PublicEmail from "../settings/PublicEmail";
 
 function NavBarBasket() {
   return (

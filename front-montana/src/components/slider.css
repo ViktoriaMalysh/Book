@@ -28,7 +28,7 @@
   padding-block-end: 13em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . . . . . img3 . . icon1 icon2 icon3 button1";
+  grid-template-areas: ". . . . . . img3 img3 . icon1 icon2 icon3 button1";
 }
 
 .img-montana {
@@ -38,7 +38,7 @@
 
 .button-booking {
   grid-area: button1;
- background-color: rgb(34, 156, 255);
+  background-color: rgb(34, 156, 255);
   color: aliceblue;
   height: 3em;
   width: 10em;
@@ -58,71 +58,194 @@
   padding-top: 0.7em;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1200px) {
   .slider {
-    background-size: 100% 100px;
+    background-size: 100% 50px;
   }
   
   .img-slider {
-    height: 30em;
+    height: 48em;
   }
-  
-  .div-slider {
-    background-color: rgba(255, 255, 255, 0.87);
-  }
-  
+
   .h-slider-title {
-    font-size: 7em;
+    font-size: 5em;
     font-weight: 300;
   }
   
   .p-slider-title {
     font-size: 1.7em;
     font-weight: 300;
-  }
+  } 
   
   .div-page {
-    padding-block-end: 20em;
+    padding-block-end: 15em;
   }
   
-  .div-slider-header {
+   .div-slider-header {
     padding-block-end: 13em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". . . . . . img3 . . icon1 icon2 icon3 button1";
+    grid-template-areas: ". . . . . . img3 img3 . icon1 icon2 icon3 button1";
   }
   
   .img-montana {
     grid-area: img3;
   }
-  
-  .button-booking {
-    grid-area: button1;
-   background-color: rgb(34, 156, 255);
-    color: aliceblue;
-    height: 3em;
-    width: 10em;
-  }
-  
-  
-  .img-icon1{
-    grid-area: icon1;
-    padding-top: 0.7em;
-  }
-  .img-icon2{
-    grid-area: icon2;
-    padding-top: 0.7em;
-  }
-  .img-icon3{
-    grid-area: icon3;
-    padding-top: 0.7em;
-  }
-
 }
 
 
 @media screen and (max-width: 1000px) {
   .slider {
     background-size: 100% 100px;
+  }
+  
+  .img-slider {
+    height: 40em;
+  }
+  
+  .h-slider-title {
+    font-size: 4em;
+    font-weight: 300;
+  }
+  
+  .p-slider-title {
+    font-size: 1.7em;
+    font-weight: 300;
+  } 
+  
+  .div-page {
+    padding-block-end: 12em;
+  }
+  
+   .div-slider-header {
+    padding-block-end: 8em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr;
+    grid-template-areas: ". . . . . . . img3 img3 . icon1 icon2 icon3 . button1";
+  }
+  
+  .img-montana {
+    grid-area: img3;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .slider {
+    background-size: 100% 100px;
+  }
+  
+  .img-slider {
+    height: 32em;
+  }
+  
+  .h-slider-title {
+    font-size: 3em;
+    font-weight: 300;
+  }
+  
+  .p-slider-title {
+    font-size: 1.7em;
+    font-weight: 300;
+  } 
+  
+  .div-page {
+    padding-block-end: 10em;
+  }
+  
+   .div-slider-header {
+    padding-block-end: 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr;
+    grid-template-areas: ". . . . icon1 . icon2 . icon3 . . button1 . . .";
+  }
+  
+  .img-montana {
+    grid-area: img3;
+    height: 0;
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .slider {
+    background-size: 100% 100px;
+  }
+  
+  .img-slider {
+    height: 25em;
+  }
+  
+  .h-slider-title {
+    font-size: 3em;
+    font-weight: 300;
+  }
+  
+  .p-slider-title {
+    font-size: 1.2em;
+    font-weight: 300;
+  } 
+  
+  .div-page {
+    padding-block-end: 6em;
+  }
+  
+   .div-slider-header {
+    padding-block-end: 4em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr;
+    grid-template-areas: ". . . . icon1 . icon2 . icon3 . . button1 . . .";
+  }
+  
+  .img-montana {
+    grid-area: img3;
+    height: 0;
+    width: 0;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .slider {
+    background-size: 100% 100px;
+  }
+  
+  .img-slider {
+    height: 20em;
+  }
+  
+  .h-slider-title {
+    font-size: 2em;
+    font-weight: 300;
+  }
+  
+  .p-slider-title {
+    font-size: 1em;
+    font-weight: 300;
+  } 
+  
+  .div-page {
+    padding-block-end: 4em;
+  }
+  
+   .div-slider-header {
+    padding-block-end: 4em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr;
+    grid-template-areas: ". . icon1 . . icon2 . . icon3 . . button1 . . .";
+  }
+  
+  .img-montana {
+    grid-area: img3;
+    height: 0;
+    width: 0;
+  }
+
+  .button-booking {
+    grid-area: button1;
+    background-color: rgb(34, 156, 255);
+    color: aliceblue;
+    font-size: 0.8em;
+    height: 3em;
+    width: 8em;
   }
 }

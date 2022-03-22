@@ -4,9 +4,9 @@ import { Card, Row, Spinner, Button, Modal } from "react-bootstrap";
 import { useSelector, connect, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./profile.css";
-import { deleteTickets, showMyTickets } from "../redux/actionTickets";
+// import { deleteTickets, showMyTickets } from "../redux/actionTickets";
 import { CURRENT_PRICE, DELETE } from "../redux/types";
-import StripeContainer from "../components/StripeContainer";
+import StripeContainer from "../payment/StripeContainer";
 
 function Profile() {
   let navigate = useNavigate();
@@ -17,15 +17,15 @@ function Profile() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    dispatch(showMyTickets(store.users.userId));
+    // dispatch(showMyTickets(store.users.userId));
   }, []);
 
   useEffect(() => {
     if (store.tickets.delete) {
-      dispatch(showMyTickets(store.users.userId));
-      setTimeout(() => {
-        dispatch({ type: DELETE, payload: false });
-      }, 600);
+      // dispatch(showMyTickets(store.users.userId));
+      // setTimeout(() => {
+        // dispatch({ type: DELETE, payload: false });
+      // }, 600);
     }
   }, [store.tickets.delete]);
 
@@ -42,7 +42,7 @@ function Profile() {
   const handleShow = () => setShow(true);
 
   const cancelBook = (id) => {
-    dispatch(deleteTickets(id));
+    // dispatch(deleteTickets(id));
   };
 
   const handleMore = () => {
@@ -52,7 +52,7 @@ function Profile() {
   };
 
   const buyTicket = (id, price) => {
-    dispatch({ type: CURRENT_PRICE, payload: price });
+    // dispatch({ type: CURRENT_PRICE, payload: price });
 
     setShow(true);
   };
