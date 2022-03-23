@@ -113,11 +113,13 @@ export const showSaleRooms = () => {
     try {
       const result = await axios.get(`${API_URL}rooms/show_sale`);
       if (result.status === 200) {
+        console.log(result)
         dispatch({ type: SHOW_SALE, payload: result.data });
       }
     } catch (err) {
-      console.log("Error", err);
+      console.log("Error1", err);
       dispatch(alert("No any promotional offers"));
     }
   };
 };
+   

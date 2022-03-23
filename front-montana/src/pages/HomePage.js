@@ -3,13 +3,12 @@ import Slider from "../components/Slider";
 import "./homePage.css";
 import ReactPlayer from "react-player";
 import { Button, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 // import { addTicket, showSaleTickets } from "../redux/actionTickets";
 import { fetchVerifyToken } from "../redux/actionUsers";
 import { showSaleRooms } from "../redux/actionTickets";
 
-export default function Home() {
+function Home() {
   const store = useSelector((state) => state);
   const dispatch = useDispatch();
   const [ticket, setTicket] = useState({});
@@ -23,6 +22,7 @@ export default function Home() {
     dispatch(fetchVerifyToken(token));
     // dispatch(showMyTickets(store.users.userId));
     dispatch(showSaleRooms());
+    console.log("store.tickets", store.tickets);
   }, []);
 
   const handleBookTicket = () => {
@@ -42,15 +42,15 @@ export default function Home() {
   const handleBook = (id) => {
     switch (id) {
       case 1:
-        setTicket(store.tickets.sale[0]);
+        setTicket(store.tickets.showSale[0]);
         setShow(true);
         break;
       case 2:
-        setTicket(store.tickets.sale[1]);
+        setTicket(store.tickets.showSale[1]);
         setShow(true);
         break;
       case 3:
-        setTicket(store.tickets.sale[2]);
+        setTicket(store.tickets.showSale[2]);
         setShow(true);
         break;
     }
@@ -110,26 +110,29 @@ export default function Home() {
         <div className="div-home-slider">
           <Slider />
         </div>
-        <div className="div-home-about-text">
-          <p className="p-title1">About Us</p>
-          <p className="p-name1">A Luxuries Hotel with Nature</p>
-          <p className="p-text">
-            Suscipit libero pretium nullam potenti. Interdum, blandit phasellus
-            consectetuer dolor ornare dapibus enim ut tincidunt rhoncus tellus
-            sollicitudin pede nam maecenas, dolor sem. Neque sollicitudin enim.
-            Dapibus lorem feugiat facilisi faucibus et. Rhoncus.
-          </p>
+        <div className="div-2-block2">
+          <div className="div-home-about-text">
+            <p className="p-title1">About Us</p>
+            <p className="p-name1">A Luxuries Hotel with Nature</p>
+            <p className="p-text">
+              Suscipit libero pretium nullam potenti. Interdum, blandit
+              phasellus consectetuer dolor ornare dapibus enim ut tincidunt
+              rhoncus tellus sollicitudin pede nam maecenas, dolor sem. Neque
+              sollicitudin enim. Dapibus lorem feugiat facilisi faucibus et.
+              Rhoncus.
+            </p>
+          </div>
+          <img
+            className="img-hotel1"
+            src="https://preview.colorlib.com/theme/montana/img/about/xabout_1.png.pagespeed.ic.LF5rkD9bee.webp"
+          ></img>
+          <img
+            className="img-hotel2"
+            src="https://preview.colorlib.com/theme/montana/img/about/xabout_2.png.pagespeed.ic.Iswjjsyaxg.webp"
+          ></img>
         </div>
-        <img
-          className="img-hotel1"
-          src="https://preview.colorlib.com/theme/montana/img/about/xabout_1.png.pagespeed.ic.LF5rkD9bee.webp"
-        ></img>
-        <img
-          className="img-hotel2"
-          src="https://preview.colorlib.com/theme/montana/img/about/xabout_2.png.pagespeed.ic.Iswjjsyaxg.webp"
-        ></img>
-
         {/* second page */}
+
         <div className="div-2-page">
           <div className="div-2-title">
             <p className="p-2-title">Our Offers</p>
@@ -137,83 +140,31 @@ export default function Home() {
             <p className="p-2-name">Ongoing Offers</p>
           </div>
 
-          <div className="div-2-sale-1">
-            <img className="img-2-sale" src="https://preview.colorlib.com/theme/montana/img/offers/x1.png.pagespeed.ic.CPgqevbSyX.webp"></img>
-            <p className="p-2-sale-title">
-              Up to 35% savings on Club rooms and Suites
-            </p>
-            <p className="p-2-sale-text">&#8226; Luxaries condition</p>
-            <p className="p-2-sale-text">&#8226; 3 Adults & 2 Children size</p>
-            <p className="p-2-sale-text">&#8226; Sea view side</p>
-            <p className="p-2-sale-text-2">
-              Price Bofore: ${" "}
-              {store.tickets.showSale[0] && store.tickets.showSale[0].priceBefore}{" "}
-              (After ${" "}
-              {store.tickets.showSale[0] && store.tickets.showSale[0].priceAfter})
-            </p>
-            <p className="p-2-sale-text">
-              Discount: ${" "}
-              {store.tickets.showSale[0] && store.tickets.showSale[0].discount}
-            </p>
-            {store.users.isAuth ? (
-              <button className="button-sale" onClick={() => handleBook(1)}>
-                Book Now
-              </button>
-            ) : (
-              <div></div>
-            )}
-          </div>
-          <div className="div-2-sale-2">
-            <img className="img-2-sale" src="https://preview.colorlib.com/theme/montana/img/offers/x2.png.pagespeed.ic.MbYDoANTJ3.webp"></img>
-            <p className="p-2-sale-title">
-              Up to 35% savings on Club rooms and Suites
-            </p>
-            <p className="p-2-sale-text">&#8226; Luxaries condition</p>
-            <p className="p-2-sale-text">&#8226; 3 Adults & 2 Children size</p>
-            <p className="p-2-sale-text">&#8226; Sea view side</p>
-            <p className="p-2-sale-text-2">
-              Price Bofore: ${" "}
-              {store.tickets.showSale[1] && store.tickets.showSale[1].priceBefore}{" "}
-              (After ${" "}
-              {store.tickets.showSale[1] && store.tickets.showSale[1].priceAfter})
-            </p>
-            <p className="p-2-sale-text">
-              Discount: ${" "}
-              {store.tickets.showSale[1] && store.tickets.sale[1].discount}
-            </p>
-            {store.users.isAuth ? (
-              <button className="button-sale" onClick={() => handleBook(2)}>
-                Book Now
-              </button>
-            ) : (
-              <div></div>
-            )}
-          </div>
-          <div className="div-2-sale-3">
-            <img className="img-2-sale" src="https://preview.colorlib.com/theme/montana/img/offers/x3.png.pagespeed.ic.Y_ffhAZTDD.webp"></img>
-            <p className="p-2-sale-title">
-              Up to 35% savings on Club rooms and Suites
-            </p>
-            <p className="p-2-sale-text">&#8226; Luxaries condition</p>
-            <p className="p-2-sale-text">&#8226; 3 Adults & 2 Children size</p>
-            <p className="p-2-sale-text">&#8226; Sea view side</p>
-            <p className="p-2-sale-text-2">
-              Price Bofore: ${" "}
-              {store.tickets.showSale[2] && store.tickets.showSale[2].priceBefore}{" "}
-              (After ${" "}
-              {store.tickets.showSale[2] && store.tickets.showSale[2].priceAfter})
-            </p>
-            <p className="p-2-sale-text">
-              Discount: ${" "}
-              {store.tickets.showSale[2] && store.tickets.showSale[2].discount}
-            </p>
-            {store.users.isAuth ? (
-              <button className="button-sale" onClick={() => handleBook(3)}>
-                Book Now
-              </button>
-            ) : (
-              <div></div>
-            )}
+          <div className="div-block2">
+            {store.tickets.showSale.map((item) => (
+              <div className="div-2-sale-1">
+                <img className="img-2-sale" src={item.url}></img>
+                <p className="p-2-sale-title">
+                  Up to 35% savings on Club rooms and Suites
+                </p>
+                <p className="p-2-sale-text">&#8226; Luxaries condition</p>
+                <p className="p-2-sale-text">
+                  &#8226; 3 Adults & 2 Children size
+                </p>
+                <p className="p-2-sale-text">&#8226; Sea view side</p>
+                <p className="p-2-sale-text-2">
+                  Price Bofore: $ {item.priceBefore} (After $ {item.priceAfter})
+                </p>
+                <p className="p-2-sale-text">Discount: $ {item.discount}</p>
+                {store.users.isAuth ? (
+                  <button className="button-sale" onClick={() => handleBook(1)}>
+                    Book Now
+                  </button>
+                ) : (
+                  <div></div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -228,26 +179,29 @@ export default function Home() {
             <i className="fa fa-play">&#9658;</i>
           </a>
         </div>
-
-        {/* <div className="div-4-text">
-          <p className="p-4-title">Delicious Food</p>
-          <p className="p-4-name">We Serve Fresh and Delicious Food</p>
-          <p className="p-4-text">
-            Suscipit libero pretium nullam potenti. Interdum, blandit phasellus
-            consectetuer dolor ornare dapibus enim ut tincidunt rhoncus tellus
-            sollicitudin pede nam maecenas, dolor sem. Neque sollicitudin enim.
-            Dapibus lorem feugiat facilisi faucibus et. Rhoncus.
-          </p>
+        {/* <div className="div-4-block4">
+          <div className="div-4-text">
+            <p className="p-4-title">Delicious Food</p>
+            <p className="p-4-name">We Serve Fresh and Delicious Food</p>
+            <p className="p-4-text">
+              Suscipit libero pretium nullam potenti. Interdum, blandit
+              phasellus consectetuer dolor ornare dapibus enim ut tincidunt
+              rhoncus tellus sollicitudin pede nam maecenas, dolor sem. Neque
+              sollicitudin enim. Dapibus lorem feugiat facilisi faucibus et.
+              Rhoncus.
+            </p>
+          </div>
+          <img
+            className="img-4-hotel1"
+            src="https://preview.colorlib.com/theme/montana/img/about/x1.png.pagespeed.ic.ytFzk1qg9A.webp"
+          ></img>
+          <img
+            className="img-4-hotel2"
+            src="https://preview.colorlib.com/theme/montana/img/about/x2.png.pagespeed.ic.TMQb44M-no.webp"
+          ></img>
         </div> */}
-        {/* <img
-          className="img-4-hotel1"
-          src="https://preview.colorlib.com/theme/montana/img/about/x1.png.pagespeed.ic.ytFzk1qg9A.webp"
-        ></img>
-        <img
-          className="img-4-hotel2"
-          src="https://preview.colorlib.com/theme/montana/img/about/x2.png.pagespeed.ic.TMQb44M-no.webp"
-        ></img> */}
 
+        
         {/* <div className="div-5-title">
           <p className="p-5-title">Featured Rooms</p>
           <p className="p-5-text">Choose a Better Room</p>
@@ -284,7 +238,7 @@ export default function Home() {
           <p className="p-6-tell">For Reservation 0r Query?</p>
           <button className="button-6-tell">+10 576 377 4789</button>
         </div> */}
-{/* 
+        {/* 
         <div className="div-7-instagram">
           <div className="div-7-img1">
             <img
@@ -317,7 +271,7 @@ export default function Home() {
             ></img>
           </div>
         </div> */}
-{/* 
+        {/* 
         <div className="div-8-end">
           <div className="div-8-block1">
             <p className="p-8-title1">Address</p>
@@ -354,3 +308,14 @@ export default function Home() {
     </div>
   );
 }
+
+const mapDispatchToProps = {
+  // addTicket,
+  // showTickets,
+};
+
+function mapStateToProps(state) {
+  return { store: state };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

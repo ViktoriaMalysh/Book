@@ -116,17 +116,10 @@ module.exports.showMyRoomsWithStatus = async function (req, res) {
 module.exports.showSaleRooms = async function (req, res) {
   try {
     const saleRooms = await SaleRooms.findAll({ raw: true })
-    if(saleRooms.length === 0){
-      res.status(404).json({ 
-        message: 'No any promotional offers',  
-      })
-    }else{
-      res.status(200).json({ 
-        saleRooms: saleRooms,  
-      })
-    }
+  
+      res.send(saleRooms)
   } catch (err) {
     console.log("Error: " + err);
-    res.status(500).json({ message: 'Server have some problem' });
+    // res.send.json({ message: 'Server have some problem' });
   }
 };

@@ -1,4 +1,4 @@
-.div-home{
+.div-home {
   background-color: rgba(180, 242, 253, 0.445);
 }
 
@@ -6,144 +6,150 @@
   background-color: rgba(148, 234, 255, 0.466);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-  "slider slider slider slider slider slider"
-  ". textAbout textAbout img1 img2."
-  ". block1 block1 block1 block1 ."
-  "video1 video1 video1 video1 video1 video1"
-  ". img41 img42 textAbout4 textAbout4 ."
-  ". . textRoom textRoom . ."
-  "room1 room1 room1 room2 room2 room2"
-  "room3 room3 room3 room4 room4 room4"
-  ". tell tell tell tell ."
-  "instagram instagram instagram instagram instagram instagram"
-  "endBlock endBlock endBlock endBlock endBlock endBlock"
-  ;
+  grid-template-areas:
+    "slider slider slider slider slider slider"
+    "block2 block2 block2 block2 block2 block2"
+    "block1 block1 block1 block1 block1 block1"
+    "video1 video1 video1 video1 video1 video1"
+    "block4 block4 block4 block4 block4 block4"
+    ". . textRoom textRoom . ."
+    "room1 room1 room1 room2 room2 room2"
+    "room3 room3 room3 room4 room4 room4"
+    ". tell tell tell tell ."
+    "instagram instagram instagram instagram instagram instagram"
+    "endBlock endBlock endBlock endBlock endBlock endBlock";
   background-color: rgb(255, 255, 255);
 }
 
-.div-home-slider{
+.div-2-block2 {
+  grid-area: block2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". textAbout textAbout img1 img2 .";
+}
+
+.div-4-block4 {
+  grid-area: block4;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". img41 img42 textAbout4 textAbout4 .";
+}
+
+.div-home-slider {
   grid-area: slider;
 }
 
-.div-home-about-text{
+.div-home-about-text {
   grid-area: textAbout;
   padding-top: 12em;
   margin-left: 7em;
   margin-right: 5em;
 }
 
-.p-title1{
-  color:rgb(83, 186, 255);
+.p-title1 {
+  color: rgb(83, 186, 255);
 }
 
-.p-text{
+.p-text {
   font-size: 18px;
   font-weight: 200;
   color: rgb(0, 0, 0);
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
   line-height: 28px;
 }
 
-.img-hotel1{
+.img-hotel1 {
   grid-area: img1;
   padding-top: 12em;
   margin-left: 1em;
 }
 
-.img-hotel2{
+.img-hotel2 {
   grid-area: img2;
   padding-top: 15em;
   padding-bottom: 10em;
 }
 
-.p-name1{
+.p-name1 {
   margin-right: 2em;
   font-size: 50px;
   color: rgb(0, 0, 0);
   font-weight: 300;
-  font-family: 'Raleway', 300;
+  font-family: "Raleway", 300;
   line-height: 80px;
 }
 
-.p-2-title{
-  color:rgb(83, 186, 255);
+.p-2-title {
+  color: rgb(83, 186, 255);
 }
 
-.p-2-name{
+.p-2-name {
   font-size: 50px;
   color: rgb(0, 0, 0);
   font-weight: 300;
-  font-family: 'Raleway', 300;
-  line-height: 80px;
-  padding-bottom: 1.3em;
+  font-family: "Raleway", 300;
+  line-height: 30px;
+  padding-bottom: 1em;
 }
 
-.div-2-page{
+.div-2-page {
   grid-area: block1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-  ". . title1 . ."
-  ". sale1 sale2 sale3 ."
-  ;
+  grid-template-areas:
+    ". . title1 . ."
+    ". sale sale sale .";
   padding-bottom: 6em;
 }
-
-.div-2-sale-1{
-  grid-area: sale1;
-  padding: 1em;
+.div-block2 {
+  grid-area: sale;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.div-2-sale-1 {
+  padding-right: 2em;
 }
 
-.div-2-sale-2{
-  grid-area: sale2;
-  padding: 1em;
-}
-
-.div-2-sale-3{
-  grid-area: sale3;
-  padding: 1em;
-}
-
-.div-2-title{
+.div-2-title {
   grid-area: title1;
   text-align: center;
 }
 
-.p-2-sale-title{
+.p-2-sale-title {
   padding-top: 2em;
   font-size: 24px;
   color: rgb(0, 0, 0);
   font-weight: 300;
-  font-family: 'Raleway', 300;
+  font-family: "Raleway", 300;
   margin-right: 2em;
 }
 
-.button-sale{
+.button-sale {
   background-color: white;
-  border-color: rgb(0, 140, 255);
-  color:rgb(0, 140, 255);
-  height: 2.8em;
-  width: 22em;
+  border: 1px solid rgb(0, 140, 255);
+  color: rgb(0, 140, 255);
+  height: 3em;
+  width: 100%;
   font-weight: 300;
+  border-radius: 4px;
 }
 
-.button-sale:hover{
+.button-sale:hover {
   background-color: rgb(0, 140, 255);
-  border-color: rgb(0, 140, 255);
-  color:rgb(255, 255, 255);
-  height: 2.8em;
-  width: 22em;
+  border: 1px solid rgb(0, 140, 255);
+  color: rgb(255, 255, 255);
+  height: 3em;
+  width: 100%;
+  border-radius: 4px;
   font-weight: 300;
 }
 
-.p-2-sale-text-2{
+.p-2-sale-text-2 {
   font-size: 1.2em;
-  font-family: 'Raleway', 300;
-
+  font-family: "Raleway", 300;
 }
 
-.div-3-video{
+.div-3-video {
   grid-area: video1;
   height: 43.5em;
   text-align: center;
@@ -152,23 +158,23 @@
   background-image: url("https://preview.colorlib.com/theme/montana/img/video/xvideo.png.pagespeed.ic.0n1b-AC7zr.jpg");
 }
 
-.p-3-title{
-  padding-top: 15em;
+.p-3-title {
+  padding-top: 11em;
   font-size: 16px;
   text-align: center;
   color: white;
   font-weight: 300;
-  font-family: 'Raleway', 300;
+  font-family: "Raleway", 300;
 }
 
-.p-3-text{
+.p-3-text {
   text-align: center;
   font-size: 45px;
   margin-left: 17em;
   margin-right: 17em;
   color: white;
   font-weight: 300;
-  font-family: 'Raleway', 300;
+  font-family: "Raleway", 300;
 }
 .overlay {
   position: relative;
@@ -184,10 +190,10 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: .5;
+  opacity: 0.5;
 }
 
-.button-video{
+.button-video {
   text-align: center;
   width: 60px;
   height: 60px;
@@ -210,97 +216,95 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.div-4-text{
+.div-4-text {
   grid-area: textAbout4;
   padding-top: 12em;
   margin-left: 3em;
 }
 
-.img-4-hotel1{
+.img-4-hotel1 {
   grid-area: img41;
   padding-top: 12em;
   margin-left: 7em;
 }
 
-.img-4-hotel2{
+.img-4-hotel2 {
   grid-area: img42;
   padding-top: 15em;
   padding-bottom: 10em;
   margin-left: 1em;
 }
 
-.p-4-title{
-  color:rgb(83, 186, 255);
+.p-4-title {
+  color: rgb(83, 186, 255);
 }
 
-.p-4-text{
+.p-4-text {
   font-size: 18px;
   font-weight: 200;
   color: rgb(0, 0, 0);
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
   line-height: 28px;
   margin-right: 7em;
 }
 
-.p-4-name{
+.p-4-name {
   margin-right: 2em;
   font-size: 50px;
   color: rgb(0, 0, 0);
   font-weight: 300;
-  font-family: 'Raleway', 300;
+  font-family: "Raleway", 300;
   line-height: 80px;
 }
 
-.div-5-title{
+.div-5-title {
   grid-area: textRoom;
   text-align: center;
   padding-bottom: 5em;
 }
 
-.p-5-title{
-  color:rgb(83, 186, 255);
+.p-5-title {
+  color: rgb(83, 186, 255);
 }
 
-.p-5-text{
+.p-5-text {
   font-size: 49px;
   text-align: center;
   color: rgb(3, 3, 3);
   font-weight: 300;
-  font-family: 'Raleway', 300;
+  font-family: "Raleway", 300;
 }
 
-.room1{
+.room1 {
   grid-area: room1;
   height: 37em;
   background-size: 100% 600px;
   background-image: url("https://preview.colorlib.com/theme/montana/img/rooms/x1.png.pagespeed.ic.HDVCJ8JPIU.webp");
 }
 
-.room1:hover{
+.room1:hover {
   grid-area: room1;
 
-
-  
   height: 37em;
   background-size: 100% 600px;
   background-image: url("https://preview.colorlib.com/theme/montana/img/rooms/x1.png.pagespeed.ic.HDVCJ8JPIU.webp");
 }
 
-.room2{
+.room2 {
   grid-area: room2;
   height: 37em;
   background-size: 100% 600px;
   background-image: url("https://preview.colorlib.com/theme/montana/img/rooms/x2.png.pagespeed.ic.LCU3Vu5xDJ.webp");
 }
 
-.room3{
+.room3 {
   grid-area: room3;
   height: 37em;
   background-size: 100% 600px;
   background-image: url("https://preview.colorlib.com/theme/montana/img/rooms/x3.png.pagespeed.ic.-sioOw-vLn.webp");
 }
 
-.room4{
+.room4 {
   grid-area: room4;
   height: 37em;
   background-size: 100% 600px;
@@ -321,30 +325,30 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: .5;
+  opacity: 0.5;
 }
 
-.room-text{
+.room-text {
   margin-top: 28em;
   color: white;
   margin-left: 4em;
 }
 
-.room-price{
+.room-price {
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
 }
 
-.room-title{
+.room-title {
   font-size: 35px;
   text-align: left;
   color: white;
   font-weight: 300;
-  font-family: 'Raleway', 300;
-  letter-spacing:normal;
+  font-family: "Raleway", 300;
+  letter-spacing: normal;
 }
 
-.div-6-tell{
+.div-6-tell {
   margin-left: 15em;
   margin-right: 15em;
   margin-top: 11em;
@@ -358,22 +362,20 @@
   grid-area: tell;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-    "titleTell titleTell titleTell buttonTell"
-  ;
+  grid-template-areas: "titleTell titleTell titleTell buttonTell";
 }
 
-.p-6-tell{
+.p-6-tell {
   grid-area: titleTell;
   font-size: 30px;
   text-align: left;
   color: black;
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
   /* letter-spacing:normal; */
 }
 
-.button-6-tell{
+.button-6-tell {
   grid-area: buttonTell;
   border-radius: 50px;
   border: 0px solid rgb(160, 160, 160);
@@ -381,44 +383,42 @@
   color: white;
   height: 3.5em;
   width: 16em;
-  font-family: 'Raleway',sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1em;
 }
 
-.div-7-instagram{
-
+.div-7-instagram {
   grid-area: instagram;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-    "img71 img72 img73 img74 img75"
+  grid-template-areas: "img71 img72 img73 img74 img75";
 }
 
-.div-7-img1{
+.div-7-img1 {
   grid-area: img71;
 }
 
-.img-7{
+.img-7 {
   width: 100%;
 }
 
-.div-7-img2{
+.div-7-img2 {
   grid-area: img72;
 }
 
-.div-7-img3{
+.div-7-img3 {
   grid-area: img73;
 }
 
-.div-7-img4{
+.div-7-img4 {
   grid-area: img74;
 }
 
-.div-7-img5{
+.div-7-img5 {
   grid-area: img75;
 }
 
-.div-8-end{
+.div-8-end {
   padding-top: 9em;
   padding-bottom: 9em;
   background-color: black;
@@ -426,230 +426,240 @@
   grid-area: endBlock;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-  ". endBlock1 endBlock2 endBlock3 endBlock4 ."
-  ". . endTitle endTitle . ."
+  grid-template-areas:
+    ". endBlock1 endBlock2 endBlock3 endBlock4 ."
+    ". . endTitle endTitle . .";
 }
 
-.div-8-block1{
+.div-8-block1 {
   grid-area: endBlock1;
   margin-right: 8em;
 }
 
-.p-8-title1{
+.p-8-title1 {
   font-size: 1.5em;
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
 }
 
-.p-8-text1{
+.p-8-text1 {
   font-size: 1em;
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
   color: rgb(180, 180, 180);
 }
 
-.div-8-block2{
+.div-8-block2 {
   grid-area: endBlock2;
   margin-right: 8em;
 }
 
-.p-8-title2{
+.p-8-title2 {
   font-size: 1.5em;
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
 }
 
-.p-8-text2{
+.p-8-text2 {
   font-size: 1em;
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
   color: rgb(180, 180, 180);
 }
 
-.div-8-block3{
+.div-8-block3 {
   grid-area: endBlock3;
 }
 
-.p-8-title3{
+.p-8-title3 {
   font-size: 1.5em;
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
 }
 
-.p-8-text31, .p-8-text32, .p-8-text33, .p-8-text34 {
+.p-8-text31,
+.p-8-text32,
+.p-8-text33,
+.p-8-text34 {
   font-size: 1em;
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
   color: rgb(180, 180, 180);
 }
 
-.div-8-block4{
+.div-8-block4 {
   grid-area: endBlock4;
   margin-left: -5em;
 }
 
-.p-8-title4{
+.p-8-title4 {
   font-size: 1.5em;
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
 }
 
-.p-8-text4{
+.p-8-text4 {
   font-size: 1em;
   font-weight: 300;
-  font-family: 'Raleway', ;
+  font-family: "Raleway";
   color: rgb(180, 180, 180);
 }
 
-.button-8-auth{
+.button-8-auth {
   background-color: blue;
 }
 
-.form-8{
+.form-8 {
   position: relative;
   margin-bottom: 20px;
 }
 
-.input-8-sign{
+.input-8-sign {
   padding-left: 1em;
   height: 3em;
   border-color: white;
 }
 
-.button-8-sign{
-  background-color:rgb(0, 140, 255);
+.button-8-sign {
+  background-color: rgb(0, 140, 255);
   width: 6em;
   color: white;
   height: 3em;
   border-color: rgb(83, 186, 255);
 }
 
-.p-9-text{
+.p-9-text {
   grid-area: endTitle;
 }
 
-
-
 @media screen and (max-width: 1800px) {
-
-  .div-home-about-text{
+  .div-home-about-text {
     grid-area: textAbout;
     padding-top: 10em;
     margin-left: 5em;
     margin-right: 5em;
-  } 
-  .p-title1{
-    color:rgb(83, 186, 255);
   }
-  
-  .p-text{
+  .p-title1 {
+    color: rgb(83, 186, 255);
+  }
+
+  .p-text {
     font-size: 16px;
     font-weight: 200;
     color: rgb(0, 0, 0);
-    font-family: 'Raleway', ;
+    font-family: "Raleway";
     line-height: 28px;
   }
-  .p-name1{
+  .p-name1 {
     margin-right: 2em;
     font-size: 40px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     line-height: 65px;
   }
-  .img-hotel1{
+  .img-hotel1 {
     grid-area: img1;
-    /* margin-top: 12em; */
     margin-left: 2em;
     height: 530px;
   }
-  
-  .img-hotel2{
+
+  .img-hotel2 {
     grid-area: img2;
-    /* margin-top: 0em; */
     padding-bottom: 10em;
     height: 710px;
     margin-left: 1em;
-
+  }
+  .p-3-title {
+    padding-top: 13em;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
   }
 
-  
-  .p-2-name{
-    font-size: 45px;
+  .p-3-text {
+    text-align: center;
+    font-size: 35px;
+    margin-left: 13.5em;
+    margin-right: 13.5em;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+
+
+
+
+  .p-2-name {
+    font-size: 40px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 80px;
-    padding-bottom: 1.3em;
+    font-family: "Raleway", 300;
+    line-height: 30px;
+    padding-bottom: 1.7em;
   }
   
-  .div-2-page{
+  .div-2-page {
     grid-area: block1;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    ". . title1 . ."
-    ". sale1 sale2 sale3 ."
-    ;
+    grid-template-columns: 10% 1fr 1fr 1fr 10%;
+    grid-template-areas:
+      ". . title1 . ."
+      ". sale sale sale .";
     padding-bottom: 6em;
   }
-  
-  .div-2-sale-1{
-    grid-area: sale1;
-    padding: 1em;
+  .div-block2 {
+    grid-area: sale;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .div-2-sale-1 {
+    padding: 2em;
   }
   
-  .div-2-sale-2{
-    grid-area: sale2;
-    padding: 1em;
-  }
-  
-  .div-2-sale-3{
-    grid-area: sale3;
-    padding: 1em;
-  }
-  
-  .div-2-title{
+  .div-2-title {
     grid-area: title1;
     text-align: center;
   }
   
-  .p-2-sale-title{
+  .p-2-sale-title {
     padding-top: 2em;
-    font-size: 22px;
+    font-size: 24px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     margin-right: 2em;
   }
   
-  .button-sale{
+  .button-sale {
     background-color: white;
-    border-color: rgb(0, 140, 255);
-    color:rgb(0, 140, 255);
-    height: 2.8em;
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(0, 140, 255);
+    height: 3em;
     width: 100%;
     font-weight: 300;
-}
+    border-radius: 4px;
+  }
   
-  .button-sale:hover{
+  .button-sale:hover {
     background-color: rgb(0, 140, 255);
-    border-color: rgb(0, 140, 255);
-    color:rgb(255, 255, 255);
-    height: 2.8em;
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(255, 255, 255);
+    height: 3em;
     width: 100%;
+    border-radius: 4px;
     font-weight: 300;
   }
   
-  .p-2-sale-text-2{
+  .p-2-sale-text-2 {
     font-size: 1.2em;
-    font-family: 'Raleway', 300;
-  
+    font-family: "Raleway", 300;
   }
-
   .img-2-sale{
-    width: 300px;
+    width: 100%;
   }
 }
 
@@ -658,60 +668,152 @@
     background-color: rgba(148, 234, 255, 0.466);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "slider slider slider slider slider slider"
-    "textAbout textAbout textAbout textAbout img1 img2"
-    ". block1 block1 block1 block1 ."
-    "video1 video1 video1 video1 video1 video1"
-    ". img41 img42 textAbout4 textAbout4 ."
-    ". . textRoom textRoom . ."
-    "room1 room1 room1 room2 room2 room2"
-    "room3 room3 room3 room4 room4 room4"
-    ". tell tell tell tell ."
-    "instagram instagram instagram instagram instagram instagram"
-    "endBlock endBlock endBlock endBlock endBlock endBlock"
-    ;
+    grid-template-areas:
+      "slider slider slider slider slider slider"
+      "block2 block2 block2 block2 block2 block2"
+      "block1 block1 block1 block1 block1 block1"
+      "video1 video1 video1 video1 video1 video1"
+      "block4 block4 block4 block4 block4 block4"
+      ". . textRoom textRoom . ."
+      "room1 room1 room1 room2 room2 room2"
+      "room3 room3 room3 room4 room4 room4"
+      ". tell tell tell tell ."
+      "instagram instagram instagram instagram instagram instagram"
+      "endBlock endBlock endBlock endBlock endBlock endBlock";
     background-color: rgb(255, 255, 255);
   }
-  .div-home-about-text{
+
+  .div-2-block2 {
+    grid-area: block2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "textAbout textAbout textAbout textAbout img1 img2";
+  }
+  .div-home-about-text {
     grid-area: textAbout;
     padding-top: 10em;
     margin-left: 11em;
     margin-right: 2.5em;
-  } 
-  .p-title1{
-    color:rgb(83, 186, 255);
   }
-  
-  .p-text{
+  .p-title1 {
+    color: rgb(83, 186, 255);
+  }
+
+  .p-text {
     font-size: 16px;
     font-weight: 200;
     color: rgb(0, 0, 0);
-    font-family: 'Raleway', ;
+    font-family: "Raleway";
     line-height: 28px;
   }
-  .p-name1{
+  .p-name1 {
     margin-right: 2em;
     font-size: 31px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     line-height: 50px;
   }
-  .img-hotel1{
+  .img-hotel1 {
     grid-area: img1;
     /* margin-top: 10em; */
     margin-left: 6em;
     height: 530px;
   }
-  
-  .img-hotel2{
+
+  .img-hotel2 {
     grid-area: img2;
     /* margin-top: 13em; */
     padding-bottom: 10em;
     height: 710px;
     margin-right: 8em;
+  }
 
+  .div-4-block4 {
+    grid-area: block4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". img41 img42 textAbout4 textAbout4 .";
+  }
+
+  .div-4-text {
+    grid-area: textAbout4;
+    padding-top: 12em;
+    /* margin-right: -10em; */
+    /* background-color: blueviolet; */
+  }
+
+  .img-4-hotel1 {
+    grid-area: img41;
+    padding-top: 12em;
+    margin-left: 0em;
+    height: 530px;
+  }
+
+  .img-4-hotel2 {
+    grid-area: img42;
+    padding-top: 15em;
+    padding-bottom: 10em;
+    margin-left: 1em;
+    height: 710px;
+  }
+
+  .p-4-text {
+    font-size: 16px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 28px;
+    margin-right: 0em;
+  }
+
+  .p-4-name {
+    margin-right: 0em;
+    font-size: 31px;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    font-family: "Raleway", 300;
+    line-height: 50px;
+  }
+
+
+
+  .p-2-name {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    font-family: "Raleway", 300;
+    line-height: 30px;
+    padding-bottom: 1em;
+  }
+
+  .div-block2 {
+    grid-area: sale;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .p-2-sale-text {
+    font-size: 16px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 18px;
+  }
+
+  .p-2-sale-title {
+    padding-top: 1em;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    line-height: 28px;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+    margin-right: 2em;
+  }
+
+  .p-2-sale-text-2 {
+    font-size: 1.2em;
+    font-family: "Raleway", 300;
   }
 }
 
@@ -720,144 +822,184 @@
     background-color: rgba(148, 234, 255, 0.466);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "slider slider slider slider slider slider"
-    "textAbout textAbout textAbout textAbout img1 img2"
-    ". block1 block1 block1 block1 ."
-    "video1 video1 video1 video1 video1 video1"
-    ". img41 img42 textAbout4 textAbout4 ."
-    ". . textRoom textRoom . ."
-    "room1 room1 room1 room2 room2 room2"
-    "room3 room3 room3 room4 room4 room4"
-    ". tell tell tell tell ."
-    "instagram instagram instagram instagram instagram instagram"
-    "endBlock endBlock endBlock endBlock endBlock endBlock"
-    ;
+    grid-template-areas:
+      "slider slider slider slider slider slider"
+      "block2 block2 block2 block2 block2 block2"
+      "block1 block1 block1 block1 block1 block1"
+      "video1 video1 video1 video1 video1 video1"
+      "block4 block4 block4 block4 block4 block4"
+      ". . textRoom textRoom . ."
+      "room1 room1 room1 room2 room2 room2"
+      "room3 room3 room3 room4 room4 room4"
+      ". tell tell tell tell ."
+      "instagram instagram instagram instagram instagram instagram"
+      "endBlock endBlock endBlock endBlock endBlock endBlock";
     background-color: rgb(255, 255, 255);
   }
-  .div-home-about-text{
+  .div-2-block2 {
+    grid-area: block2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "textAbout textAbout textAbout textAbout img1 img2";
+  }
+  .div-home-about-text {
     grid-area: textAbout;
     padding-top: 7em;
     margin-left: 8em;
     margin-right: 1em;
-  } 
-  .p-title1{
-    color:rgb(83, 186, 255);
   }
-  
-  .p-text{
+  .p-title1 {
+    color: rgb(83, 186, 255);
+  }
+
+  .p-text {
     font-size: 15px;
     font-weight: 200;
     color: rgb(0, 0, 0);
-    font-family: 'Raleway', ;
+    font-family: "Raleway";
     line-height: 28px;
   }
-  .p-name1{
+  .p-name1 {
     margin-right: 2em;
     font-size: 25px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     line-height: 40px;
   }
-  .img-hotel1{
+  .img-hotel1 {
     grid-area: img1;
     margin-top: -3em;
     margin-left: 6em;
     height: 500px;
   }
-  
-  .img-hotel2{
+
+  .img-hotel2 {
     grid-area: img2;
     margin-top: -3em;
     padding-bottom: 10em;
     height: 680px;
     margin-right: 8em;
-
   }
 
 
 
-  .div-2-page{
-    grid-area: block1;
+
+  .div-3-video {
+    grid-area: video1;
+    height: 40em;
+    text-align: center;
+    background-size: 100% 700px;
+    background-color: #1f1f1f;
+    background-image: url("https://preview.colorlib.com/theme/montana/img/video/xvideo.png.pagespeed.ic.0n1b-AC7zr.jpg");
+  }
+  .p-3-title {
+    padding-top: 13em;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+  .p-3-text {
+    text-align: center;
+    font-size: 30px;
+    margin-left: 13.5em;
+    margin-right: 13.5em;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+  .div-4-block4 {
+    grid-area: block4;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    ". . title1 . ."
-    ". sale1 sale2 sale3 ."
-    ;
-    margin-bottom: 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "img41 img42 textAbout4 textAbout4 textAbout4 textAbout4";
   }
-  .p-2-name{
-    font-size: 35px;
+
+  .div-4-text {
+    grid-area: textAbout4;
+    padding-top: 12em;
+    margin-right: 8em;
+  }
+
+  .img-4-hotel1 {
+    grid-area: img41;
+    padding-top: 12em;
+    margin-left: 8em;
+    height: 500px;
+  }
+
+  .img-4-hotel2 {
+    grid-area: img42;
+    padding-top: 15em;
+    padding-bottom: 10em;
+    margin-left: 1em;
+    height: 680px;
+  }
+
+  .p-4-text {
+    font-size: 15px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 28px;
+    margin-right: 0em;
+  }
+
+  .p-4-name {
+    margin-right: 0em;
+    font-size: 25px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 60px;
-    padding-bottom: 0.3em;
+    font-family: "Raleway", 300;
+    line-height: 40px;
   }
 
-  
-  .div-2-sale-1{
-    grid-area: sale1;
-    /* padding-top: 0em; */
-    padding-left: 1em;
-  }
-  
-  .div-2-sale-2{
-    grid-area: sale2;
-    padding-left: 3em;
-  }
-  
-  .div-2-sale-3{
-    grid-area: sale3;
-    padding-left: 3em;
+
+
+
+
+
+
+  .p-2-name {
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    font-family: "Raleway", 300;
+    line-height: 30px;
+    padding-bottom: 0.5em;
   }
 
-  .p-2-sale-text{
-    line-height: 15px;
+  .div-block2 {
+    grid-area: sale;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  
-  .div-2-title{
-    grid-area: title1;
-    text-align: center;
+
+  .p-2-sale-text {
+    font-size: 14px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 18px;
   }
-  
-  .p-2-sale-title{
-    padding-top: 2em;
+
+  .p-2-sale-title {
+    padding-top: 1em;
     font-size: 20px;
     color: rgb(0, 0, 0);
+    line-height: 28px;
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     margin-right: 2em;
   }
-  
-  .button-sale{
-    background-color: white;
-    border-color: rgb(0, 140, 255);
-    color:rgb(0, 140, 255);
-    height: 2.8em;
-    width: 100%;
-    font-weight: 300;
-}
-  
-  .button-sale:hover{
-    background-color: rgb(0, 140, 255);
-    border-color: rgb(0, 140, 255);
-    color:rgb(255, 255, 255);
-    height: 2.8em;
-    width: 100%;
-    font-weight: 300;
-  }
-  
-  .p-2-sale-text-2{
-    font-size: 1.2em;
-    font-family: 'Raleway', 300;
-  
-  }
 
-  .img-2-sale{
-    width: 250px;
+  .p-2-sale-text-2 {
+    font-size: 1.1em;
+    font-family: "Raleway", 300;
   }
 }
 
@@ -866,392 +1008,353 @@
     background-color: rgba(148, 234, 255, 0.466);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "slider slider slider slider slider slider"
-    "textAbout textAbout textAbout textAbout img1 img2"
-    ". block1 block1 block1 block1 ."
-    "video1 video1 video1 video1 video1 video1"
-    ". img41 img42 textAbout4 textAbout4 ."
-    ". . textRoom textRoom . ."
-    "room1 room1 room1 room2 room2 room2"
-    "room3 room3 room3 room4 room4 room4"
-    ". tell tell tell tell ."
-    "instagram instagram instagram instagram instagram instagram"
-    "endBlock endBlock endBlock endBlock endBlock endBlock"
-    ;
+    grid-template-areas:
+      "slider slider slider slider slider slider"
+      "block2 block2 block2 block2 block2 block2"
+      "block1 block1 block1 block1 block1 block1"
+      "video1 video1 video1 video1 video1 video1"
+      "block4 block4 block4 block4 block4 block4"
+      ". . textRoom textRoom . ."
+      "room1 room1 room1 room2 room2 room2"
+      "room3 room3 room3 room4 room4 room4"
+      ". tell tell tell tell ."
+      "instagram instagram instagram instagram instagram instagram"
+      "endBlock endBlock endBlock endBlock endBlock endBlock";
     background-color: rgb(255, 255, 255);
   }
-  .div-home-about-text{
+  .div-2-block2 {
+    grid-area: block2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "textAbout textAbout textAbout textAbout img1 img2";
+  }
+  .div-home-about-text {
     grid-area: textAbout;
     padding-top: 7em;
     margin-left: 5.5em;
     margin-right: 1em;
-  } 
-  .p-text{
+  }
+  .p-text {
     font-size: 15px;
     font-weight: 200;
     color: rgb(0, 0, 0);
-    font-family: 'Raleway', ;
+    font-family: "Raleway";
     line-height: 28px;
   }
-  .p-name1{
+  .p-name1 {
     margin-right: 2em;
     font-size: 25px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     line-height: 40px;
   }
-  .img-hotel1{
+  .img-hotel1 {
     grid-area: img1;
     margin-top: -3em;
     margin-left: 6em;
     height: 450px;
   }
-  
-  .img-hotel2{
+
+  .img-hotel2 {
     grid-area: img2;
     margin-top: -3em;
     padding-bottom: 10em;
     height: 630px;
     margin-right: 5em;
-
   }
 
-
-
-
-  .div-2-page{
-    grid-area: block1;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 10%;
-    grid-template-areas: 
-    ". . title1 . ."
-    ". sale1 sale2 sale3 ."
-    ;
-    margin-bottom: 1em;
-  }
-  .p-2-name{
-    font-size: 28px;
-    color: rgb(0, 0, 0);
-    font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 60px;
-    padding-bottom: 0.3em;
-  }
-
-  .div-2-sale-1{
-    grid-area: sale1;
-    /* padding-top: 0em; */
-    /* padding-left: 1em; */
-  }
-  
-  .div-2-sale-2{
-    grid-area: sale2;
-    padding-left: 4.5em;
-  }
-  
-  .div-2-sale-3{
-    grid-area: sale3;
-    padding-left: 4.5em;
-  }
-
-  .p-2-sale-text{
-    line-height: 10px;
-  }
-  
-  .div-2-title{
-    grid-area: title1;
+  .div-3-video {
+    grid-area: video1;
+    height: 33em;
     text-align: center;
+    background-size: 100% 700px;
+    background-color: #1f1f1f;
+    background-image: url("https://preview.colorlib.com/theme/montana/img/video/xvideo.png.pagespeed.ic.0n1b-AC7zr.jpg");
   }
-  
-  .p-2-sale-title{
-    padding-top: 0.5em;
-    font-size: 17px;
+  .p-3-title {
+    padding-top: 9em;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+  .p-3-text {
+    text-align: center;
+    font-size: 28px;
+    margin-left: 10em;
+    margin-right: 10em;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+
+
+
+
+
+
+  .p-2-name {
+    font-size: 30px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
+    line-height: 30px;
+    padding-bottom: 0.5em;
+  }
+
+  .div-block2 {
+    grid-area: sale;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .p-2-sale-text {
+    font-size: 12px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 14px;
+  }
+
+  .p-2-sale-title {
+    padding-top: 0.5em;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    line-height: 28px;
+    font-weight: 300;
+    font-family: "Raleway", 300;
     margin-right: 2em;
   }
-  
-  .button-sale{
+
+  .p-2-sale-text-2 {
+    font-size: 0.9em;
+    font-family: "Raleway", 300;
+  }
+
+
+  .button-sale {
     background-color: white;
-    border-color: rgb(0, 140, 255);
-    color:rgb(0, 140, 255);
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(0, 140, 255);
     height: 2.8em;
     width: 100%;
     font-weight: 300;
-}
+    border-radius: 4px;
+  }
   
-  .button-sale:hover{
+  .button-sale:hover {
     background-color: rgb(0, 140, 255);
-    border-color: rgb(0, 140, 255);
-    color:rgb(255, 255, 255);
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(255, 255, 255);
     height: 2.8em;
     width: 100%;
+    border-radius: 4px;
     font-weight: 300;
   }
-  
-  .p-2-sale-text-2{
-    font-size: 1.1em;
-    font-family: 'Raleway', 300;
-  }
 
-  .img-2-sale{
-    width: 200px;
+  .div-2-sale-1 {
+    padding-right: 1em;
   }
 }
-
 
 @media screen and (max-width: 900px) {
-  .div-home-about-text{
+  .div-home-about-text {
     grid-area: textAbout;
     padding-top: 5em;
     margin-left: 3.5em;
     margin-right: 0.5em;
-  } 
-  
-  .p-text{
+  }
+
+  .p-text {
     font-size: 13px;
     font-weight: 200;
     color: rgb(0, 0, 0);
-    font-family: 'Raleway', ;
+    font-family: "Raleway";
     line-height: 28px;
   }
-  .p-name1{
+  .p-name1 {
     margin-right: 2em;
     font-size: 22px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     line-height: 40px;
   }
-  .img-hotel1{
+  .img-hotel1 {
     grid-area: img1;
     margin-top: -5em;
     margin-left: 6em;
     height: 430px;
   }
-  
-  .img-hotel2{
+
+  .img-hotel2 {
     grid-area: img2;
     margin-top: -5em;
     padding-bottom: 10em;
     height: 610px;
     margin-right: 3.5em;
-
   }
 
 
-
-
-
-
-  .div-2-page{
-    grid-area: block1;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 15%;
-    grid-template-areas: 
-    ". . title1 . ."
-    ". sale1 sale2 sale3 ."
-    ;
-    margin-bottom: 1em;
-  }
-  .p-2-name{
-    font-size: 24px;
-    color: rgb(0, 0, 0);
-    font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 60px;
-    padding-bottom: 0.3em;
-  }
-
-  .div-2-sale-1{
-    grid-area: sale1;
-    /* padding-top: 0em; */
-    /* padding-left: 1em; */
-  }
-  
-  .div-2-sale-2{
-    grid-area: sale2;
-    padding-left: 1em;
-  }
-  
-  .div-2-sale-3{
-    grid-area: sale3;
-    padding-left: 1em;
-  }
-
-  .p-2-sale-text{
-    line-height: 8px;
-  }
-  
-  .div-2-title{
-    grid-area: title1;
-    text-align: center;
-  }
-  
-  .p-2-sale-title{
-    padding-top: 0.5em;
-    font-size: 15px;
-    color: rgb(0, 0, 0);
-    font-weight: 300;
-    font-family: 'Raleway', 300;
-    margin-right: 2em;
-  }
-  
-  .button-sale{
-    background-color: white;
-    border-color: rgb(0, 140, 255);
-    color:rgb(0, 140, 255);
-    height: 2.8em;
-    width: 100%;
-    font-weight: 300;
-}
-  
-  .button-sale:hover{
-    background-color: rgb(0, 140, 255);
-    border-color: rgb(0, 140, 255);
-    color:rgb(255, 255, 255);
-    height: 2.8em;
-    width: 100%;
-    font-weight: 300;
-  }
-  
-  .p-2-sale-text-2{
-    font-size: 1.1em;
-    font-family: 'Raleway', 300;
-  }
-
-  .img-2-sale{
-    width: 200px;
-  }
 }
 
 @media screen and (max-width: 800px) {
-  .div-home-about-text{
+  .div-home-about-text {
     grid-area: textAbout;
     padding-top: 5em;
     margin-left: 3.5em;
     margin-right: 0.5em;
-  } 
+  }
 
-  .p-text{
+  .p-text {
     font-size: 13px;
     font-weight: 200;
     color: rgb(0, 0, 0);
-    font-family: 'Raleway', ;
+    font-family: "Raleway";
     line-height: 28px;
   }
-  .p-name1{
+  .p-name1 {
     margin-right: 2em;
     font-size: 22px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     line-height: 30px;
   }
-  .img-hotel1{
+  .img-hotel1 {
     grid-area: img1;
     margin-top: -5em;
     margin-left: 3em;
     height: 400px;
   }
-  
-  .img-hotel2{
+
+  .img-hotel2 {
     grid-area: img2;
     margin-top: -5em;
     padding-bottom: 10em;
     height: 580px;
     margin-right: 3.5em;
-
   }
 
-
-
-
-
-
-
-  .div-2-page{
-    grid-area: block1;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 15%;
-    grid-template-areas: 
-    ". . title1 . ."
-    ". sale1 sale2 sale3 ."
-    ;
-    margin-bottom: 1em;
-  }
-  .p-2-name{
-    font-size: 24px;
-    color: rgb(0, 0, 0);
-    font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 30px;
-    margin-bottom: -1em;
-  }
-
-  .div-2-sale-1{
-    grid-area: sale1;
-    /* padding-top: 0em; */
-    /* padding-left: 1em; */
-  }
-  
-  .div-2-sale-2{
-    grid-area: sale2;
-    padding-left: 0.5em;
-  }
-  
-  .div-2-sale-3{
-    grid-area: sale3;
-    padding-left: 1em;
-  }
-
-  .p-2-sale-text{
-    line-height: 6px;
-    font-size: 0.4;
-  }
-  
-  .div-2-title{
-    grid-area: title1;
+  .div-3-video {
+    grid-area: video1;
+    height: 28em;
     text-align: center;
+    background-size: 100% 700px;
+    background-color: #1f1f1f;
+    background-image: url("https://preview.colorlib.com/theme/montana/img/video/xvideo.png.pagespeed.ic.0n1b-AC7zr.jpg");
   }
-  
-  .p-2-sale-title{
-    padding-top: 0.5em;
+  .p-3-title {
+    padding-top: 7em;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+  .p-3-text {
+    text-align: center;
+    font-size: 23px;
+    margin-left: 8em;
+    margin-right: 8em;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+  .button-video {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    line-height: 50px;
     font-size: 15px;
+    color: #009dff;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+
+
+
+  .p-2-name {
+    font-size: 23px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
+    line-height: 30px;
+    padding-bottom: 0.2em;
+  }
+
+  .div-block2 {
+    grid-area: sale;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .p-2-sale-text {
+    font-size: 10px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 8px;
+  }
+
+  .p-2-sale-title {
+    padding-top: 0.5em;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    line-height: 20px;
+    font-weight: 300;
+    font-family: "Raleway", 300;
     margin-right: 2em;
   }
-  
-  .button-sale{
-    background-color: white;
-    border-color: rgb(0, 140, 255);
-    color:rgb(0, 140, 255);
-    height: 2.8em;
-    width: 100%;
-    font-weight: 300;
-}
-  
-  .button-sale:hover{
-    background-color: rgb(0, 140, 255);
-    border-color: rgb(0, 140, 255);
-    color:rgb(255, 255, 255);
-    height: 2.8em;
-    width: 100%;
-    font-weight: 300;
-  }
-  
-  .p-2-sale-text-2{
-    font-size: 0.9em;
-    font-family: 'Raleway', 300;
+
+  .p-2-sale-text-2 {
+    font-size: 0.8em;
+    font-family: "Raleway", 300;
   }
 
-  .img-2-sale{
-    width: 170px;
+
+  .button-sale {
+    background-color: white;
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(0, 140, 255);
+    height: 2.5em;
+    width: 100%;
+    font-weight: 300;
+    border-radius: 4px;
+  }
+  
+  .button-sale:hover {
+    background-color: rgb(0, 140, 255);
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(255, 255, 255);
+    height: 2.5em;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 300;
+  }
+
+  .div-2-sale-1 {
+    padding-right: 0em;
+  }
+
+  .div-2-page {
+    grid-area: block1;
+    display: grid;
+    grid-template-columns: 3% 1fr 1fr 1fr 4%;
+    grid-template-areas:
+      ". . title1 . ."
+      ". sale sale sale .";
+    padding-bottom: 4em;
   }
 }
 
@@ -1260,53 +1363,57 @@
     background-color: rgba(148, 234, 255, 0.466);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "slider slider slider slider slider slider"
-    "textAbout textAbout textAbout textAbout img2 img2"
-    ". block1 block1 block1 block1 ."
-    "video1 video1 video1 video1 video1 video1"
-    ". img41 img42 textAbout4 textAbout4 ."
-    ". . textRoom textRoom . ."
-    "room1 room1 room1 room2 room2 room2"
-    "room3 room3 room3 room4 room4 room4"
-    ". tell tell tell tell ."
-    "instagram instagram instagram instagram instagram instagram"
-    "endBlock endBlock endBlock endBlock endBlock endBlock"
-    ;
+    grid-template-areas:
+      "slider slider slider slider slider slider"
+      "block2 block2 block2 block2 block2 block2"
+      "block1 block1 block1 block1 block1 block1"
+      "video1 video1 video1 video1 video1 video1"
+      "block4 block4 block4 block4 block4 block4"
+      ". . textRoom textRoom . ."
+      "room1 room1 room1 room2 room2 room2"
+      "room3 room3 room3 room4 room4 room4"
+      ". tell tell tell tell ."
+      "instagram instagram instagram instagram instagram instagram"
+      "endBlock endBlock endBlock endBlock endBlock endBlock";
     background-color: rgb(255, 255, 255);
   }
-
-  .div-home-about-text{
+  .div-2-block2 {
+    grid-area: block2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "textAbout textAbout textAbout textAbout img2 img2";
+  }
+  .div-home-about-text {
     grid-area: textAbout;
     padding-top: 5em;
     margin-left: 5em;
     margin-right: 0.5em;
-  } 
-  
-  .p-text{
+  }
+
+  .p-text {
     font-size: 13px;
     font-weight: 200;
     color: rgb(0, 0, 0);
-    font-family: 'Raleway', ;
+    font-family: "Raleway";
     line-height: 28px;
   }
-  .p-name1{
+  .p-name1 {
     margin-right: 2em;
     font-size: 22px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     line-height: 40px;
   }
-  .img-hotel1{
+  .img-hotel1 {
     grid-area: img1;
     margin-top: 0em;
     margin-left: 0em;
     height: 0px;
     width: 0px;
   }
-  
-  .img-hotel2{
+
+  .img-hotel2 {
     grid-area: img2;
     margin-top: -8em;
     padding-bottom: 10em;
@@ -1316,115 +1423,107 @@
 
 
 
-  .div-2-page{
-    grid-area: block1;
+
+
+  .p-2-name {
+    font-size: 23px;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    font-family: "Raleway", 300;
+    line-height: 20px;
+    padding-bottom: 0em;
+  }
+
+  .div-block2 {
+    grid-area: sale;
     display: grid;
-    grid-template-columns: 20px 1fr 1fr 1fr 15px;
-    grid-template-areas: 
-    ". . title1 . ."
-    ". sale1 sale2 sale3 ."
-    ;
-    margin-bottom: 1em;
-    margin-left: -15%;
-    margin-right: -20%;
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  .p-2-name{
-    font-size: 24px;
+
+  .p-2-sale-text {
+    font-size: 10px;
+    font-weight: 200;
     color: rgb(0, 0, 0);
-    font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 30px;
-    margin-bottom: -1em;
+    font-family: "Raleway";
+    line-height: 6px;
   }
 
-  .div-2-sale-1{
-    grid-area: sale1;
-    /* padding-top: 0em; */
-    /* padding-left: 1em; */
-  }
-  
-  .div-2-sale-2{
-    grid-area: sale2;
-    padding-left: 0.3em;
-  }
-  
-  .div-2-sale-3{
-    grid-area: sale3;
-    padding-left: 0.3em;
-  }
-
-  .p-2-sale-text{
-    line-height: 3px;
-    font-size: 0.8em;
-  }
-  
-  .div-2-title{
-    grid-area: title1;
-    text-align: center;
-  }
-  
-  .p-2-sale-title{
+  .p-2-sale-title {
     padding-top: 0.5em;
-    font-size: 13px;
+    font-size: 14px;
     color: rgb(0, 0, 0);
+    line-height: 17px;
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
     margin-right: 2em;
   }
-  
-  .button-sale{
-    background-color: white;
-    border-color: rgb(0, 140, 255);
-    color:rgb(0, 140, 255);
-    height: 2.8em;
-    width: 95%;
-    font-weight: 300;
-}
-  
-  .button-sale:hover{
-    background-color: rgb(0, 140, 255);
-    border-color: rgb(0, 140, 255);
-    color:rgb(255, 255, 255);
-    height: 2.8em;
-    width: 95%;
-    font-weight: 300;
-  }
-  
-  .p-2-sale-text-2{
-    font-size: 0.9em;
-    font-family: 'Raleway', 300;
+
+  .p-2-sale-text-2 {
+    font-size: 0.8em;
+    font-family: "Raleway", 300;
   }
 
-  .img-2-sale{
-    width: 150px;
+
+  .button-sale {
+    background-color: white;
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(0, 140, 255);
+    height: 2.5em;
+    width: 100%;
+    font-weight: 300;
+    border-radius: 4px;
+  }
+  
+  .button-sale:hover {
+    background-color: rgb(0, 140, 255);
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(255, 255, 255);
+    height: 2.5em;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 300;
+  }
+
+  .div-2-sale-1 {
+    padding-right: 0em;
+  }
+
+  .div-2-page {
+    grid-area: block1;
+    display: grid;
+    grid-template-columns: 3% 1fr 1fr 1fr 4%;
+    grid-template-areas:
+      ". . title1 . ."
+      ". sale sale sale .";
+    padding-bottom: 4em;
   }
 }
 
 @media screen and (max-width: 578px) {
-  .p-text{
+  .p-text {
     font-size: 11px;
     font-weight: 200;
     color: rgb(0, 0, 0);
-    font-family: 'Raleway', ;
-    line-height: 22px;
+    font-family: "Raleway";
+    line-height: 20px;
   }
-  .p-name1{
-    margin-right: 2em;
-    font-size: 22px;
+  .p-name1 {
+    margin-right: 1em;
+    font-size: 20px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 30px;
+    font-family: "Raleway", 300;
+    line-height: 25px;
   }
-  .img-hotel1{
+  .img-hotel1 {
     grid-area: img1;
     margin-top: 0em;
     margin-left: 0em;
     height: 0px;
     width: 0px;
   }
-  
-  .img-hotel2{
+
+  .img-hotel2 {
     grid-area: img2;
     margin-top: -9em;
     padding-bottom: 10em;
@@ -1432,126 +1531,154 @@
     margin-right: 15em;
   }
 
-
-
-
-
-  .div-2-page{
-    grid-area: block1;
-    display: grid;
-    grid-template-columns: 20px 1fr 1fr 1fr 15px;
-    grid-template-areas: 
-    ". title1 title1 title1 ."
-    ". sale1 sale2 sale3 ."
-    ;
-    margin-bottom: 1em;
-    margin-left: -17%;
-    margin-right: -30%;
-  }
-  .p-2-name{
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 30px;
-    margin-bottom: -1em;
-  }
-
-  .div-2-sale-1{
-    grid-area: sale1;
-    /* padding-top: 0em; */
-    /* padding-left: 1em; */
-  }
-  
-  .div-2-sale-2{
-    grid-area: sale2;
-    padding-left: 0em;
-  }
-  
-  .div-2-sale-3{
-    grid-area: sale3;
-    padding-left: 0em;
-  }
-
-  .p-2-sale-text{
-    line-height: 6px;
-    font-size: 0.7em;
-  }
-  
-  .div-2-title{
-    grid-area: title1;
+  .div-3-video {
+    grid-area: video1;
+    height: 18em;
     text-align: center;
+    background-size: 100% 700px;
+    background-color: #1f1f1f;
+    background-image: url("https://preview.colorlib.com/theme/montana/img/video/xvideo.png.pagespeed.ic.0n1b-AC7zr.jpg");
   }
-  
-  .p-2-sale-title{
-    padding-top: 0.5em;
-    font-size: 10px;
+  .p-3-title {
+    padding-top: 5em;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+  .p-3-text {
+    text-align: center;
+    font-size: 20px;
+    margin-left: 8em;
+    margin-right: 8em;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+  .button-video {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    line-height: 40px;
+    font-size: 15px;
+    color: #009dff;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+
+
+
+  .p-2-name {
+    font-size: 21px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
+    line-height: 20px;
+    padding-bottom: 0em;
+  }
+
+  .div-block2 {
+    grid-area: sale;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .p-2-sale-text {
+    font-size: 8px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 3px;
+  }
+
+  .p-2-sale-title {
+    padding-top: 0.5em;
+    font-size: 9px;
+    color: rgb(0, 0, 0);
+    line-height: 12px;
+    font-weight: 300;
+    font-family: "Raleway", 300;
     margin-right: 2em;
   }
-  
-  .button-sale{
-    background-color: white;
-    border-color: rgb(0, 140, 255);
-    color:rgb(0, 140, 255);
-    height: 2.8em;
-    width: 95%;
-    font-weight: 300;
-}
-  
-  .button-sale:hover{
-    background-color: rgb(0, 140, 255);
-    border-color: rgb(0, 140, 255);
-    color:rgb(255, 255, 255);
-    height: 2.8em;
-    width: 95%;
-    font-weight: 300;
-  }
-  
-  .p-2-sale-text-2{
-    font-size: 0.7em;
-    font-family: 'Raleway', 300;
+
+  .p-2-sale-text-2 {
+    font-size: 0.6em;
+    font-family: "Raleway", 300;
   }
 
-  .img-2-sale{
-    width: 130px;
+  .button-sale {
+    background-color: white;
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(0, 140, 255);
+    height: 1.7em;
+    width: 100%;
+    font-weight: 300;
+    border-radius: 4px;
+  }
+  
+  .button-sale:hover {
+    background-color: rgb(0, 140, 255);
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(255, 255, 255);
+    height: 1.7em;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 300;
+  }
+
+  .div-2-sale-1 {
+    padding-right: 0em;
+  }
+
+  .div-2-page {
+    grid-area: block1;
+    display: grid;
+    grid-template-columns: 2% 1fr 1fr 1fr 8%;
+    grid-template-areas:
+      ". . title1 . ."
+      ". sale sale sale .";
+    padding-bottom: 2em;
   }
 }
 
 @media screen and (max-width: 476px) {
-
-  .div-home-about-text{
+  .div-home-about-text {
     grid-area: textAbout;
-    padding-top: 3em;
+    padding-top: 2em;
     margin-left: 3em;
     margin-right: 0.5em;
-  } 
-  .p-text{
+  }
+  .p-text {
     font-size: 9px;
     font-weight: 200;
     color: rgb(0, 0, 0);
-    font-family: 'Raleway', ;
+    font-family: "Raleway";
     line-height: 15px;
   }
-  .p-name1{
-    margin-right: 2em;
-    font-size: 15px;
+  .p-name1 {
+    margin-right: 1em;
+    font-size: 13px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 25px;
+    font-family: "Raleway", 300;
+    line-height: 20px;
   }
-  .img-hotel1{
+  .img-hotel1 {
     grid-area: img1;
     margin-top: 0em;
     margin-left: 0em;
     height: 0px;
     width: 0px;
   }
-  
-  .img-hotel2{
+
+  .img-hotel2 {
     grid-area: img2;
     margin-top: -11em;
     padding-bottom: 10em;
@@ -1559,91 +1686,120 @@
     margin-right: 11em;
   }
 
-
-
-
-  .div-2-page{
-    grid-area: block1;
-    display: grid;
-    grid-template-columns: 20px 1fr 1fr 1fr 15px;
-    grid-template-areas: 
-    ". title1 title1 title1 ."
-    ". sale1 sale2 sale3 ."
-    ;
-    margin-bottom: 1em;
-    margin-left: -17%;
-    margin-right: -30%;
+  .div-3-video {
+    grid-area: video1;
+    height: 14em;
+    text-align: center;
+    background-size: 100% 700px;
+    background-color: #1f1f1f;
+    background-image: url("https://preview.colorlib.com/theme/montana/img/video/xvideo.png.pagespeed.ic.0n1b-AC7zr.jpg");
   }
-  .p-2-name{
-    font-size: 18px;
+
+  .p-3-title {
+    padding-top: 5em;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+  .p-3-text {
+    text-align: center;
+    font-size: 15px;
+    margin-left: 8em;
+    margin-right: 8em;
+    color: white;
+    font-weight: 300;
+    font-family: "Raleway", 300;
+  }
+
+  .button-video {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    line-height: 28px;
+    font-size: 15px;
+    color: #009dff;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+
+
+
+  .p-2-name {
+    font-size: 14px;
     color: rgb(0, 0, 0);
     font-weight: 300;
-    font-family: 'Raleway', 300;
-    line-height: 15px;
-    margin-bottom: -1em;
+    font-family: "Raleway", 300;
+    line-height: 5px;
+    padding-bottom: 0em;
   }
 
-  .div-2-sale-1{
-    grid-area: sale1;
-    /* padding-top: 0em; */
-    /* padding-left: 1em; */
-  }
-  
-  .div-2-sale-2{
-    grid-area: sale2;
-    padding-left: 0em;
-  }
-  
-  .div-2-sale-3{
-    grid-area: sale3;
-    padding-left: 0em;
+  .div-block2 {
+    grid-area: sale;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .p-2-sale-text{
-    line-height: 6px;
-    font-size: 0.5em;
+  .p-2-sale-text {
+    font-size: 6px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 2px;
   }
-  
-  .div-2-title{
-    grid-area: title1;
-    text-align: center;
-  }
-  
-  .p-2-sale-title{
+
+  .p-2-sale-title {
     padding-top: 0.5em;
     font-size: 7px;
     color: rgb(0, 0, 0);
+    line-height: 12px;
     font-weight: 300;
-    font-family: 'Raleway', 300;
-    margin-right: 2em;
-  }
-  
-  .button-sale{
-    background-color: white;
-    border-color: rgb(0, 140, 255);
-    color:rgb(0, 140, 255);
-    height: 1.9em;
-    width: 90%;
-    font-weight: 300;
-    font-size: 0.8em;
-}
-  
-  .button-sale:hover{
-    background-color: rgb(0, 140, 255);
-    border-color: rgb(0, 140, 255);
-    color:rgb(255, 255, 255);
-    height: 1.9em;
-    width: 90%;
-    font-weight: 300;
-    font-size: 0.8em;   
-  }
-  
-  .p-2-sale-text-2{
-    font-size: 0.5em;
-    font-family: 'Raleway', 300;
+    font-family: "Raleway", 300;
+    margin-right: 1em;
   }
 
-  .img-2-sale{
-    width: 90px;
+  .p-2-sale-text-2 {
+    font-size: 0.4em;
+    font-family: "Raleway", 300;
+  }
+
+  .button-sale {
+    background-color: white;
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(0, 140, 255);
+    height: 1.5em;
+    width: 100%;
+    font-weight: 300;
+    border-radius: 4px;
+  }
+  
+  .button-sale:hover {
+    background-color: rgb(0, 140, 255);
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(255, 255, 255);
+    height: 1.5em;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 300;
+  }
+
+  .div-2-sale-1 {
+    padding-right: 0em;
+  }
+
+  .div-2-page {
+    grid-area: block1;
+    display: grid;
+    grid-template-columns: 2% 1fr 1fr 1fr 8%;
+    grid-template-areas:
+      ". . title1 . ."
+      ". sale sale sale .";
+    padding-bottom: 2em;
   }
 }
