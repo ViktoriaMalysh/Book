@@ -179,7 +179,7 @@ function Home() {
             <i className="fa fa-play">&#9658;</i>
           </a>
         </div>
-        {/* <div className="div-4-block4">
+        <div className="div-4-block4">
           <div className="div-4-text">
             <p className="p-4-title">Delicious Food</p>
             <p className="p-4-name">We Serve Fresh and Delicious Food</p>
@@ -199,7 +199,7 @@ function Home() {
             className="img-4-hotel2"
             src="https://preview.colorlib.com/theme/montana/img/about/x2.png.pagespeed.ic.TMQb44M-no.webp"
           ></img>
-        </div> */}
+        </div>
 
         
         {/* <div className="div-5-title">

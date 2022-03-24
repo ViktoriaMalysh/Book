@@ -17,7 +17,6 @@ function Header() {
     dispatch(fetchVerifyToken(token));
     // dispatch(showMyTickets(store.users.userId));
     // dispatch(showSaleTickets());
-
   }, []);
 
   return (
@@ -230,5 +229,7 @@ function Header() {
     </div>
   );
 }
+
+
 
 export default Header;

@@ -23,16 +23,10 @@
 
 .div-2-block2 {
   grid-area: block2;
+  margin-bottom: 12em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: ". textAbout textAbout img1 img2 .";
-}
-
-.div-4-block4 {
-  grid-area: block4;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". img41 img42 textAbout4 textAbout4 .";
 }
 
 .div-home-slider {
@@ -67,16 +61,17 @@
 .img-hotel2 {
   grid-area: img2;
   padding-top: 15em;
-  padding-bottom: 10em;
+  /* padding-bottom: 10em; */
+  height: 610px;
 }
 
 .p-name1 {
-  margin-right: 2em;
+  margin-right: 1em;
   font-size: 50px;
   color: rgb(0, 0, 0);
   font-weight: 300;
   font-family: "Raleway", 300;
-  line-height: 80px;
+  line-height: 70px;
 }
 
 .p-2-title {
@@ -152,6 +147,7 @@
 .div-3-video {
   grid-area: video1;
   height: 43.5em;
+  margin-bottom: 10em;
   text-align: center;
   background-size: 100% 700px;
   background-color: #1f1f1f;
@@ -216,22 +212,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.div-4-block4 {
+  grid-area: block4;
+  margin-bottom: 9em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". img41 img42 textAbout4 textAbout4 .";
+}
+
 .div-4-text {
   grid-area: textAbout4;
-  padding-top: 12em;
+  margin-top: 2em;
   margin-left: 3em;
 }
 
 .img-4-hotel1 {
   grid-area: img41;
-  padding-top: 12em;
   margin-left: 7em;
 }
 
 .img-4-hotel2 {
   grid-area: img42;
-  padding-top: 15em;
-  padding-bottom: 10em;
+  margin-top: 3em;
   margin-left: 1em;
 }
 
@@ -535,10 +537,11 @@
 @media screen and (max-width: 1800px) {
   .div-home-about-text {
     grid-area: textAbout;
-    padding-top: 10em;
+    padding-top: 12em;
     margin-left: 5em;
     margin-right: 5em;
   }
+
   .p-title1 {
     color: rgb(83, 186, 255);
   }
@@ -550,14 +553,16 @@
     font-family: "Raleway";
     line-height: 28px;
   }
+
   .p-name1 {
-    margin-right: 2em;
+    margin-right: 0.5em;
     font-size: 40px;
     color: rgb(0, 0, 0);
     font-weight: 300;
     font-family: "Raleway", 300;
-    line-height: 65px;
+    line-height: 55px;
   }
+
   .img-hotel1 {
     grid-area: img1;
     margin-left: 2em;
@@ -566,10 +571,65 @@
 
   .img-hotel2 {
     grid-area: img2;
-    padding-bottom: 10em;
-    height: 710px;
-    margin-left: 1em;
+    /* padding-bottom: 10em; */
+    height: 580px;
+    margin-left: 0.5em;
   }
+
+
+
+
+  .div-4-block4 {
+    grid-area: block4;
+    margin-bottom: 9em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". img41 img42 textAbout4 textAbout4 .";
+  }
+  
+  .div-4-text {
+    grid-area: textAbout4;
+    margin-top: 2em;
+    margin-left: 3em;
+  }
+  
+  .img-4-hotel1 {
+    grid-area: img41;
+    margin-left: 7em;
+    height: 580px;
+  }
+  
+  .img-4-hotel2 {
+    grid-area: img42;
+    margin-top: 3em;
+    margin-left: 1em;
+    height: 580px;
+  }
+  
+  .p-4-title {
+    color: rgb(83, 186, 255);
+  }
+  
+  .p-4-text {
+    font-size: 18px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 28px;
+    margin-right: 7em;
+  }
+  
+  .p-4-name {
+    margin-right: 2em;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    font-family: "Raleway", 300;
+    line-height: 80px;
+  }
+
+
+
   .p-3-title {
     padding-top: 13em;
     font-size: 16px;
@@ -589,10 +649,6 @@
     font-family: "Raleway", 300;
   }
 
-
-
-
-
   .p-2-name {
     font-size: 40px;
     color: rgb(0, 0, 0);
@@ -601,7 +657,7 @@
     line-height: 30px;
     padding-bottom: 1.7em;
   }
-  
+
   .div-2-page {
     grid-area: block1;
     display: grid;
@@ -619,12 +675,12 @@
   .div-2-sale-1 {
     padding: 2em;
   }
-  
+
   .div-2-title {
     grid-area: title1;
     text-align: center;
   }
-  
+
   .p-2-sale-title {
     padding-top: 2em;
     font-size: 24px;
@@ -633,7 +689,7 @@
     font-family: "Raleway", 300;
     margin-right: 2em;
   }
-  
+
   .button-sale {
     background-color: white;
     border: 1px solid rgb(0, 140, 255);
@@ -643,7 +699,7 @@
     font-weight: 300;
     border-radius: 4px;
   }
-  
+
   .button-sale:hover {
     background-color: rgb(0, 140, 255);
     border: 1px solid rgb(0, 140, 255);
@@ -653,13 +709,61 @@
     border-radius: 4px;
     font-weight: 300;
   }
-  
+
   .p-2-sale-text-2 {
     font-size: 1.2em;
     font-family: "Raleway", 300;
   }
-  .img-2-sale{
+  .img-2-sale {
     width: 100%;
+  }
+
+  .div-4-block4 {
+    grid-area: block4;
+    display: grid;
+    /* margin-bottom: 5em; */
+    grid-template-columns: 15% 1fr 1fr 1fr 1fr 15%;
+    grid-template-areas: ". img41 img42 textAbout4 textAbout4 .";
+  }
+
+  .div-4-text {
+    grid-area: textAbout4;
+    /* margin-top: 12em; */
+    margin-right: 1em;
+    margin-left: 4em;
+  }
+
+  .img-4-hotel1 {
+    grid-area: img41;
+    /* margin-top: 2em; */
+    margin-left: 6em;
+    height: 530px;
+  }
+
+  .img-4-hotel2 {
+    grid-area: img42;
+    /* padding-top: 0em; */
+    margin-top: 3em;
+    margin-left: 1em;
+    height: 580px;
+  }
+
+  .p-4-text {
+    font-size: 16px;
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+    font-family: "Raleway";
+    line-height: 28px;
+    margin-right: 0em;
+  }
+
+  .p-4-name {
+    margin-right: 0.5em;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    font-family: "Raleway", 300;
+    line-height: 55px;
   }
 }
 
@@ -691,7 +795,7 @@
   }
   .div-home-about-text {
     grid-area: textAbout;
-    padding-top: 10em;
+    padding-top: 12em;
     margin-left: 11em;
     margin-right: 2.5em;
   }
@@ -723,60 +827,17 @@
 
   .img-hotel2 {
     grid-area: img2;
-    /* margin-top: 13em; */
-    padding-bottom: 10em;
-    height: 710px;
+    margin-left: 1em;
+    /* padding-bottom: 10em; */
+    height: 590px;
     margin-right: 8em;
   }
 
-  .div-4-block4 {
-    grid-area: block4;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". img41 img42 textAbout4 textAbout4 .";
-  }
-
-  .div-4-text {
-    grid-area: textAbout4;
-    padding-top: 12em;
-    /* margin-right: -10em; */
-    /* background-color: blueviolet; */
-  }
-
-  .img-4-hotel1 {
-    grid-area: img41;
-    padding-top: 12em;
-    margin-left: 0em;
-    height: 530px;
-  }
-
-  .img-4-hotel2 {
-    grid-area: img42;
-    padding-top: 15em;
-    padding-bottom: 10em;
-    margin-left: 1em;
-    height: 710px;
-  }
-
-  .p-4-text {
-    font-size: 16px;
-    font-weight: 200;
-    color: rgb(0, 0, 0);
-    font-family: "Raleway";
-    line-height: 28px;
-    margin-right: 0em;
-  }
-
-  .p-4-name {
-    margin-right: 0em;
-    font-size: 31px;
-    color: rgb(0, 0, 0);
-    font-weight: 300;
-    font-family: "Raleway", 300;
-    line-height: 50px;
-  }
 
 
+
+
+ 
 
   .p-2-name {
     font-size: 35px;
@@ -844,9 +905,9 @@
   }
   .div-home-about-text {
     grid-area: textAbout;
-    padding-top: 7em;
+    padding-top: 8em;
     margin-left: 8em;
-    margin-right: 1em;
+    margin-right: 0em;
   }
   .p-title1 {
     color: rgb(83, 186, 255);
@@ -860,7 +921,7 @@
     line-height: 28px;
   }
   .p-name1 {
-    margin-right: 2em;
+    margin-right: 0em;
     font-size: 25px;
     color: rgb(0, 0, 0);
     font-weight: 300;
@@ -877,13 +938,10 @@
   .img-hotel2 {
     grid-area: img2;
     margin-top: -3em;
-    padding-bottom: 10em;
-    height: 680px;
+    /* padding-bottom: 10em; */
+    height: 550px;
     margin-right: 8em;
   }
-
-
-
 
   .div-3-video {
     grid-area: video1;
@@ -912,54 +970,10 @@
     font-family: "Raleway", 300;
   }
 
-  .div-4-block4 {
-    grid-area: block4;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "img41 img42 textAbout4 textAbout4 textAbout4 textAbout4";
-  }
 
-  .div-4-text {
-    grid-area: textAbout4;
-    padding-top: 12em;
-    margin-right: 8em;
-  }
+ 
 
-  .img-4-hotel1 {
-    grid-area: img41;
-    padding-top: 12em;
-    margin-left: 8em;
-    height: 500px;
-  }
-
-  .img-4-hotel2 {
-    grid-area: img42;
-    padding-top: 15em;
-    padding-bottom: 10em;
-    margin-left: 1em;
-    height: 680px;
-  }
-
-  .p-4-text {
-    font-size: 15px;
-    font-weight: 200;
-    color: rgb(0, 0, 0);
-    font-family: "Raleway";
-    line-height: 28px;
-    margin-right: 0em;
-  }
-
-  .p-4-name {
-    margin-right: 0em;
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-    font-weight: 300;
-    font-family: "Raleway", 300;
-    line-height: 40px;
-  }
-
-
-
+ 
 
 
 
@@ -1024,6 +1038,8 @@
   }
   .div-2-block2 {
     grid-area: block2;
+    margin-bottom: 6em;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "textAbout textAbout textAbout textAbout img1 img2";
@@ -1059,8 +1075,8 @@
   .img-hotel2 {
     grid-area: img2;
     margin-top: -3em;
-    padding-bottom: 10em;
-    height: 630px;
+    /* padding-bottom: 10em; */
+    height: 490px;
     margin-right: 5em;
   }
 
@@ -1090,12 +1106,6 @@
     font-weight: 300;
     font-family: "Raleway", 300;
   }
-
-
-
-
-
-
 
   .p-2-name {
     font-size: 30px;
@@ -1135,7 +1145,6 @@
     font-family: "Raleway", 300;
   }
 
-
   .button-sale {
     background-color: white;
     border: 1px solid rgb(0, 140, 255);
@@ -1145,7 +1154,7 @@
     font-weight: 300;
     border-radius: 4px;
   }
-  
+
   .button-sale:hover {
     background-color: rgb(0, 140, 255);
     border: 1px solid rgb(0, 140, 255);
@@ -1159,6 +1168,14 @@
   .div-2-sale-1 {
     padding-right: 1em;
   }
+
+
+
+
+
+  
+
+
 }
 
 @media screen and (max-width: 900px) {
@@ -1194,10 +1211,14 @@
   .img-hotel2 {
     grid-area: img2;
     margin-top: -5em;
-    padding-bottom: 10em;
-    height: 610px;
+    /* padding-bottom: 10em; */
+    height: 460px;
     margin-right: 3.5em;
   }
+
+
+
+
 
 
 }
@@ -1234,9 +1255,8 @@
 
   .img-hotel2 {
     grid-area: img2;
-    margin-top: -5em;
-    padding-bottom: 10em;
-    height: 580px;
+    margin-top: -6em;
+    height: 450px;
     margin-right: 3.5em;
   }
 
@@ -1281,9 +1301,6 @@
     border-radius: 50%;
   }
 
-
-
-
   .p-2-name {
     font-size: 23px;
     color: rgb(0, 0, 0);
@@ -1322,7 +1339,6 @@
     font-family: "Raleway", 300;
   }
 
-
   .button-sale {
     background-color: white;
     border: 1px solid rgb(0, 140, 255);
@@ -1332,7 +1348,7 @@
     font-weight: 300;
     border-radius: 4px;
   }
-  
+
   .button-sale:hover {
     background-color: rgb(0, 140, 255);
     border: 1px solid rgb(0, 140, 255);
@@ -1379,13 +1395,14 @@
   }
   .div-2-block2 {
     grid-area: block2;
+    margin-bottom: -5em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "textAbout textAbout textAbout textAbout img2 img2";
   }
   .div-home-about-text {
     grid-area: textAbout;
-    padding-top: 5em;
+    padding-top: 7em;
     margin-left: 5em;
     margin-right: 0.5em;
   }
@@ -1413,17 +1430,18 @@
     width: 0px;
   }
 
+  /* .img-hotel2 {
+    grid-area: img2;
+    margin-top: 8em;
+    height: 480px;
+    margin-right: 18em;
+  } */
   .img-hotel2 {
     grid-area: img2;
-    margin-top: -8em;
-    padding-bottom: 10em;
-    height: 610px;
-    margin-right: 18em;
+    margin-top: -9em;
+    height: 450px;
+    margin-right: 3.5em;
   }
-
-
-
-
 
   .p-2-name {
     font-size: 23px;
@@ -1463,7 +1481,6 @@
     font-family: "Raleway", 300;
   }
 
-
   .button-sale {
     background-color: white;
     border: 1px solid rgb(0, 140, 255);
@@ -1473,7 +1490,7 @@
     font-weight: 300;
     border-radius: 4px;
   }
-  
+
   .button-sale:hover {
     background-color: rgb(0, 140, 255);
     border: 1px solid rgb(0, 140, 255);
@@ -1525,9 +1542,9 @@
 
   .img-hotel2 {
     grid-area: img2;
-    margin-top: -9em;
-    padding-bottom: 10em;
-    height: 580px;
+    margin-top: -8em;
+    /* padding-bottom: 10em; */
+    height: 410px;
     margin-right: 15em;
   }
 
@@ -1571,9 +1588,6 @@
     -moz-border-radius: 50%;
     border-radius: 50%;
   }
-
-
-
 
   .p-2-name {
     font-size: 21px;
@@ -1622,7 +1636,7 @@
     font-weight: 300;
     border-radius: 4px;
   }
-  
+
   .button-sale:hover {
     background-color: rgb(0, 140, 255);
     border: 1px solid rgb(0, 140, 255);
@@ -1649,11 +1663,20 @@
 }
 
 @media screen and (max-width: 476px) {
+  .div-2-block2 {
+    grid-area: block2;
+    margin-bottom: -8em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "textAbout textAbout textAbout textAbout img2 img2";
+  }
+
   .div-home-about-text {
     grid-area: textAbout;
     padding-top: 2em;
     margin-left: 3em;
     margin-right: 0.5em;
+    /* margin-bottom: -20em; */
   }
   .p-text {
     font-size: 9px;
@@ -1680,10 +1703,12 @@
 
   .img-hotel2 {
     grid-area: img2;
-    margin-top: -11em;
-    padding-bottom: 10em;
-    height: 520px;
-    margin-right: 11em;
+    margin-top: -12em;
+    margin-right: 2em;
+    /* padding-bottom: 0em; */
+    height: 380px;
+    width: 130px;
+    /* margin-right: 3em; */
   }
 
   .div-3-video {
@@ -1727,9 +1752,6 @@
     -moz-border-radius: 50%;
     border-radius: 50%;
   }
-
-
-
 
   .p-2-name {
     font-size: 14px;
@@ -1775,10 +1797,11 @@
     color: rgb(0, 140, 255);
     height: 1.5em;
     width: 100%;
+    font-size: 0.7em;
     font-weight: 300;
     border-radius: 4px;
   }
-  
+
   .button-sale:hover {
     background-color: rgb(0, 140, 255);
     border: 1px solid rgb(0, 140, 255);
