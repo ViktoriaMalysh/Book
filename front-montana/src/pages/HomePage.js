@@ -6,7 +6,29 @@ import { Button, Modal } from "react-bootstrap";
 import { connect, useDispatch, useSelector } from "react-redux";
 // import { addTicket, showSaleTickets } from "../redux/actionTickets";
 import { fetchVerifyToken } from "../redux/actionUsers";
+import Carousel from "react-multi-carousel";
 import { showSaleRooms } from "../redux/actionTickets";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 3,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 476 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 476, min: 0 },
+    items: 2,
+  },
+};
 
 function Home() {
   const store = useSelector((state) => state);
@@ -139,32 +161,44 @@ function Home() {
 
             <p className="p-2-name">Ongoing Offers</p>
           </div>
-
           <div className="div-block2">
-            {store.tickets.showSale.map((item) => (
-              <div className="div-2-sale-1">
-                <img className="img-2-sale" src={item.url}></img>
-                <p className="p-2-sale-title">
-                  Up to 35% savings on Club rooms and Suites
-                </p>
-                <p className="p-2-sale-text">&#8226; Luxaries condition</p>
-                <p className="p-2-sale-text">
-                  &#8226; 3 Adults & 2 Children size
-                </p>
-                <p className="p-2-sale-text">&#8226; Sea view side</p>
-                <p className="p-2-sale-text-2">
-                  Price Bofore: $ {item.priceBefore} (After $ {item.priceAfter})
-                </p>
-                <p className="p-2-sale-text">Discount: $ {item.discount}</p>
-                {store.users.isAuth ? (
-                  <button className="button-sale" onClick={() => handleBook(1)}>
-                    Book Now
-                  </button>
-                ) : (
-                  <div></div>
-                )}
-              </div>
-            ))}
+            <Carousel 
+              responsive={responsive} 
+              infinite={true} 
+              draggable={true}
+              autoPlay={true}
+            >
+              {store.tickets.showSale.map((item) => (
+                <div className="div-2-sale-1">
+                  {/* <div> */}
+                  <img className="img-2-sale" src={item.url}></img>
+                  <p className="p-2-sale-title">
+                    Up to 35% savings on Club rooms and Suites
+                  </p>
+                  <p className="p-2-sale-text">&#8226; Luxaries condition</p>
+                  <p className="p-2-sale-text">
+                    &#8226; 3 Adults & 2 Children size
+                  </p>
+                  <p className="p-2-sale-text">&#8226; Sea view side</p>
+                  <p className="p-2-sale-text-2">
+                    Price Bofore: $ {item.priceBefore} (After ${" "}
+                    {item.priceAfter})
+                  </p>
+                  <p className="p-2-sale-text">Discount: $ {item.discount}</p>
+                  {store.users.isAuth ? (
+                    <button
+                      className="button-sale"
+                      onClick={() => handleBook(1)}
+                    >
+                      Book Now
+                    </button>
+                  ) : (
+                    <div></div>
+                  )}
+                </div>
+                // </div>
+              ))}
+            </Carousel>{" "}
           </div>
         </div>
 
@@ -201,13 +235,12 @@ function Home() {
           ></img>
         </div>
 
-        
-        {/* <div className="div-5-title">
+        <div className="div-5-title">
           <p className="p-5-title">Featured Rooms</p>
           <p className="p-5-text">Choose a Better Room</p>
-        </div> */}
+        </div>
 
-        {/* <div className="room1 overlay1">
+        <div className="room1 overlay1">
           <div className="room-text">
             <p className="room-price" id="featuredRooms">
               From $250/night
@@ -220,8 +253,8 @@ function Home() {
             <p className="room-price">From $250/night</p>
             <p className="room-title">Deluxe Room</p>
           </div>
-        </div> */}
-        {/* <div className="room3 overlay1">
+        </div>
+        <div className="room3 overlay1">
           <div className="room-text">
             <p className="room-price">From $250/night</p>
             <p className="room-title">Signature Room</p>
@@ -232,7 +265,7 @@ function Home() {
             <p className="room-price">From $250/night</p>
             <p className="room-title">Couple Room</p>
           </div>
-        </div> */}
+        </div>
 
         {/* <div className="div-6-tell">
           <p className="p-6-tell">For Reservation 0r Query?</p>
