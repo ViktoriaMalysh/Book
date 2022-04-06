@@ -1,15 +1,22 @@
 .div-page-profile{
+  min-height: 63em;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 20% 1fr 1fr 1fr 1fr 1fr 1fr 20%;
   grid-template-areas: 
   ". blockProfile blockProfile blockProfile blockProfile blockProfile blockProfile ."
   ;
 }
 
+.img-fon{
+  opacity: 0.5;
+  z-index: 1;
+  height: 62em;
+}
+
 .div-profile{
   grid-area: blockProfile;
-  min-height: 56em;
-  background-color: rgba(236, 255, 253, 0.815);
+  /* min-height: 60em; */
+  background-color: rgb(248, 252, 251);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: 
@@ -18,18 +25,23 @@
   " . . profileMore profileMore . . "
   " . tickets tickets tickets tickets . "
   " . deleteAccount . . . . "
-
   ;
+  position: relative;
+  z-index: 2;
+  /* opacity: 0; */
 }
 
 .img-header{
   grid-area: headerProfile;
-  width: 1500px;
+  width: 100%;
 }
 
 .img-avatar{
   grid-area: profileAvatar;
-  margin-top: -6em;
+  /* margin-top: -6em; */
+  top: -60%;
+  position: relative;
+  z-index: 3;
   height: 20em;
   width: 20em;
   border-radius: 50em;

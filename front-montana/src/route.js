@@ -64,7 +64,7 @@ export default function AppNav() {
         {/* <Route path="/ticket/aviaTicket" element={<AviaTicket />} /> */}
 
         {/* <Route path="/tickets" element={<Tickets />} /> */}
-        {/* <Route path="/profile" element={<Profile />} /> */}
+        <Route path="/profile" element={<Profile />} />
 
         {/* <Route path="/basket/*" element={<Basket />} /> */}
 

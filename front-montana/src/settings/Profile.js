@@ -7,6 +7,8 @@ import "./profile.css";
 // import { deleteTickets, showMyTickets } from "../redux/actionTickets";
 import { CURRENT_PRICE, DELETE } from "../redux/types";
 import StripeContainer from "../payment/StripeContainer";
+// import 'semantic-ui-css/semantic.min.css'
+import { Segment } from 'semantic-ui-react'
 
 function Profile() {
   let navigate = useNavigate();
@@ -24,7 +26,7 @@ function Profile() {
     if (store.tickets.delete) {
       // dispatch(showMyTickets(store.users.userId));
       // setTimeout(() => {
-        // dispatch({ type: DELETE, payload: false });
+      // dispatch({ type: DELETE, payload: false });
       // }, 600);
     }
   }, [store.tickets.delete]);
@@ -59,6 +61,10 @@ function Profile() {
 
   return (
     <div className="div-page-profile">
+      <img
+        className="img-fon"
+        src="https://images.1plus1.ua/nocache/uploads/site/000/542/082/ce65ead4276a190189f837271050a36f.jpg?v=1565265103"
+      />
       <Modal
         show={show}
         onHide={() => handleClose()}
@@ -77,11 +83,12 @@ function Profile() {
           </Button>
         </Modal.Footer>
       </Modal>
-      <div className="div-profile">
+      <Segment raised className="div-profile ">
+      {/* <div className="div-profile ">     */}
         <img
           alt="Header"
           className="img-header"
-          src="https://fs.tonkosti.ru/sized/c1600x400/0k/5p/0k5pzsquv480ggkckscogwcok.jpg"
+          src="https://images.1plus1.ua/nocache/uploads/site/000/542/082/ce65ead4276a190189f837271050a36f.jpg?v=1565265103"
         />
         <img
           alt="Avatar"
@@ -147,7 +154,8 @@ function Profile() {
         >
           Profile Settings
         </button>
-      </div>
+      {/* </div> */}
+      </Segment>
     </div>
   );
 }

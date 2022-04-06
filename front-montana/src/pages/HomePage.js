@@ -9,6 +9,7 @@ import { fetchVerifyToken } from "../redux/actionUsers";
 import Carousel from "react-multi-carousel";
 import { showSaleRooms } from "../redux/actionTickets";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
 
 const responsive = {
   superLargeDesktop: {
@@ -162,9 +163,9 @@ function Home() {
             <p className="p-2-name">Ongoing Offers</p>
           </div>
           <div className="div-block2">
-            <Carousel 
-              responsive={responsive} 
-              infinite={true} 
+            <Carousel
+              responsive={responsive}
+              infinite={true}
               draggable={true}
               autoPlay={true}
             >
@@ -267,11 +268,11 @@ function Home() {
           </div>
         </div>
 
-        {/* <div className="div-6-tell">
-          <p className="p-6-tell">For Reservation 0r Query?</p>
-          <button className="button-6-tell">+10 576 377 4789</button>
-        </div> */}
-        {/* 
+        <div className="div-6-tell">
+          <p className="p-6-tell-title">For Reservation 0r Query?</p>
+          <p className="p-6-tell-number">+10 576 377 4789</p>
+        </div>
+
         <div className="div-7-instagram">
           <div className="div-7-img1">
             <img
@@ -303,40 +304,67 @@ function Home() {
               src="https://preview.colorlib.com/theme/montana/img/instragram/x5.png.pagespeed.ic.gbYqEWPqMR.webp"
             ></img>
           </div>
-        </div> */}
-        {/* 
+        </div>
+
         <div className="div-8-end">
           <div className="div-8-block1">
-            <p className="p-8-title1">Address</p>
-            <p className="p-8-text1">
+            <p className="p-8-title">Address</p>
+            <p className="p-8-text">
               200, Green road, Mongla, New Yor City USA
             </p>
           </div>
           <div className="div-8-block2">
-            <p className="p-8-title2">Reservation</p>
-            <p className="p-8-text2">
-              +10 367 267 2678 reservation@montana.com
-            </p>
+            <p className="p-8-title">Reservation</p>
+            <p className="p-8-text">+10 367 267 2678 reservation@montana.com</p>
           </div>
           <div className="div-8-block3">
-            <p className="p-8-title1">Navigation</p>
-            <Link className="p-8-text31" to='/'>Home</Link><br/>
-            <Link className="p-8-text33" to='/tickets'>Rooms</Link><br/>
-            <Link className="p-8-text34" to='/'>Sale</Link>
+            <p className="p-8-title">Navigation</p>
+            <Link className="p-8-text-link" to="/">
+              Home
+            </Link>
+            <br />
+            <Link className="p-8-text-link" to="/tickets">
+              Rooms
+            </Link>
+            <br />
+            <Link className="p-8-text-link" to="/">
+              Sale
+            </Link>
           </div>
 
           <div className="div-8-block4">
             <img
-              style={{ width: "400px", marginLeft: "0em", height: "240px" }}
+              style={{ width: "100%", marginLeft: "0em", height: "100%" }}
               src="https://pngimg.com/uploads/seashell/seashell_PNG84.png"
             />
           </div>
-    
-          <p className="p-9-text">
-            Copyright ©2022 All rights reserved | This template is made with by
-            Colorlib
-          </p>
-        </div> */}
+
+          <div className="div-9-block">
+            <div className="div-9-line" />
+
+            <p className="p-9-text">
+              Copyright ©2022 All rights reserved | This template is made with
+              by Colorlib
+            </p>
+
+            <div className="div-9-icon">
+              <base target="_blank"></base>
+              <a href="https://www.instagram.com/" className="img-9-icon">
+                <img src="https://img.icons8.com/material-rounded/24/ffffff/instagram-new.png"></img>
+              </a>
+
+              <base target="_blank"></base>
+              <a href="https://uk-ua.facebook.com/" className="img-9-icon">
+                <img src="https://img.icons8.com/material-sharp/24/ffffff/facebook-new.png"></img>
+              </a>
+
+              <base target="_blank"></base>
+              <a href="https://twitter.com/" className="img-9-icon">
+                <img src="https://img.icons8.com/material-sharp/24/ffffff/twitter-squared.png"></img>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
