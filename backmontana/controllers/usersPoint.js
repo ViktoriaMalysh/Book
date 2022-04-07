@@ -196,6 +196,7 @@ module.exports.verifyToken = async function (req, res) {
       res.status(404).json({ message: 'invalid token' })
     }else{
       const check_user = await checkUser(decode_token.email);
+     console.log('check_user.phone', check_user.phone)
       await jwt.verify(token, keys.jwt, function (err, decoded) {
         const newToken = jwt.sign(
           {
@@ -214,7 +215,7 @@ module.exports.verifyToken = async function (req, res) {
           lastName: check_user.lastName,
           gender: check_user.gender,
           country: check_user.country,
-          dateOfBirth: check_user.dateOfBirth,
+          dateOfBirth: check_user.dateOfBirth,   
           phone: check_user.phone,
           email: check_user.email,
           isAdmin: check_user.isAdmin,

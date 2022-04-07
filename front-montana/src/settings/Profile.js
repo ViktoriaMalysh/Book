@@ -8,7 +8,7 @@ import "./profile.css";
 import { CURRENT_PRICE, DELETE } from "../redux/types";
 import StripeContainer from "../payment/StripeContainer";
 // import 'semantic-ui-css/semantic.min.css'
-import { Segment } from 'semantic-ui-react'
+import { Segment, Table, Label } from "semantic-ui-react";
 
 function Profile() {
   let navigate = useNavigate();
@@ -84,28 +84,82 @@ function Profile() {
         </Modal.Footer>
       </Modal>
       <Segment raised className="div-profile ">
-      {/* <div className="div-profile ">     */}
+      <Label as='a' color={store.users.userGender ==="female" ? "pink" : "blue"} className='label-gender' ribbon>
+         {store.users.userGender}
+        </Label>
         <img
           alt="Header"
           className="img-header"
           src="https://images.1plus1.ua/nocache/uploads/site/000/542/082/ce65ead4276a190189f837271050a36f.jpg?v=1565265103"
         />
+        <>
+        {/* <Label as='a' color='red' className='label-gender' ribbon>
+          Overview
+        </Label> */}
         <img
           alt="Avatar"
           className="img-avatar"
           src="https://okeygeek.ru/wp-content/uploads/2020/03/no_avatar.png"
         />
+        </>
+
         <div className="div-myself">
-          <p className="p-profile-name">
+          <div className="div-name">
+            <p className="p-profile-name">
+              {store.users.userFirstName}
+              {"  "}
+              {store.users.userLastName}
+            </p>
+            <p className="p-profile-country">
+              {store.users.userCountry}
+            </p>
+          </div>
+
+          <div className="div-profile-button-sett">
+            <button
+              variant="warning"
+              className="button-settings"
+              onClick={() => navigate("/settings/profile")}
+            >
+              Profile Settings
+            </button>
+          </div>
+
+          <div className="div-about">
+            <Table color="teal">
+              <Table.Body>
+                <Table.Row>
+                  <Table.Cell>Gender</Table.Cell>
+                  <Table.Cell>{store.users.userGender}</Table.Cell>
+                </Table.Row>
+
+                <Table.Row>
+                  <Table.Cell>Email</Table.Cell>
+                  <Table.Cell>{store.users.userEmail}</Table.Cell>
+                </Table.Row>
+
+                <Table.Row>
+                  <Table.Cell>Date Of Birth</Table.Cell>
+                  <Table.Cell>{store.users.userDateOfBirth}</Table.Cell>
+                </Table.Row>
+
+                <Table.Row>
+                  <Table.Cell>Phone Number</Table.Cell>
+                  <Table.Cell>{store.users.userPhoneN}</Table.Cell>
+                </Table.Row>
+              </Table.Body>
+            </Table>
+          </div>
+          {/* <p className="p-profile-name">
             {store.users.userName}
             {"  "}
             {store.users.userSurname}
           </p>
           <p className="p-profile-country">{store.users.userCountry}</p>
 
-          <p className="p-profile-myself">{store.users.userEmail}</p>
+          <p className="p-profile-myself">{store.users.userEmail}</p> */}
 
-          {more ? (
+          {/* {more ? (
             <div className="div-profile-myself">
               <p className="p-profile-myself">
                 Gender:{" "}
@@ -133,28 +187,22 @@ function Profile() {
                 <span className="span-myself" style={{ fontStyle: "italic" }}>
                   +380{store.users.userPhone}
                 </span>
-              </p>
-            </div>
+              </p> */}
+          {/* </div>
           ) : (
             <div></div>
-          )}
+          )} */}
 
-          <Button
+          {/* <Button
             variant="link"
             className="button-more"
             onClick={() => handleMore()}
           >
             {!more ? "More Information..." : "Less Information"}
-          </Button>
+          </Button> */}
         </div>
-        <button
-          variant="warning"
-          className="button-settings"
-          onClick={() => navigate("/settings/profile")}
-        >
-          Profile Settings
-        </button>
-      {/* </div> */}
+
+        {/* </div> */}
       </Segment>
     </div>
   );

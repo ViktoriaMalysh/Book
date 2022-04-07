@@ -15,114 +15,212 @@
 
 .div-profile{
   grid-area: blockProfile;
-  /* min-height: 60em; */
   background-color: rgb(248, 252, 251);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 15% 1fr 1fr 1fr 1fr 15%;
   grid-template-areas: 
   " headerProfile headerProfile headerProfile headerProfile headerProfile headerProfile "
-  " . profileAvatar profileMyself profileMyself profileSettings . "
-  " . . profileMore profileMore . . "
-  " . tickets tickets tickets tickets . "
+  " . profileAvatar profileMyself profileMyself profileMyself . "
   " . deleteAccount . . . . "
   ;
   position: relative;
   z-index: 2;
-  /* opacity: 0; */
 }
 
 .img-header{
   grid-area: headerProfile;
   width: 100%;
+  height: 70%;
 }
 
 .img-avatar{
   grid-area: profileAvatar;
-  /* margin-top: -6em; */
-  top: -60%;
+  top: -70%;
   position: relative;
   z-index: 3;
   height: 20em;
   width: 20em;
   border-radius: 50em;
-  /* background-color: aqua; */
 }
 
 .div-myself{
-  padding-left: 5em;
   grid-area: profileMyself;
-  padding-top: 2em;
-  /* background-color: aquamarine; */
+  margin-top: -25%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  ". nameSurname nameSurname nameSurname nameSurname sett"
+  ". aboutUser aboutUser aboutUser aboutUser ."
+  ;
+}
+
+.div-name{
+  grid-area: nameSurname;
+}
+
+.ui.label.label-gender{
+  margin-top: -10%;
+  height: 40px;
+  width: 60%;
+  font-size: 18px;
+}
+
+.div-about{
+  grid-area: aboutUser;
 }
 
 .p-profile-name{
-  font-size: 2.5em;
+  font-size: 3em;
+  text-align: left;
   font-weight: 300;
+  color: rgb(75, 73, 73);
   font-family: 'Raleway',;
 }
 
-.div-profile-myself{
-  grid-area: profileMore;
-  /* padding-left: 5em; */
-}
-
-/* .div-profile-tickets{
-  padding-top: 5em;
-  padding-left: 1em;
-  grid-area: tickets;
-} */
-
-.p-profile-country{
-  font-size: 1.4em;
-  font-weight: 300;
-  font-family: 'Raleway',;
+.div-profile-button-sett{
+  grid-area: sett;
 }
 
 .button-settings{
   grid-area: profileSettings;
-  margin-top: 3em;
+  margin-top: 0.8em;
   height: 3em;
   width: 10em;
   background-color: white;
-  border-color: rgb(0, 140, 255);
-  color:rgb(0, 140, 255);
+  border: 2px solid rgb(9, 88, 153);
+  border-radius: 3px;
+  color:rgb(9, 88, 153);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .button-settings:hover{
   grid-area: profileSettings;
-  margin-top: 3em;
+  margin-top: 0.8em;
   height: 3em;
   width: 10em;
   color: white;
-  background-color: rgb(0, 140, 255);
-  border-color: rgb(0, 140, 255);
+  background-color: rgb(9, 88, 153);
+  border-color: rgb(9, 88, 153);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.button-more{
-  /* margin-left: -0.9em; */
-}
-
-.p-profile-myself{
-  font-size: 1.1em;
+.p-profile-country{
+  font-size: 1.5em;
   font-weight: 300;
-  font-family: 'Raleway',;
+  font-family: 'Raleway', ;
+  font-style: italic;
+  margin-top: -2em;
+  color: rgba(56, 55, 55, 0.801);
 }
 
-.p-profile-ticket{
+@media screen and (max-width: 1800px) {
+  .div-page-profile{
+    min-height: 50em;
+    display: grid;
+    grid-template-columns: 15% 1fr 1fr 1fr 1fr 1fr 1fr 15%;
+    grid-template-areas: 
+    ". blockProfile blockProfile blockProfile blockProfile blockProfile blockProfile ."
+    ;
+  }
+  
+  .img-fon{
+    opacity: 0.5;
+    z-index: 1;
+    height: 100hv;
+  }
+  
+  .div-profile{
+    grid-area: blockProfile;
+    background-color: rgb(248, 252, 251);
+    display: grid;
+    grid-template-columns: 15% 1fr 1fr 1fr 1fr 15%;
+    grid-template-areas: 
+    " headerProfile headerProfile headerProfile headerProfile headerProfile headerProfile "
+    " . profileAvatar profileMyself profileMyself profileMyself . "
+    " . deleteAccount . . . . "
+    ;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .img-header{
+    grid-area: headerProfile;
+    width: 100%;
+    height: 60%;
+  }
+  
+  .img-avatar{
+    grid-area: profileAvatar;
+    top: -80%;
+    position: relative;
+    z-index: 3;
+    height: 17em;
+    width: 17em;
+    border-radius: 50em;
+  }
+  
+  .div-myself{
+    grid-area: profileMyself;
+    margin-top: -35%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". nameSurname nameSurname nameSurname nameSurname sett"
+    ". aboutUser aboutUser aboutUser aboutUser ."
+    ;
+  }
+  
+  .div-name{
+    grid-area: nameSurname;
+  }
+  
+  .ui.label.label-gender{
+    margin-top: -10%;
+    height: 35px;
+    width: 50%;
+    font-size: 15px;
+  }
+  
+  .div-about{
+    grid-area: aboutUser;
+    margin-top: -20%;
+  }
+  
+  .p-profile-name{
+    font-size: 2.5em;
+    text-align: left;
+    font-weight: 300;
+    color: rgb(75, 73, 73);
+    font-family: 'Raleway',;
+  }
+  
+  .p-profile-country{
+    font-size: 1.2em;
+    font-weight: 300;
+    font-family: 'Raleway', ;
+    font-style: italic;
+    margin-top: -2em;
+    color: rgba(56, 55, 55, 0.801);
+  }
+}
+
+
+
+
+
+
+/* .p-profile-ticket{
   font-size: 1.5em;
   font-weight: 300;
   font-family: 'Raleway',;
   padding-bottom: 1em;
 }
-
-.card-ticket{
-  margin-bottom: 5em;
-}
-
-/* .card-ticket-profile{
-  width: 18rem; 
-  margin: 1.4em;
-} */
 
 .button-cancel-book{
   margin-top: 1em;
@@ -132,9 +230,9 @@
   background-color: white;
   border-color: rgb(255, 51, 0);
   color:rgb(255, 0, 0);
-}
+} */
 
-.button-cancel-book:hover{
+/* .button-cancel-book:hover{
   margin-top: 1em;
   margin-left: 2em;
   height: 3em;
@@ -142,16 +240,16 @@
   color: white;
   background-color: rgb(255, 51, 0);
   border-color: rgb(255, 51, 0);
-}
+} */
 
-.div-button-delete{
+/* .div-button-delete{
   grid-area: deleteAccount;
   margin-top: 1em;
   margin-left: 2em;
   margin-bottom: 2em;
-}
+} */
 
-.button-delete{
+/* .button-delete{
   margin-top: 1em;
   margin-bottom: 5em;
   height: 3em;
@@ -159,17 +257,17 @@
   background-color: white;
   border-color: rgb(255, 51, 0);
   color:rgb(255, 0, 0);
-}
+} */
 
-.button-delete:hover{
+/* .button-delete:hover{
   height: 3em;
   width: 10em;
   color: white;
   background-color: rgb(255, 51, 0);
   border-color: rgb(255, 51, 0);
-}
+} */
 
-.button-buy-ticket{
+/* .button-buy-ticket{
   margin-top: 1em;
   margin-left: 2em;
   height: 3em;
@@ -177,9 +275,9 @@
   background-color: white;
   border-color: rgb(0, 140, 255);
   color:rgb(0, 140, 255);
-}
+} */
 
-.button-buy-ticket:hover{
+/* .button-buy-ticket:hover{
   margin-top: 1em;
   margin-left: 2em;
   height: 3em;
@@ -187,24 +285,24 @@
   color: white;
   background-color: rgb(0, 140, 255);
   border-color: rgb(0, 140, 255);
-}
+} */
 
-.button-block3-save{
+/* .button-block3-save{
   margin-top: 3em;
   height: 3em;
   width: 10em;
   background-color: white;
   border-color: rgb(0, 140, 255);
   color:rgb(0, 140, 255);
-}
+} */
 
-.button-block3-save:hover{
+/* .button-block3-save:hover{
   margin-top: 3em;
   height: 3em;
   width: 10em;
   color: white;
   background-color: rgb(0, 140, 255);
   border-color: rgb(0, 140, 255);
-}
+} */
 
 /* 2b4d0d94d60478aec3d30ec8d214e72ebbfb0bd7 */

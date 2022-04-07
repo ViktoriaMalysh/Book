@@ -37,7 +37,7 @@ export const fetchVerifyToken = (token) => {
         { headers: { authorization: token } }
       );
       if (result.status === 200) {
-        console.log('result', result)
+        console.log('result', result.data.phone)
         localStorage.setItem("token", result.data.token);
         dispatch({ type: IS_AUTH, payload: true });
         dispatch({ type: USER_ID, payload: result.data.id });
