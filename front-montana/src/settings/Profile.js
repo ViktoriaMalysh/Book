@@ -84,8 +84,13 @@ function Profile() {
         </Modal.Footer>
       </Modal>
       <Segment raised className="div-profile ">
-      <Label as='a' color={store.users.userGender ==="female" ? "pink" : "blue"} className='label-gender' ribbon>
-         {store.users.userGender}
+        <Label
+          as="a"
+          color={store.users.userGender === "female" ? "pink" : "blue"}
+          className="label-gender"
+          ribbon
+        >
+          {store.users.userGender}
         </Label>
         <img
           alt="Header"
@@ -93,14 +98,11 @@ function Profile() {
           src="https://images.1plus1.ua/nocache/uploads/site/000/542/082/ce65ead4276a190189f837271050a36f.jpg?v=1565265103"
         />
         <>
-        {/* <Label as='a' color='red' className='label-gender' ribbon>
-          Overview
-        </Label> */}
-        <img
-          alt="Avatar"
-          className="img-avatar"
-          src="https://okeygeek.ru/wp-content/uploads/2020/03/no_avatar.png"
-        />
+          <img
+            alt="Avatar"
+            className="img-avatar"
+            src="https://okeygeek.ru/wp-content/uploads/2020/03/no_avatar.png"
+          />
         </>
 
         <div className="div-myself">
@@ -110,9 +112,7 @@ function Profile() {
               {"  "}
               {store.users.userLastName}
             </p>
-            <p className="p-profile-country">
-              {store.users.userCountry}
-            </p>
+            <p className="p-profile-country">{store.users.userCountry}</p>
           </div>
 
           <div className="div-profile-button-sett">
@@ -145,64 +145,12 @@ function Profile() {
 
                 <Table.Row>
                   <Table.Cell>Phone Number</Table.Cell>
-                  <Table.Cell>{store.users.userPhoneN}</Table.Cell>
+                  <Table.Cell>{store.users.userPhone}</Table.Cell>
                 </Table.Row>
               </Table.Body>
             </Table>
           </div>
-          {/* <p className="p-profile-name">
-            {store.users.userName}
-            {"  "}
-            {store.users.userSurname}
-          </p>
-          <p className="p-profile-country">{store.users.userCountry}</p>
-
-          <p className="p-profile-myself">{store.users.userEmail}</p> */}
-
-          {/* {more ? (
-            <div className="div-profile-myself">
-              <p className="p-profile-myself">
-                Gender:{" "}
-                <span className="span-myself" style={{ fontStyle: "italic" }}>
-                  {store.users.userGender}
-                </span>
-              </p>
-
-              <p className="p-profile-myself">
-                Date Of Birth:{" "}
-                <span className="span-myself" style={{ fontStyle: "italic" }}>
-                  {store.users.dateOfBirth}
-                </span>
-              </p>
-
-              <p className="p-profile-myself">
-                Age:{" "}
-                <span className="span-myself" style={{ fontStyle: "italic" }}>
-                  {store.users.userAge} year
-                </span>
-              </p>
-
-              <p className="p-profile-myself">
-                Phone:{" "}
-                <span className="span-myself" style={{ fontStyle: "italic" }}>
-                  +380{store.users.userPhone}
-                </span>
-              </p> */}
-          {/* </div>
-          ) : (
-            <div></div>
-          )} */}
-
-          {/* <Button
-            variant="link"
-            className="button-more"
-            onClick={() => handleMore()}
-          >
-            {!more ? "More Information..." : "Less Information"}
-          </Button> */}
         </div>
-
-        {/* </div> */}
       </Segment>
     </div>
   );

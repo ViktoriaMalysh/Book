@@ -1,48 +1,45 @@
 .div-change-profile {
-  background-color: rgba(235, 252, 250, 0.514);
+  /* min-height: 63em; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 20% 1fr 1fr 1fr 1fr 1fr 1fr 20%;
+  grid-template-areas: ". blockSett blockSett blockSett blockSett blockSett blockSett .";
+}
+
+.div-block-sett {
+  /* margin-top: -50%; */
+  grid-area: blockSett;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
-    ". . block7 block7 . . . block8 . ."
-    ". . profile profile profile profile profile profile . .";
+   "navBar profile profile profile profile profile";
+
+  position: relative;
+  z-index: 2;
 }
 
-.alert{
-  width: 25em;
+.div-profile-all {
+  grid-area: profile;
+  background-color: blue;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "titleBlock2 titleBlock2 titleBlock2 titleBlock2 titleBlock2 titleBlock2"
+    "myselfChange myselfChange myselfChange myselfChange myselfChange avatarChange ";
 }
 
-.div-prof-sett-block1 {
-  margin-top: 2em;
+.img-sett-fon {
+  opacity: 0.5;
+  z-index: 1;
+  height: 100hv;
+}
+
+/* .div-prof-sett-block1{
   grid-area: block7;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas: "avatarBlock1 titleBlock1 titleBlock1 titleBlock1";
-}
-
-.img-avatar-block1 {
-  grid-area: avatarBlock1;
-  height: 4em;
-  width: 4em;
-  border-radius: 50em;
-}
-
-.div-block1-title {
-  grid-area: titleBlock1;
-  padding-left: -1em;
-}
-
-.p-block1-title {
-  font-size: 1.3em;
-  font-weight: 400;
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-}
-
-.p-block1-text {
-  font-size: 1em;
-  font-weight: 300;
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  margin-top: -1em;
-}
+} */
 
 .button-prof-sett-block1 {
   margin-top: 2em;
@@ -64,101 +61,14 @@
   border-color: rgb(0, 140, 255);
 }
 
-.div-profile-settings {
-  margin-top: 1.5em;
-  grid-area: profile;
-  min-height: 57em;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "navBar block2 block2 block2 block2 ";
-}
-
 .nav-change-profile {
   grid-area: navBar;
-}
-
-.div-prof-sett-block2 {
-  grid-area: block2;
-  height: 5em;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-    "titleBlock2 titleBlock2 titleBlock2 titleBlock2 "  
-    "myselfChange myselfChange myselfChange avatarChange "
-  ;
-}
-
-.div-border-block2{
-  margin-left: 5em;
-  margin-right: 6em;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  border: 0.5px solid rgb(203, 241, 248);
-}
-
-.div-block2 {
-  grid-area: titleBlock2;
-}
-
-.p-block2-title{
-  margin-top: -0.3em;
-  padding-left: 2.9em;
-  font-size: 1.7em;
-  font-weight: 300;
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-}
-
-.div-avatar-change {
-  grid-area: avatarChange;
-  margin-right: 3em;
-}
-
-.img-avatar-change {
-  margin-right: 5em;
-  height: 13em;
-  width: 13em;
-  border-radius: 50em;
-}
-
-.p-avatar-title{
-  font-size: 1.2em;
-  font-weight: 300;
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-}
-
-.div-change-myself {
-  margin-left: 5em;
-  grid-area: myselfChange;
-}
-
-.p-change-myself {
-  margin-bottom: 0.5em;
-  font-size: 1.3em;
-  font-weight: 300;
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-}
-
-.input-change-profile {
-  margin-left: 2em;
-}
-
-.input-data{
-  height: 2em;
-  width: 15em;
-}
-
-.div-nav-link {
-  height: 2em;
-  width: 15em;
-  padding-left: 1.5em;
-  padding-top: 0.2em;
-  font-size: 1em;
-  font-weight: 300;
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  background-color: rgb(167, 144, 189);
 }
 
 .nav-link-profile {
-  background-color: rgb(203, 241, 248);
+  /* background-color: rgb(203, 241, 248); */
+  background-color: blueviolet;
   border: 1px solid white;
 }
 
@@ -173,36 +83,171 @@
   border: 0.5px solid rgb(203, 241, 248);
 }
 
-.p-prof-sett-title {
-  padding-left: 2em;
-  font-size: 0.8em;
-  font-weight: 300;
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+/* .img-avatar-block1 {
+  grid-area: avatarBlock1;
+  height: 4em;
+  width: 4em;
+  border-radius: 50em;
 }
 
-.div-block3{
-  margin-bottom: 1em;
+.div-block1-title {
+  grid-area: titleBlock1;
+  padding-left: -1em;
 }
 
-.input-prof-sett{
-  height: 2em;
+.p-block1-title {
+  font-size: 1.3em;
+  font-weight: 400;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}  */
+
+/* .alert {
   width: 25em;
+} */
+
+.p-block1-text {
+  font-size: 1em;
+  font-weight: 300;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  /* margin-top: -1em; */
 }
 
-.input-prof-sett1{
+.button-prof-sett-block1 {
+  margin-top: 2em;
+  /* grid-area: block8; */
+  height: 3em;
+  width: 15em;
+  background-color: white;
+  border-color: rgb(0, 140, 255);
+  color: rgb(0, 140, 255);
+}
+
+.button-prof-sett-block1:hover {
+  margin-top: 2em;
+  /* grid-area: block8; */
+  height: 3em;
+  width: 15em;
+  color: white;
+  background-color: rgb(0, 140, 255);
+  border-color: rgb(0, 140, 255);
+}
+
+/* .div-prof-sett-block2 {
+  grid-area: profile;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "titleBlock2 titleBlock2 titleBlock2 titleBlock2 titleBlock2"
+    "myselfChange myselfChange myselfChange myselfChange avatarChange ";
+} */
+
+.div-border-block2 {
+  margin-left: 5em;
+  margin-right: 6em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0.5px solid rgb(203, 241, 248);
+}
+
+.div-block2 {
+  grid-area: titleBlock2;
+}
+
+.p-block2-title {
+  margin-top: -0.3em;
+  padding-left: 2.9em;
+  font-size: 1.7em;
+  font-weight: 300;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+.div-avatar-change {
+  grid-area: avatarChange;
+  /* margin-right: 3em; */
+}
+
+.img-avatar-change {
+  /* margin-right: 5em; */
+  height: 13em;
+  width: 13em;
+  border-radius: 50em;
+}
+
+.p-avatar-title {
+  font-size: 1.2em;
+  font-weight: 300;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+.div-change-myself {
+  margin-left: 5em;
+  grid-area: myselfChange;
+}
+
+.p-change-myself {
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+  font-weight: 300;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+.input-change-profile {
+  margin-left: 2em;
+}
+
+.input-data {
   height: 2em;
   width: 15em;
 }
 
-.input-pass-save-change{
+.div-nav-link {
+  height: 2em;
+  width: 15em;
+  padding-left: 1.5em;
+  padding-top: 0.2em;
+  font-size: 1em;
+  font-weight: 300;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+.p-prof-sett-title {
+  padding-left: 2em;
+  font-size: 0.8em;
+  font-weight: 300;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+.div-block3 {
+  margin-bottom: 1em;
+}
+
+.input-prof-sett {
+  height: 2em;
+  width: 25em;
+}
+
+.input-prof-sett1 {
+  height: 2em;
+  width: 15em;
+}
+
+.input-pass-save-change {
   height: 2em;
   width: 20em;
 }
 
-.p-block3-message{
+.p-block3-message {
   font-size: 0.9em;
   color: rgba(0, 0, 0, 0.623);
   font-weight: 300;
-  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  margin-right: 4em;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  /* margin-right: 4em; */
 }
