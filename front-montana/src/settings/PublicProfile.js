@@ -7,6 +7,7 @@ import {
   // fetchChangePass,
   fetchVerifyToken,
 } from "../redux/actionUsers";
+import "./publicProfile.css"
 
 function PublicProfile() {
   const store = useSelector((state) => state);
@@ -89,18 +90,10 @@ function PublicProfile() {
           </Button>
         </Modal.Footer>
       </Modal>
-      {/* <div className="div-profile-all"> */}
+      {/* <div className="div-profile-all1"> */}
         <div className="div-block2">
           <p className="p-block2-title">Public profile</p>
           <div className="div-border-block2"></div>
-        </div>
-        <div className="div-avatar-change">
-          <p className="p-avatar-title">Profile picture</p>
-          <img
-            alt="Avatar"
-            className="img-avatar-change"
-            src="https://okeygeek.ru/wp-content/uploads/2020/03/no_avatar.png"
-          />
         </div>
 
         <div className="div-change-myself">
@@ -173,9 +166,9 @@ function PublicProfile() {
               Update profile
             </button>
           </div>
-        {/* </div> */}
+        </div>
       </div>
-    </div>
+    // </div>
   );
 }
 
