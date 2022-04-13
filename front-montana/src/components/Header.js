@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch, connect } from "react-redux";
 import { fetchVerifyToken } from "../redux/actionUsers";
+import { Menu } from "semantic-ui-react";
 // import { showMyTickets } from "../redux/actionTickets";
 // import { showSaleTickets } from "../redux/actionTickets";
 
@@ -11,6 +12,9 @@ function Header() {
   const store = useSelector((state) => state);
   const dispatch = useDispatch();
   const [admin, setAdmin] = useState(false);
+  const [activeItem, setActiveItem] = useState("home");
+
+  const handleItemClick = (name) => setActiveItem(name);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -21,7 +25,24 @@ function Header() {
 
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <div className="div-header">
+        <div
+          name="home"
+          active={activeItem === "home"}
+          onClick={() => handleItemClick("home")}
+        >Home</div>
+        <div
+          name="home"
+          active={activeItem === "home"}
+          onClick={() => handleItemClick("home")}
+        >About</div>
+        <div
+          name="home"
+          active={activeItem === "home"}
+          onClick={() => handleItemClick("home")}
+        >Rooms</div>
+      </div>
+      {/* <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand>
             <Link style={{ textDecoration: "none", color: "white" }} to={"/"}>
@@ -225,11 +246,9 @@ function Header() {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
     </div>
   );
 }
-
-
 
 export default Header;

@@ -1,5 +1,6 @@
 .div-page-profile{
   min-height: 63em;
+  background-color: rgba(210, 211, 211, 0.459);
   display: grid;
   grid-template-columns: 20% 1fr 1fr 1fr 1fr 1fr 1fr 20%;
   grid-template-areas: 
@@ -7,11 +8,11 @@
   ;
 }
 
-.img-fon{
+/* .img-fon{
   opacity: 0.5;
   z-index: 1;
   height: 62em;
-}
+} */
 
 .div-profile{
   grid-area: blockProfile;
@@ -21,26 +22,109 @@
   grid-template-areas: 
   " headerProfile headerProfile headerProfile headerProfile headerProfile headerProfile "
   " . profileAvatar profileMyself profileMyself profileMyself . "
+  /* " . changeAvatarButton profileMyself profileMyself profileMyself . " */
   " . deleteAccount . . . . "
   ;
   position: relative;
   z-index: 2;
 }
 
-.img-header{
+.div-img-header{
   grid-area: headerProfile;
+
+}
+
+.img-header{
   width: 100%;
   height: 70%;
 }
 
-.img-avatar{
+.changeHeaderButton{
+  position: relative;
+  z-index: 4;
+  top: -2.8em;
+  left: 70em;
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  padding-left: 0.9em;
+  background-color: white;
+  border: 2px solid rgb(9, 88, 153);
+  color:rgb(9, 88, 153);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.changeHeaderButton:hover{
+  color: white;
+  background-color: rgb(9, 88, 153);
+  position: relative;
+  z-index: 4;
+  top: -2.8em;
+  left: 70em;
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  padding-left: 0.9em;
+  border: 2px solid rgb(9, 88, 153);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.div-avatar{
   grid-area: profileAvatar;
-  top: -70%;
+
+  /* height: 20em; */
+  /* width: 20em; */
+}
+
+.img-avatar{
+  top: -60%;            
   position: relative;
   z-index: 3;
   height: 20em;
   width: 20em;
   border-radius: 50em;
+}
+
+.changeAvatarButton{
+  position: relative;
+  z-index: 4;
+  top: -22em;
+  left: 15.5em;
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  padding-left: 0.9em;
+  background-color: white;
+  border: 2px solid rgb(9, 88, 153);
+  color:rgb(9, 88, 153);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.changeAvatarButton:hover{
+  color: white;
+  background-color: rgb(9, 88, 153);
+  position: relative;
+  z-index: 4;
+  top: -22em;
+  left: 15.5em;
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  padding-left: 0.9em;
+  border: 2px solid rgb(9, 88, 153);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .div-myself{
@@ -58,12 +142,12 @@
   grid-area: nameSurname;
 }
 
-.ui.label.label-gender{
+/* .ui.label.label-gender{
   margin-top: -10%;
   height: 40px;
   width: 60%;
   font-size: 18px;
-}
+} */
 
 .div-about{
   grid-area: aboutUser;

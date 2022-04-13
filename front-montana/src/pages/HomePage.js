@@ -10,6 +10,15 @@ import Carousel from "react-multi-carousel";
 import { showSaleRooms } from "../redux/actionTickets";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
+import { slideInDown } from "react-animations";
+import Radium, { StyleRoot } from "radium";
+
+const styles = {
+  bounce: {
+    animation: "x 1s",
+    animationName: Radium.keyframes(slideInDown, "bounce"),
+  },
+};
 
 const responsive = {
   superLargeDesktop: {
@@ -80,6 +89,7 @@ function Home() {
   };
 
   return (
+    <StyleRoot>
     <div className="div-home">
       <Modal
         show={show}
@@ -130,9 +140,10 @@ function Home() {
         </Modal.Footer>
       </Modal>
       <div className="home">
-        <div className="div-home-slider">
-          <Slider />
-        </div>
+          <div className="div-home-slider" style={styles.bounce}>
+            <Slider />
+          </div>
+
         <div className="div-2-block2">
           <div className="div-home-about-text">
             <p className="p-title1">About Us</p>
@@ -147,6 +158,8 @@ function Home() {
           </div>
           <img
             className="img-hotel1"
+            // onMouseEnter= "animation: bounce"
+            // style={":hover" styles.bounce}
             src="https://preview.colorlib.com/theme/montana/img/about/xabout_1.png.pagespeed.ic.LF5rkD9bee.webp"
           ></img>
           <img
@@ -367,6 +380,7 @@ function Home() {
         </div>
       </div>
     </div>
+    </StyleRoot>
   );
 }
 

@@ -1,8 +1,9 @@
   .nav-link-profile {
-    background-color: rgba(170, 165, 165, 0.849);
-    margin-top: 1px;
+    background-color: rgba(198, 225, 255, 0.808);
+    margin-top: 2px;
+    height: 3em;
     display: grid;
-    grid-template-columns: 30% 5% 65%;
+    grid-template-columns: 20% 5% 65%;
     grid-template-areas: "icon line text";
   }
 
@@ -12,8 +13,8 @@
     height: 100%;
   }
 
-  .ui.menu.claim_Card  {
+  .icon-nav {
     grid-area: icon;
-    background: aqua;
+    /* background: rgb(68, 173, 173); */
   }
 

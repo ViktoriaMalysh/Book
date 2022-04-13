@@ -5,7 +5,6 @@ import PublicEmail from "../settings/PublicEmail";
 // import styles from "./NavBar.module.scss";
 import "./navBar.css";
 
-
 function NavBar() {
   // const classes = useStyles();
   const [activeItem, setActiveItem] = useState("account");
@@ -15,89 +14,96 @@ function NavBar() {
     console.log("Name:", name);
   };
 
-  return ( 
+  return (
     <>
-      <Menu pointing vertical>
+      {/* <Menu pointing vertical>
         <Menu.Item
           icon="user"
           name="account"
-          className="claim_Card"
+          // className="claim_Card"
+          // style={{ background: "aqua" }}
+          onmouseover={{ background: "black" }}
+          onmouseout={{ background: "#333" }}
           active={activeItem === "account"}
-          onClick={(e) => handleItemClick(e.target.name)}
+          onClick={() => handleItemClick("account")}
         />
-        <Menu.Item   
+        <Menu.Item
           name="messages"
           active={activeItem === "messages"}
-          onClick={(e) => handleItemClick("messages")}
+          onClick={() => handleItemClick("messages")}
         />
         <Menu.Item
           name="friends"
           active={activeItem === "friends"}
-          onClick={(e) => handleItemClick(e.target.name)}
+          onClick={() => handleItemClick("friends")}
         />
-      </Menu>
+      </Menu> */}
 
-      {/* <div className="nav-link-profile">
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={"/settings/profile"}
-        >
+      <Link
+        style={{ textDecoration: "none", color: "black" }}
+        to={"/settings/profile"}
+      >
+        <div className="nav-link-profile">
           <Icon className="icon-nav" name="user" />
           <div className="div-between" />
           <div className="div-nav-link">Account</div>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
-      <div className="nav-link-profile">
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={"/settings/account"}
-        >
-          <Icon name="key" />
+      <Link
+        style={{ textDecoration: "none", color: "black" }}
+        to={"/settings/account"}
+      >
+        <div className="nav-link-profile">
+          <Icon className="icon-nav" name="key" />
+          <div className="div-between" />
           <div className="div-nav-link">Change Password</div>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
-      <div className="nav-link-profile">
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={"/settings/email"}
-        >
-          <Icon name="envelope outline" />
+      <Link
+        style={{ textDecoration: "none", color: "black" }}
+        to={"/settings/email"}
+      >
+        <div className="nav-link-profile">
+          <Icon className="icon-nav" name="envelope outline" />
+          <div className="div-between" />
           <div className="div-nav-link">Change Email</div>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
-      <div className="nav-link-profile">
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={"/settings/phone"}
-        >
-          <Icon name="phone" />
+      <Link
+        style={{ textDecoration: "none", color: "black" }}
+        to={"/settings/phone"}
+      >
+        <div className="nav-link-profile">
+          <Icon className="icon-nav" name="phone" />
+          <div className="div-between" />
           <div className="div-nav-link">Phone</div>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
-      <div className="nav-link-profile">
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={"/settings/cards"}
-        >
-          <Icon name="credit card" />
+      <Link
+        style={{ textDecoration: "none", color: "black" }}
+        to={"/settings/cards"}
+      >
+        <div className="nav-link-profile">
+          <Icon className="icon-nav" name="credit card" />
+          <div className="div-between" />
           <div className="div-nav-link">Payment card</div>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
-      <div className="nav-link-profile">
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={"/settings/cards"}
-        >
-          <Icon name="user delete" />
-
+      <Link
+        style={{ textDecoration: "none", color: "black" }}
+        to={"/settings/cards"}
+      >
+        <div className="nav-link-profile">
+          <Icon className="icon-nav" name="user delete" />
+          <div className="div-between" />
           <div className="div-nav-link">Delete Account</div>
-        </Link>
-      </div> */}
+        </div>
+      </Link>
     </>
   );
 }

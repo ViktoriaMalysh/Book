@@ -8,7 +8,7 @@ import "./profile.css";
 import { CURRENT_PRICE, DELETE } from "../redux/types";
 import StripeContainer from "../payment/StripeContainer";
 // import 'semantic-ui-css/semantic.min.css'
-import { Segment, Table, Label } from "semantic-ui-react";
+import { Segment, Table, Label, Icon } from "semantic-ui-react";
 
 function Profile() {
   let navigate = useNavigate();
@@ -61,10 +61,10 @@ function Profile() {
 
   return (
     <div className="div-page-profile">
-      <img
+      {/* <img
         className="img-fon"
         src="https://images.1plus1.ua/nocache/uploads/site/000/542/082/ce65ead4276a190189f837271050a36f.jpg?v=1565265103"
-      />
+      /> */}
       <Modal
         show={show}
         onHide={() => handleClose()}
@@ -84,26 +84,26 @@ function Profile() {
         </Modal.Footer>
       </Modal>
       <Segment raised className="div-profile ">
-        <Label
-          as="a"
-          color={store.users.userGender === "female" ? "pink" : "blue"}
-          className="label-gender"
-          ribbon
-        >
-          {store.users.userGender}
-        </Label>
-        <img
-          alt="Header"
-          className="img-header"
-          src="https://images.1plus1.ua/nocache/uploads/site/000/542/082/ce65ead4276a190189f837271050a36f.jpg?v=1565265103"
-        />
-        <>
+        <div className="div-img-header">
+          <img
+            alt="Header"
+            className="img-header"
+            src="https://images.1plus1.ua/nocache/uploads/site/000/542/082/ce65ead4276a190189f837271050a36f.jpg?v=1565265103"
+          />
+          <button className="changeHeaderButton">
+            <Icon name="edit outline" size="large" />
+          </button>
+        </div>
+        <div className="div-avatar">
           <img
             alt="Avatar"
             className="img-avatar"
             src="https://okeygeek.ru/wp-content/uploads/2020/03/no_avatar.png"
           />
-        </>
+          <button className="changeAvatarButton">
+            <Icon className="icon-avatar" name="edit outline" size="large" />
+          </button>
+        </div>
 
         <div className="div-myself">
           <div className="div-name">
@@ -126,26 +126,42 @@ function Profile() {
           </div>
 
           <div className="div-about">
-            <Table color="teal">
+            <Table color="teal" size="large" celled>
               <Table.Body>
-                <Table.Row>
+                <Table.Row negative={store.users.userGender === ""}>
                   <Table.Cell>Gender</Table.Cell>
-                  <Table.Cell>{store.users.userGender}</Table.Cell>
+                  <Table.Cell>
+                    {store.users.userGender !== ""
+                      ? store.users.userGender
+                      : "not specified"}
+                  </Table.Cell>
                 </Table.Row>
 
-                <Table.Row>
+                <Table.Row negative={store.users.userEmail === ""}>
                   <Table.Cell>Email</Table.Cell>
-                  <Table.Cell>{store.users.userEmail}</Table.Cell>
+                  <Table.Cell>
+                    {store.users.userEmail !== ""
+                      ? store.users.userEmail
+                      : "not specified"}
+                  </Table.Cell>
                 </Table.Row>
 
-                <Table.Row>
+                <Table.Row negative={store.users.userDateOfBirth === ""}>
                   <Table.Cell>Date Of Birth</Table.Cell>
-                  <Table.Cell>{store.users.userDateOfBirth}</Table.Cell>
+                  <Table.Cell>
+                    {store.users.userDateOfBirth !== ""
+                      ? store.users.userDateOfBirth
+                      : "not specified"}
+                  </Table.Cell>
                 </Table.Row>
 
-                <Table.Row>
+                <Table.Row negative={store.users.userPhone === 0}>
                   <Table.Cell>Phone Number</Table.Cell>
-                  <Table.Cell>{store.users.userPhone}</Table.Cell>
+                  <Table.Cell>
+                    {store.users.userPhone !== 0
+                      ? store.users.userPhone
+                      : "not specified"}
+                  </Table.Cell>
                 </Table.Row>
               </Table.Body>
             </Table>
