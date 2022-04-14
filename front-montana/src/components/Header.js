@@ -7,6 +7,7 @@ import { fetchVerifyToken } from "../redux/actionUsers";
 import { Menu } from "semantic-ui-react";
 // import { showMyTickets } from "../redux/actionTickets";
 // import { showSaleTickets } from "../redux/actionTickets";
+import "./header.css";
 
 function Header() {
   const store = useSelector((state) => state);
@@ -24,24 +25,47 @@ function Header() {
   }, []);
 
   return (
-    <div>
-      <div className="div-header">
+    <div className="div-menu">
+      <Link to="/">
         <div
-          name="home"
-          active={activeItem === "home"}
+          className="div-menu-item11"
           onClick={() => handleItemClick("home")}
-        >Home</div>
+        >
+          Home
+          <div className="div-line-item" hidden={activeItem !== "home"} />
+        </div>
+      </Link>
+      <Link to="/">
         <div
-          name="home"
-          active={activeItem === "home"}
-          onClick={() => handleItemClick("home")}
-        >About</div>
+          className="div-menu-item22"
+          onClick={() => handleItemClick("rooms")}
+        >
+          <span className="p-item"> Rooms</span>
+          <div className="div-line-item" hidden={activeItem !== "rooms"} />
+        </div>
+      </Link>
+
+      <Link to="/">
         <div
-          name="home"
-          active={activeItem === "home"}
-          onClick={() => handleItemClick("home")}
-        >Rooms</div>
-      </div>
+          className="div-menu-item33"
+          onClick={() => handleItemClick("about")}
+        >
+          <span className="p-item"> About</span>
+          <div className="div-line-item" hidden={activeItem !== "about"} />
+        </div>
+      </Link>
+
+      <Link to="/">
+        <div
+          className="div-menu-item44"
+          onClick={() => handleItemClick("contact")}
+        >
+          <span className="p-item"> Contact</span>
+          <div className="div-line-item" hidden={activeItem !== "contact"} />
+        </div>
+      </Link>
+
+      {/* </div> */}
       {/* <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand>

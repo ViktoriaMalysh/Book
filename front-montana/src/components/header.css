@@ -1,0 +1,24 @@
+.div-menu-item11,
+.div-menu-item22,
+.div-menu-item33,
+.div-menu-item44 {
+  padding: 2em;
+  color: #fff;
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.div-line-item {
+  margin-top: 0.7em;
+  text-align: center;
+  width: 100%;
+  height: 2px;
+  background-color: azure;
+}
+
+.div-menu-item33:hover .div-line-item{
+  background-color: rgb(9, 189, 189);
+
+}

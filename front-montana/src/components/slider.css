@@ -1,19 +1,84 @@
-.slider {
-  background-size: 100% 700px;
+.div-carousel-item1, .div-carousel-item2{
+  background-size: 100% 100vh;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  "headerCarousel headerCarousel headerCarousel headerCarousel"
+  "titleCarousel titleCarousel titleCarousel titleCarousel";
 }
 
-/* .img-slider {
-  height: 58em;
-} */
+.div-carousel-item1{
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/xbanner.png.pagespeed.ic.Fz8_Hc8pX8.jpg");
+}
 
-.div-slider{
-  height: 58em;
+.div-carousel-item2{
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/xbanner2.png.pagespeed.ic.RygwS5iHf6.jpg");
+}
 
+.div-slider-header {
+  grid-area: headerCarousel;
+  margin-top: 2em;
+  display: grid;                              
+  grid-template-columns: 7% 15% 15% 5% 5% 10% 5% 15% 5% 15% 7%;
+  grid-template-areas: ". sliderHeader sliderHeader . . img3 . icon123 . buttonAuthOrBook .";
+}
+
+.header-button-auth{
+  margin-top: 2em;
+  margin-left: 0.5em;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 500;
+  border: 1px solid rgb(34, 156, 255);
+  border-radius: 1px;
+  background-color: rgb(34, 156, 255);
+  height: 2.5em;
+  width: 6em;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header-button-auth:hover {
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 500;
+  border: 1px solid rgb(34, 156, 255);
+  border-radius: 1px;
+  color: rgb(34, 156, 255);
+  background-color: aliceblue;
+  height: 2.5em;
+  width: 6em;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.div-header-button-auth{
+  grid-area: buttonAuthOrBook;
+}
+
+.div-slider-nav {
+  grid-area: sliderHeader;
+}
+
+.div-page{
+  grid-area: titleCarousel;
+  color: #fff;
+  text-align: center;
 }
 
 .h-slider-title {
-  font-size: 7em;
-  font-weight: 300;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 100px;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
 }
 
 .p-slider-title {
@@ -21,79 +86,59 @@
   font-weight: 300;
 }
 
-.div-page {
-  padding-block-end: 20em;
-}
-
-.div-slider-header {
-  background-color: lightcoral;
-  /* width: 180%; */
-  /* padding-block-end: 13em; */
-  margin-top: -50em;
-  display: grid;
-  grid-template-columns: 1% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1%;
-  grid-template-areas: ". sliderHeader sliderHeader . img3 . icon123 button1 .";
-}
-
-.div-slider-nav {
-  grid-area: sliderHeader;
-  background-color: lightblue;
-}
-
 .img-montana {
+  margin-top: 1em;
   grid-area: img3;
   width: 50%;
 }
 
 .button-booking {
-  grid-area: button1;
+  grid-area: buttonAuthOrBook;
+  margin: 2em;
   border: 1px solid rgb(34, 156, 255);
   border-radius: 1px;
   background-color: rgb(34, 156, 255);
-  color: aliceblue;
-  height: 3em;
-  width: 10em;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 500;  
+  height: 2.5em;
+  width: 9em;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
+} 
 
 .button-booking:hover {
-  grid-area: button1;
+  grid-area: buttonAuthOrBook;
   border: 1px solid rgb(34, 156, 255);
   border-radius: 1px;
   color: rgb(34, 156, 255);
   background-color: aliceblue;
-  height: 3em;
-  width: 10em;
+  height: 2.5em;
+  width: 9em;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.div-slider-icon{
+.div-slider-icon {
   grid-area: icon123;
+  padding: 2.5em;
 }
 
-.img-icon1, .img-icon2, .img-icon3{
+.img-icon1,
+.img-icon2,
+.img-icon3 {
   display: inline;
   padding-top: 0.7em;
   padding-right: 2em;
-}
+} 
 
-/* .img-icon2 {
-  grid-area: icon2;
-  padding-top: 0.7em;
-}
 
-.img-icon3 {
-  grid-area: icon3;
-  padding-top: 0.7em;
-} */
-
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .slider {
     background-size: 100% 50px;
   }
@@ -283,4 +328,4 @@
     height: 3em;
     width: 8em;
   }
-}
+} */
