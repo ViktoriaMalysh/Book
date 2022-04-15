@@ -42,7 +42,7 @@ export default function AppNav() {
 
   return (
     <BrowserRouter>   
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/country/turkey" element={<CountryTurkey />} />
         <Route path="/country/italy" element={<CountryItaly />} />

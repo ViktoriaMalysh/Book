@@ -18,11 +18,27 @@
 }
 
 .div-slider-header {
-  grid-area: headerCarousel;
-  margin-top: 2em;
+  /* visibility: hidden; */
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
+  background-color: #212529;
+  /* margin-top: 2em; */
   display: grid;                              
-  grid-template-columns: 7% 15% 15% 5% 5% 10% 5% 15% 5% 15% 7%;
-  grid-template-areas: ". sliderHeader sliderHeader . . img3 . icon123 . buttonAuthOrBook .";
+  grid-template-columns: 7% 15% 15% 5% 5% 10% 5% 10% 10% 10% 7%;
+  grid-template-areas: ". sliderHeader sliderHeader . . img3 . . icon123 buttonAuthOrBook .";
+}
+
+.align-div {
+    -webkit-box-align: center!important;
+  align-items: center!important;
+}
+
+.div-slider-header:fullscreen {
+  background-color: rgba(0, 0, 0, 0.61);
 }
 
 .header-button-auth{
@@ -126,206 +142,22 @@
 
 .div-slider-icon {
   grid-area: icon123;
-  padding: 2.5em;
+  padding-top: 3em;
+  /* background-color: aqua; */
 }
 
 .img-icon1,
 .img-icon2,
 .img-icon3 {
   display: inline;
+  color: rgba(255, 255, 255, 0.733);
+  /* color: black; */
   padding-top: 0.7em;
-  padding-right: 2em;
+  padding-right: 1.3em;
 } 
 
 
-/* @media screen and (max-width: 1200px) {
-  .slider {
-    background-size: 100% 50px;
-  }
-
-  .img-slider {
-    height: 48em;
-  }
-
-  .h-slider-title {
-    font-size: 5em;
-    font-weight: 300;
-  }
-
-  .p-slider-title {
-    font-size: 1.7em;
-    font-weight: 300;
-  }
-
-  .div-page {
-    padding-block-end: 15em;
-  }
-
-  .div-slider-header {
-    padding-block-end: 13em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". . . . . . img3 img3 . icon1 icon2 icon3 button1";
-  }
-
-  .img-montana {
-    grid-area: img3;
-  }
+@media screen and (max-width: 1600px) {
+ 
 }
 
-@media screen and (max-width: 1000px) {
-  .slider {
-    background-size: 100% 100px;
-  }
-
-  .img-slider {
-    height: 40em;
-  }
-
-  .h-slider-title {
-    font-size: 4em;
-    font-weight: 300;
-  }
-
-  .p-slider-title {
-    font-size: 1.7em;
-    font-weight: 300;
-  }
-
-  .div-page {
-    padding-block-end: 12em;
-  }
-
-  .div-slider-header {
-    padding-block-end: 8em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". . . . . . . img3 img3 . icon1 icon2 icon3 . button1";
-  }
-
-  .img-montana {
-    grid-area: img3;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .slider {
-    background-size: 100% 100px;
-  }
-
-  .img-slider {
-    height: 32em;
-  }
-
-  .h-slider-title {
-    font-size: 3em;
-    font-weight: 300;
-  }
-
-  .p-slider-title {
-    font-size: 1.7em;
-    font-weight: 300;
-  }
-
-  .div-page {
-    padding-block-end: 10em;
-  }
-
-  .div-slider-header {
-    padding-block-end: 5em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". . . . icon1 . icon2 . icon3 . . button1 . . .";
-  }
-
-  .img-montana {
-    grid-area: img3;
-    height: 0;
-    width: 0;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .slider {
-    background-size: 100% 100px;
-  }
-
-  .img-slider {
-    height: 25em;
-  }
-
-  .h-slider-title {
-    font-size: 3em;
-    font-weight: 300;
-  }
-
-  .p-slider-title {
-    font-size: 1.2em;
-    font-weight: 300;
-  }
-
-  .div-page {
-    padding-block-end: 6em;
-  }
-
-  .div-slider-header {
-    padding-block-end: 4em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". . . . icon1 . icon2 . icon3 . . button1 . . .";
-  }
-
-  .img-montana {
-    grid-area: img3;
-    height: 0;
-    width: 0;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .slider {
-    background-size: 100% 100px;
-  }
-
-  .img-slider {
-    height: 20em;
-  }
-
-  .h-slider-title {
-    font-size: 2em;
-    font-weight: 300;
-  }
-
-  .p-slider-title {
-    font-size: 1em;
-    font-weight: 300;
-  }
-
-  .div-page {
-    padding-block-end: 4em;
-  }
-
-  .div-slider-header {
-    padding-block-end: 4em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". . icon1 . . icon2 . . icon3 . . button1 . . .";
-  }
-
-  .img-montana {
-    grid-area: img3;
-    height: 0;
-    width: 0;
-  }
-
-  .button-booking {
-    grid-area: button1;
-    border: 1px solid rgb(34, 156, 255);
-    border-radius: 1px;
-    background-color: rgb(34, 156, 255);
-    color: aliceblue;
-    font-size: 0.8em;
-    height: 3em;
-    width: 8em;
-  }
-} */
