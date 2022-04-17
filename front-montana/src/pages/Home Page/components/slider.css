@@ -1,0 +1,24 @@
+.div-carousel-item1,
+.div-carousel-item2 {
+  background-size: 100% 100vh;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "headerCarousel headerCarousel headerCarousel headerCarousel"
+    "titleCarousel titleCarousel titleCarousel titleCarousel";
+}
+
+.div-carousel-item1 {
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/xbanner.png.pagespeed.ic.Fz8_Hc8pX8.jpg");
+}
+
+.div-carousel-item2 {
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/xbanner2.png.pagespeed.ic.RygwS5iHf6.jpg");
+}
+
+
+
+@media screen and (max-width: 1600px) {
+}

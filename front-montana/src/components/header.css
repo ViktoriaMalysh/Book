@@ -18,7 +18,135 @@
   background-color: azure;
 }
 
-.div-menu-item33:hover .div-line-item{
+.div-menu-item33:hover .div-line-item {
   background-color: rgb(9, 189, 189);
+}
 
+.div-slider-header {
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
+  display: grid;
+  grid-template-columns: 7% 15% 15% 5% 5% 10% 5% 10% 10% 15% 7%;
+  grid-template-areas: ". sliderHeader sliderHeader . . img3 . . icon123 buttonAuthOrBook .";
+}
+
+.align-div {
+  -webkit-box-align: center !important;
+  align-items: center !important;
+}
+
+.header-button-auth {
+  margin-top: 2em;
+  margin-left: 0.5em;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 500;
+  border: 1px solid rgb(34, 156, 255);
+  border-radius: 1px;
+  background-color: rgb(34, 156, 255);
+  height: 2.5em;
+  width: 6em;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header-button-auth:hover {
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 500;
+  border: 1px solid rgb(34, 156, 255);
+  border-radius: 1px;
+  color: rgb(34, 156, 255);
+  background-color: aliceblue;
+  height: 2.5em;
+  width: 6em;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.div-header-button-auth {
+  grid-area: buttonAuthOrBook;
+}
+
+.div-slider-nav {
+  grid-area: sliderHeader;
+}
+
+.div-page {
+  grid-area: titleCarousel;
+  color: #fff;
+  text-align: center;
+}
+
+.h-slider-title {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 100px;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+}
+
+.p-slider-title {
+  font-size: 1.7em;
+  font-weight: 300;
+}
+
+.img-montana {
+  margin-top: 1em;
+  grid-area: img3;
+  width: 50%;
+}
+
+.button-booking {
+  grid-area: buttonAuthOrBook;
+  margin: 2em;
+  border: 1px solid rgb(34, 156, 255);
+  border-radius: 1px;
+  background-color: rgb(34, 156, 255);
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 17px;
+  font-weight: 500;
+  height: 2.5em;
+  width: 9em;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button-booking:hover {
+  grid-area: buttonAuthOrBook;
+  border: 1px solid rgb(34, 156, 255);
+  border-radius: 1px;
+  color: rgb(34, 156, 255);
+  background-color: aliceblue;
+  height: 2.5em;
+  width: 9em;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.div-slider-icon {
+  grid-area: icon123;
+}
+
+.img-icon1,
+.img-icon2,
+.img-icon3 {
+  display: inline;
+  color: rgba(255, 255, 255, 0.733);
+  padding-top: 0.7em;
+  padding-right: 1.3em;
 }

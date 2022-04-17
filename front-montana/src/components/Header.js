@@ -6,12 +6,13 @@ import { useSelector, useDispatch, connect } from "react-redux";
 import { fetchVerifyToken } from "../redux/actionUsers";
 import { Icon, Menu } from "semantic-ui-react";
 import { useNavigate } from "react-router";
-
+import { slideInDown } from "react-animations";
+import Radium, { StyleRoot } from "radium";
+import "react-multi-carousel/lib/styles.css";
 // import { showMyTickets } from "../redux/actionTickets";
 // import { showSaleTickets } from "../redux/actionTickets";
 import "./header.css";
-import "./slider.css";
-
+import { styles } from "../animation/styles";
 
 function Header() {
   const store = useSelector((state) => state);
@@ -19,8 +20,17 @@ function Header() {
   const [admin, setAdmin] = useState(false);
   const [activeItem, setActiveItem] = useState("home");
   const navigate = useNavigate();
-
   const handleItemClick = (name) => setActiveItem(name);
+
+  const [headerShow, setHeaderShow] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, [headerShow]);
+
+  const handleScroll = () => {
+    window.scrollY > 0 ? setHeaderShow(true) : setHeaderShow(false);
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -30,50 +40,60 @@ function Header() {
   }, []);
 
   return (
-    <div className="div-slider-header align-div ">
-      <div className="div-slider-nav">
-        <div className="div-menu">
-          <Link to="/">
-            <div
-              className="div-menu-item11"
-              onClick={() => handleItemClick("home")}
-            >
-              Home
-              <div className="div-line-item" hidden={activeItem !== "home"} />
-            </div>
-          </Link>
-          <Link to="/">
-            <div
-              className="div-menu-item22"
-              onClick={() => handleItemClick("rooms")}
-            >
-              <span className="p-item"> Rooms</span>
-              <div className="div-line-item" hidden={activeItem !== "rooms"} />
-            </div>
-          </Link>
-          <Link to="/">
-            <div
-              className="div-menu-item33"
-              onClick={() => handleItemClick("about")}
-            >
-              <span className="p-item"> About</span>
-              <div className="div-line-item" hidden={activeItem !== "about"} />
-            </div>
-          </Link>
-          <Link to="/">
-            <div
-              className="div-menu-item44"
-              onClick={() => handleItemClick("contact")}
-            >
-              <span className="p-item"> Contact</span>
+    <StyleRoot>
+      <div
+        className="div-slider-header align-div"
+        style={{ background: headerShow ? "#212529" : "transparent" }}
+        // style={styles.fadeInDown2s}
+      >
+        <div className="div-slider-nav">
+          <div className="div-menu">
+            <Link to="/">
               <div
-                className="div-line-item"
-                hidden={activeItem !== "contact"}
-              />
-            </div>
-          </Link>{" "}
+                className="div-menu-item11"
+                onClick={() => handleItemClick("home")}
+              >
+                Home
+                <div className="div-line-item" hidden={activeItem !== "home"} />
+              </div>
+            </Link>
+            <Link to="/rooms">
+              <div
+                className="div-menu-item22"
+                onClick={() => handleItemClick("rooms")}
+              >
+                <span className="p-item"> Rooms</span>
+                <div
+                  className="div-line-item"
+                  hidden={activeItem !== "rooms"}
+                />
+              </div>
+            </Link>
+            <Link to="/about">
+              <div
+                className="div-menu-item33"
+                onClick={() => handleItemClick("about")}
+              >
+                <span className="p-item"> About</span>
+                <div
+                  className="div-line-item"
+                  hidden={activeItem !== "about"}
+                />
+              </div>
+            </Link>
+            <Link to="/contact">
+              <div
+                className="div-menu-item44"
+                onClick={() => handleItemClick("contact")}
+              >
+                <span className="p-item"> Contact</span>
+                <div
+                  className="div-line-item"
+                  hidden={activeItem !== "contact"}
+                />
+              </div>
+            </Link>{" "}
           </div>
-
         </div>
         <img
           className="img-montana"
@@ -119,214 +139,8 @@ function Header() {
             </button>
           </div>
         )}
-
-      {/* </div> */}
-      {/* <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand>
-            <Link style={{ textDecoration: "none", color: "white" }} to={"/"}>
-              MONTANA
-            </Link>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <NavDropdown
-                title="Country"
-                id="collasible-nav-dropdown"
-                style={{ color: "white" }}
-              >
-                <NavDropdown.Item>
-                  <Nav.Link
-                    as={Link}
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/country/italy"
-                  >
-                    Italy
-                  </Nav.Link>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item>
-                  <Nav.Link
-                    as={Link}
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/country/turkey"
-                  >
-                    Turkey
-                  </Nav.Link>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item>
-                  <Nav.Link
-                    as={Link}
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/country/germany"
-                  >
-                    Germany
-                  </Nav.Link>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item>
-                  <Nav.Link
-                    as={Link}
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/country/france"
-                  >
-                    France
-                  </Nav.Link>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item>
-                  <Nav.Link
-                    as={Link}
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/country/egypt"
-                  >
-                    Egypt
-                  </Nav.Link>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item>
-                  <Nav.Link
-                    as={Link}
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/country/greece"
-                  >
-                    Greece
-                  </Nav.Link>
-                </NavDropdown.Item>
-
-                <NavDropdown.Item>
-                  <Nav.Link
-                    as={Link}
-                    style={{ textDecoration: "none", color: "black" }}
-                    to="/country/spain"
-                  >
-                    Spain
-                  </Nav.Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-
-              <Nav.Link>
-                <Link
-                  style={{ textDecoration: "none", color: "white" }}
-                  to={"/tickets"}
-                >
-                  Rooms
-                </Link>
-              </Nav.Link>
-
-              <Nav.Link>
-                <Link
-                  style={{ textDecoration: "none", color: "white" }}
-                  to={"/sale"}
-                >
-                  Sale
-                </Link>
-              </Nav.Link>
-
-              <Nav.Link>
-                <Link
-                  style={{ textDecoration: "none", color: "white" }}
-                  to={"/"}
-                >
-                  About Us
-                </Link>
-              </Nav.Link>
-
-              <Nav.Link>
-                <Link
-                  style={{ textDecoration: "none", color: "white" }}
-                  to={"/"}
-                >
-                  Our Offers
-                </Link>
-              </Nav.Link>
-
-              <Nav.Link>
-                <Link
-                  style={{ textDecoration: "none", color: "white" }}
-                  to={"/"}
-                >
-                  Delicious Food
-                </Link>
-              </Nav.Link>
-
-              <Nav.Link>
-                <a
-                  style={{ textDecoration: "none", color: "white" }}
-                  href="#featuredRooms"
-                >
-                  Featured Rooms
-                </a>
-              </Nav.Link>
-            </Nav>
-            <Nav>
-              {store.users.isAuth ? (
-                <>
-                  <NavDropdown
-                    title={store.users.userName}
-                    id="collasible-nav-dropdown"
-                    style={{ color: "white" }}
-                  >
-                    <NavDropdown.Item>
-                      <Link
-                        style={{ textDecoration: "none", color: "black" }}
-                        to={"/profile"}
-                      >
-                        Profile
-                      </Link>
-                    </NavDropdown.Item>
-
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item>
-                      <Link
-                        style={{ textDecoration: "none", color: "black" }}
-                        to={"/logout"}
-                      >
-                        Log Out
-                      </Link>
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                  <Nav.Link>
-                    <Link
-                      style={{ textDecoration: "none", color: "white" }}
-                      to={"/basket"}
-                    >
-                      <Figure.Image
-                        width={31}
-                        height={40}
-                        alt="171x180"
-                        src="https://cdn-icons.flaticon.com/png/512/4647/premium/4647563.png?token=exp=1645621653~hmac=6da9ebcc9df28e104d24978ae9ebd865"
-                      />
-                    </Link>
-                  </Nav.Link>
-                </>
-              ) : (
-                <>
-                  <Nav.Link>
-                    <Link
-                      style={{ textDecoration: "none", color: "white" }}
-                      to={"/sign_in"}
-                    >
-                      Sing In
-                    </Link>
-                  </Nav.Link>
-                  <Nav.Link>
-                    <Link
-                      style={{ textDecoration: "none", color: "white" }}
-                      to={"/sign_up"}
-                    >
-                      Sing Up
-                    </Link>
-                  </Nav.Link>
-                </>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar> */}
-    </div>
+      </div>
+    </StyleRoot>
   );
 }
 

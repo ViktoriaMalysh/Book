@@ -17,12 +17,12 @@ import Profile from "./settings/Profile";
 import DeleteAccount from "./user/DeleteAccount";
 import ProfileSettings from "./settings/ProfileSettings";
 import FirstPage from "./pages/FirstPage";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/Home Page/HomePage";
 import Account from "./settings/Account";
 import PublicEmail from "./settings/PublicEmail";
 import Basket from "./settings/basket/Basket";
+import { styles } from "./animation/styles";
 // import StripeCheckoutButton from '../src/components/stripe.button.component';
-
 
 export default function AppNav() {
   const store = useSelector((state) => state);
@@ -41,7 +41,7 @@ export default function AppNav() {
   }
 
   return (
-    <BrowserRouter>   
+    <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/country/turkey" element={<CountryTurkey />} />
@@ -53,12 +53,12 @@ export default function AppNav() {
         <Route path="/country/germany" element={<CountryGermany />} />
 
         <Route path="/sign_in" element={<SignIn />} />
-        <Route path="/sign_up" element={<SignUp />} />  
+        <Route path="/sign_up" element={<SignUp />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/delete_ccount" element={<DeleteAccount />} />
 
         <Route path="/settings/*" element={<ProfileSettings />} />
-  
+
         {/* profileSettings */}
         {/* <Route path="/ticket/hotelTicket" element={<HotelTicket />} /> */}
         {/* <Route path="/ticket/aviaTicket" element={<AviaTicket />} /> */}
@@ -68,13 +68,9 @@ export default function AppNav() {
 
         {/* <Route path="/basket/*" element={<Basket />} /> */}
 
-
-        
         {/* <Route path="/payment" element={<StripeCheckoutButton />} /> */}
 
-
         {/* <Route path="/profile" element={<Profile />} /> */}
-
 
         <Route path="/" element={<HomePage />} />
 

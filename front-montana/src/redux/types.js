@@ -4,6 +4,12 @@ export const HIDE_ALERT = 'APP/HIDE_ALERT'
 export const SHOW_LOADER = 'APP/SHOW_LOADER'
 export const HIDE_LOADER = 'APP/HIDE_LOADER'
 
+
+//------------------SALE---------------------
+export const SHOW_MODAL = 'SALE/SHOW_MODAL'
+export const ROOM_DATA = 'SALE/ROOM_DATA'
+
+
 //------------------HOTEL---------------------
 export const BOOK = 'ROOMS/BOOK'
 export const CANCEL = 'ROOMS/CANCEL'
