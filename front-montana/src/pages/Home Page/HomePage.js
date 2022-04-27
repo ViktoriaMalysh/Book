@@ -10,7 +10,7 @@ import About from "./components/About";
 import "react-multi-carousel/lib/styles.css";
 import "./homePage.css";
 import DeliciousFood from "./components/DeliciousFood";
-import Footer from "./components/Footer";
+import Footer from "../../components/footer/Footer";
 import Video from "./components/Video";
 import Rooms from "./components/Rooms";
 import Links from "./components/Links";

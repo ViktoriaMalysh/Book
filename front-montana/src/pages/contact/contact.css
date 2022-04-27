@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+
+.div-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "header header header header header header"
+    ". map map map map ."
+    ". info info info info ."
+    "footer footer footer footer footer footer";
+}
+
+.div-maps {
+  grid-area: map;
+  height: 500px;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.span-contact-message-title {
+  /* font-family: 'BIZ UDPGothic', sans-serif; */
+  font-family: "Raleway", sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  grid-area: titleMessage;
+}
+
+textarea {
+  color: #e5e6e9;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  height: 150px;
+
+  writing-mode: horizontal-tb !important;
+
+  /* font-family: monospace; */
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  resize: auto;
+  cursor: text;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  column-count: initial !important;
+
+  padding-top: 2px;
+}
+
+textarea::placeholder {
+  color: #a6acb1;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+
+.input-contact-message {
+  border: 1px solid #e5e6e9;
+  height: 100px;
+  margin-top: 2em;
+  padding-left: 18px;
+  padding-top: 0.8em;
+  font-size: 16px;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.5;
+  color: #495057;
+}
+
+.button-contact-send {
+  margin-top: 2em;
+  height: 4em;
+  width: 9em;
+  border: 1px solid rgb(34, 156, 255);
+  border-radius: 1px;
+  background: #fff;
+  font-family: "Raleway",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #009DFF !important;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button-contact-send:hover {
+  background-color: rgb(34, 156, 255);
+  color: #fff !important;
+  margin-top: 2em;
+  height: 4em;
+  width: 9em;
+  border: 1px solid rgb(34, 156, 255);
+  border-radius: 1px;
+  font-family: "Raleway",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.div-contacts-info {
+  grid-area: info;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas:
+    "titleMessage ."
+    "message contact";
+}
+
+.div-contact-message {
+  grid-area: message;
+  min-height: 170px;
+  
+}
+
+.div-contact-contact {
+  grid-area: contact;
+}
+
+.div-contact-header {
+  text-align: center;
+  padding-top: 15%;
+  grid-area: header;
+  background-size: 100% 500px;
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/bradcam3.png");
+  height: 54vh;
+}
+
+.div-contact-footer {
+  grid-area: footer;
+  margin-top: 10%;
+}
+
+.span-contact-title {
+  font-family: "Raleway", 300;
+  font-style: initial;
+  font-size: 60px;
+  color: #fff;
+}

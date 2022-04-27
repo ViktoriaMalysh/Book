@@ -40,7 +40,7 @@
 }
 
 .header-button-auth {
-  margin-top: 2em;
+  margin-top: 1em;
   margin-left: 0.5em;
   color: #fff;
   text-transform: capitalize;
@@ -79,6 +79,7 @@
 
 .div-slider-nav {
   grid-area: sliderHeader;
+  margin-top: 20px;
 }
 
 .div-page {
@@ -108,15 +109,16 @@
 
 .button-booking {
   grid-area: buttonAuthOrBook;
-  margin: 2em;
+  /* margin: 2em; */
+  margin-top: 1.5em;
   border: 1px solid rgb(34, 156, 255);
   border-radius: 1px;
   background-color: rgb(34, 156, 255);
   color: #fff;
   text-transform: capitalize;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
-  height: 2.5em;
+  height: 3em;
   width: 9em;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -130,7 +132,7 @@
   border-radius: 1px;
   color: rgb(34, 156, 255);
   background-color: aliceblue;
-  height: 2.5em;
+  height: 3em;
   width: 9em;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -140,6 +142,7 @@
 
 .div-slider-icon {
   grid-area: icon123;
+  margin-top: 20px;
 }
 
 .img-icon1,

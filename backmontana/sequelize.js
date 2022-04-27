@@ -100,6 +100,7 @@ const UserPaymentCards = sequelize.define('UserPaymentCards', {}, { timestamps: 
 User.belongsToMany(PaymentCards, { through: UserPaymentCards });
 PaymentCards.belongsToMany(User, { through: UserPaymentCards });
 
+sequelize.sync({ alter: true })
 
 module.exports = {
   User: User,   

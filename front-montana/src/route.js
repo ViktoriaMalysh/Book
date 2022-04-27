@@ -18,6 +18,8 @@ import DeleteAccount from "./user/DeleteAccount";
 import ProfileSettings from "./settings/ProfileSettings";
 import FirstPage from "./pages/FirstPage";
 import HomePage from "./pages/Home Page/HomePage";
+import Contact from "./pages/contact/Contact";
+
 import Account from "./settings/Account";
 import PublicEmail from "./settings/PublicEmail";
 import Basket from "./settings/basket/Basket";
@@ -56,7 +58,9 @@ export default function AppNav() {
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/delete_ccount" element={<DeleteAccount />} />
+        <Route path="/contact" element={<Contact />} />
 
+        
         <Route path="/settings/*" element={<ProfileSettings />} />
 
         {/* profileSettings */}

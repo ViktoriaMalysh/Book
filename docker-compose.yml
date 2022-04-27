@@ -1,6 +1,6 @@
-version: "3.9"
+version: "3.2"
 services:
-  client:
+  frontMontana:
     image: node:16-alpine3.11
     build: ./front-montana
     working_dir: /app
@@ -13,8 +13,8 @@ services:
       - ./front-montana:/app
     command: npm start
     depends_on:
-      - server
-  server:
+      - backmontana
+  backmontana:
     image: node:16-alpine3.11
     build: ./backmontana
     restart: always
@@ -44,4 +44,5 @@ services:
       - 5432:5432
 volumes:
   db:
-  server:
+  backmontana:
+  frontMontana:

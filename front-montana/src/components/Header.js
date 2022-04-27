@@ -124,14 +124,20 @@ function Header() {
           </button>
         ) : (
           <div className="div-header-button-auth">
-            <button className="header-button-auth">
+              <button
+                className="header-button-auth"
+                onClick={() => navigate("/sign_in")}
+              >
               <div className="div-button">
                 <Icon name="sign-in" />
                 Sign In
               </div>
             </button>
 
-            <button className="header-button-auth">
+              <button
+                className="header-button-auth"
+                onClick={() => navigate("/sign_up")}
+              >
               <div className="div-button">
                 <Icon name="sign-out" />
                 Sign Up

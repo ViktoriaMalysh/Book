@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.32",
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.23.0",
     "@testing-library/jest-dom": "^5.16.1",
@@ -12,6 +13,7 @@
     "bootstrap": "^5.1.3",
     "carousel-react-rcdev": "0.0.3",
     "formik": "^2.2.9",
+    "google-map-react": "^2.1.10",
     "i": "^0.3.7",
     "node-sass": "^7.0.1",
     "npm": "^8.5.2",
