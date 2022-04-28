@@ -1,13 +1,13 @@
 import React from "react";
-import "./slider.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router";
 import Carousel from "react-multi-carousel";
 import { useSelector } from "react-redux";
-import { slideInDown } from "react-animations";
-import Radium, { StyleRoot } from "radium";
-import "react-multi-carousel/lib/styles.css";
+import { StyleRoot } from "radium";
 import { styles } from "../../../animation/styles";
+import "react-multi-carousel/lib/styles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./slider.css";
+
 
 const responsive = {
   superLargeDesktop: {
@@ -27,21 +27,6 @@ const responsive = {
     items: 1,
   },
 };
-
-// const styles = {
-//   bounce: {
-//     animation: "x 1s",
-//     animationName: Radium.keyframes(slideInDown, "bounce"),
-//   },
-//   fadeInDown: {
-//     animation: "x 2s",
-//     animationName: Radium.keyframes(slideInDown, "fadeInDown"),
-//   },
-//   fadeInDown1: {
-//     animation: "x 3s",
-//     animationName: Radium.keyframes(slideInDown, "fadeInDown"),
-//   },
-// };
 
 export default function Slider() {
   const navigate = useNavigate();

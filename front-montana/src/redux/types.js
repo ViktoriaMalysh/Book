@@ -20,6 +20,9 @@ export const SHOW_ROOMS = 'ROOMS/SHOW_ROOMS'
 export const SHOW = 'ROOMS/SHOW'
 
 
+//------------------MESSAGE---------------------
+// export const SHOW_MODAL_MESSAGE = 'MESSAGE/SHOW_MODAL_MESSAGE'
+
 
 
 

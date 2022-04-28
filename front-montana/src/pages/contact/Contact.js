@@ -1,16 +1,17 @@
 import Footer from "../../components/footer/Footer";
 import { StyleRoot } from "radium";
 import { styles } from "../../animation/styles";
-import "./contact.css";
-
 import GoogleMapReact from "google-map-react";
 import MyMarker from "./MyMarker";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-// import { useEffect, useRef, useState } from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "./contact.css";
+import ModalSendMessage from "./ModalSendMessage";
 
 const distanceToMouse = (pt, mp) => {
   if (pt && mp) {
-    // return distance between the marker and mouse pointer
     return Math.sqrt(
       (pt.x - mp.x) * (pt.x - mp.x) + (pt.y - mp.y) * (pt.y - mp.y)
     );
@@ -24,16 +25,25 @@ const points = [
 ];
 
 function Contacts() {
+  const store = useSelector((state) => state);
+  const [show, setShow] = useState(false)
+
+  const handleSendMessage = () => {
+    
+  } 
+
   return (
     <StyleRoot>
       <div className="div-contact">
+      {show ? <ModalSendMessage /> : <></>}
         <div className="div-contact-header">
-          <span className="span-contact-title">Get In Touch</span>
+          <p className="p-contact-title" style={styles.fadeInDown2s}>
+            Get In Touch
+          </p>
         </div>
         <div className="div-maps">
           <GoogleMapReact
             bootstrapURLKeys={{
-              // remove the key if you want to fork
               key: "AIzaSyCZur5gRVE4AHqzt2GV4QT2CzQ-rvaCAP0",
               language: "en",
               region: "US",
@@ -59,11 +69,51 @@ function Contacts() {
           <div className="div-contact-message">
             <textarea
               className="input-contact-message"
-              placeholder="Enter message"  
+              placeholder="Enter message"
             ></textarea>
-            <button className="button-contact-send">SEND</button>
+            <button
+              className="button-contact-send"
+              onClick={() => handleSendMessage()}
+              disabled={!store.users.isAuth}
+            >
+              SEND
+            </button>
+            {!store.users.isAuth ? (
+              <span className="span-contact-help-message">
+                Please <Link to="/sign_in">sign in</Link> before sending a
+                message
+              </span>
+            ) : (
+              <></>
+            )}
           </div>
-          <div className="div-contact-contact"></div>
+          <div className="div-contact-contact">
+            <div className="div-contact-block1">
+              <i class="bi bi-house icon-contact"></i>
+              <span className="span-contact-block-title">
+                Buttonwood, California.
+              </span>
+              <span className="span-contact-block-text">
+                Rosemead, CA 91770
+              </span>
+            </div>
+            <div className="div-contact-block2">
+              <i class="bi bi-phone icon-contact"></i>
+              <span className="span-contact-block-title">+1 253 565 2365</span>
+              <span className="span-contact-block-text">
+                Mon to Fri 9am to 6pm
+              </span>
+            </div>
+            <div className="div-contact-block3">
+              <i class="bi bi-envelope icon-contact"></i>
+              <span className="span-contact-block-title">
+                support@colorlib.com
+              </span>
+              <span className="span-contact-block-text">
+                Send us your query anytime!
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* footer */}
