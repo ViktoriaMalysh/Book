@@ -24,6 +24,7 @@ import Account from "./settings/Account";
 import PublicEmail from "./settings/PublicEmail";
 import Basket from "./settings/basket/Basket";
 import { styles } from "./animation/styles";
+import About from "./pages/about/About";
 // import StripeCheckoutButton from '../src/components/stripe.button.component';
 
 export default function AppNav() {
@@ -59,8 +60,9 @@ export default function AppNav() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/delete_ccount" element={<DeleteAccount />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
 
-        
+
         <Route path="/settings/*" element={<ProfileSettings />} />
 
         {/* profileSettings */}

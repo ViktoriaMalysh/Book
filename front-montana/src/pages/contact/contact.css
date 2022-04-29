@@ -66,7 +66,6 @@ textarea {
   margin-bottom: 0;
   padding-right: 3em;
   font-size: 16px;
-  /* color: #2a2a2a; */
   font-weight: 300;
   font-family: "Raleway", sans-serif;
   color: #8a8a8a;
@@ -112,7 +111,6 @@ textarea::placeholder {
   height: 200px;
   width: 100%;
   font-family: inherit;
-  /* font-size: inherit; */
   line-height: 1.5;
   color: #495057;
 }
@@ -227,4 +225,40 @@ textarea::placeholder {
   font-size: 17px;
   letter-spacing: 1px;
 
+}
+
+.button-close{
+  cursor: pointer;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  background: #e0e1e2 none;
+  color: rgba(0,0,0,.6);
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  margin: 0 0.25em 0 0;
+  padding: 0.78571429em 1.5em 0.78571429em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.28571429rem;
+}
+
+.button-close:hover{
+  background: #d1d1d1 none;
+}
+
+.modal-header{
+  padding-left: 2em;
+}
+
+.modal-body{
+  padding-left: 2em;
+  line-height: 1.5em;
+  font-size: 15px;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 }

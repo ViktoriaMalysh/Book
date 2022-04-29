@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+
+.div-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "header header header header header header"
+    ". about about about about ."
+    ". info info info info ."
+    "footer footer footer footer footer footer";
+}
+
+.div-about-header {
+  text-align: center;
+  padding-top: 13%;
+  grid-area: header;
+  background-size: 100% 500px;
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/bradcam.png");
+  height: 54vh;
+}
+
+.div-about-block2{
+  grid-area: about;
+}
+
+.div-about-footer {
+  grid-area: footer;
+  margin-top: 5%;
+}
+
+.p-about-title {
+  font-family: "Raleway", sans-serif;
+  font-style: initial;
+  font-size: 60px;
+  color: #fff;
+}
+
