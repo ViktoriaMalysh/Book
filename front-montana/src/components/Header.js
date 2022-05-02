@@ -81,9 +81,21 @@ function Header() {
                 />
               </div>
             </Link>
-            <Link to="/contact">
+            <Link to="/blog">
               <div
                 className="div-menu-item44"
+                onClick={() => handleItemClick("blog")}
+              >
+                <span className="p-item"> Blog</span>
+                <div
+                  className="div-line-item"
+                  hidden={activeItem !== "blog"}
+                />
+              </div>
+            </Link>
+            <Link to="/contact">
+              <div
+                className="div-menu-item55"
                 onClick={() => handleItemClick("contact")}
               >
                 <span className="p-item"> Contact</span>

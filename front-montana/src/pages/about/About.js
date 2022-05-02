@@ -2,6 +2,7 @@ import { StyleRoot } from "radium";
 import { styles } from "../../animation/styles";
 import Footer from "../../components/footer/Footer";
 import AboutUs from "../Home Page/components/About";
+import Links from "../Home Page/components/Links";
 import "./about.css";
 
 function About() {
@@ -16,6 +17,56 @@ function About() {
 
         <div className="div-about-block2">
           <AboutUs />
+        </div>
+        <div className="div-about-link">
+          <Links />
+        </div>
+
+        <div className="div-about-counter">
+          {[
+            {
+              id: 1,
+              icon: "bi bi-people i-item",
+              count: 30,
+              title: "+ Tour Guides",
+            },
+            {
+              id: 2,
+              icon: "bi bi-trophy i-item",
+              count: 600,
+              title: "+ Tour Completed",
+            },
+            {
+              id: 3,
+              icon: "bi bi-people i-item",
+              count: 25,
+              title: "+ Travel Experience",
+            },
+            {
+              id: 4,
+              icon: "bi bi-people i-item",
+              count: 50,
+              title: "+ Win Awards",
+            },
+          ].map((item) => (
+            <div className="div-about-counter-item">
+              <i className={item.icon}></i>
+              <br />
+              <span
+                className="span-about-counter-item-count"
+                data-count="+"
+                data-to="600"
+                data-speed="3000"
+              >
+                {item.count}
+              
+              </span>
+              <br />
+              <span className="span-about-counter-item-title">
+                {item.title}
+              </span>
+            </div>
+          ))}
         </div>
 
         {/* footer */}

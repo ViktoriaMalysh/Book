@@ -1,7 +1,8 @@
 .div-menu-item11,
 .div-menu-item22,
 .div-menu-item33,
-.div-menu-item44 {
+.div-menu-item44,
+.div-menu-item55 {
   padding: 2em;
   color: #fff;
   display: inline-block;
@@ -31,7 +32,7 @@
   position: fixed;
   display: grid;
   grid-template-columns: 7% 15% 15% 5% 5% 10% 5% 10% 10% 15% 7%;
-  grid-template-areas: ". sliderHeader sliderHeader . . img3 . . icon123 buttonAuthOrBook .";
+  grid-template-areas: ". sliderHeader sliderHeader sliderHeader . img3 . . icon123 buttonAuthOrBook .";
 }
 
 .align-div {

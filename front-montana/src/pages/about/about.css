@@ -5,8 +5,10 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "header header header header header header"
-    ". about about about about ."
+    "about about about about about about"
     ". info info info info ."
+    "counter counter counter counter counter counter"
+    "link link link link link link"
     "footer footer footer footer footer footer";
 }
 
@@ -19,13 +21,13 @@
   height: 54vh;
 }
 
-.div-about-block2{
+.div-about-block2 {
   grid-area: about;
 }
 
 .div-about-footer {
   grid-area: footer;
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 
 .p-about-title {
@@ -35,3 +37,51 @@
   color: #fff;
 }
 
+.div-about-link {
+  grid-area: link;
+}
+
+.div-about-counter {
+  grid-area: counter;
+  background-color: rgb(34, 156, 255);
+  height: 350px;
+  width: 100%;
+  display: grid;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 25px;
+  /* grid-template-areas: ". item item item item ."; */
+}
+
+.div-about-counter-item {
+  /* display: inline; */
+  margin-top: 50px;
+  border-radius: 20px;
+  color: #fff;
+  height: 250px;
+  text-align: center;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.i-item {
+  margin-top: 3em;
+  font-size: 50px;
+}
+
+.span-about-counter-item-count {
+  line-height: 1;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+}
+
+.span-about-counter-item-title{
+  color: #232323;
+  font-family: karla,sans-serif;
+  margin-top: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-weight: 600;
+}
