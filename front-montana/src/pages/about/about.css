@@ -7,9 +7,14 @@
     "header header header header header header"
     "about about about about about about"
     ". info info info info ."
+    "comments comments comments comments comments comments"
     "counter counter counter counter counter counter"
     "link link link link link link"
     "footer footer footer footer footer footer";
+}
+
+.div-about-comments{
+  grid-area: comments;
 }
 
 .div-about-header {
@@ -56,6 +61,7 @@
 }
 
 .div-about-counter-item {
+  padding-top: 1em;
   /* display: inline; */
   margin-top: 50px;
   border-radius: 20px;
@@ -63,14 +69,24 @@
   height: 250px;
   text-align: center;
   border: 3px solid rgba(255, 255, 255, 0.3);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "iconItem"
+  "countItem"
+  "titleItem";
 }
 
 .i-item {
-  margin-top: 3em;
+  margin-top: 0.6em;
   font-size: 50px;
+  grid-area: iconItem;
+  /* width: 100%; */
 }
 
 .span-about-counter-item-count {
+  grid-area: countItem;
+  margin-top: -10px;
+  /* width: 100%; */
   line-height: 1;
   font-size: 50px;
   font-weight: 600;
@@ -78,9 +94,10 @@
 }
 
 .span-about-counter-item-title{
+  grid-area: titleItem;
   color: #232323;
   font-family: karla,sans-serif;
-  margin-top: 15px;
+  margin-top: -15px;
   font-size: 18px;
   letter-spacing: -1px;
   font-weight: 600;

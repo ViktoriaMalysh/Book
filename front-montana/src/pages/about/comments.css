@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+
+.div-ab-comments{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  ". . title title . ."
+  ". . textA textA . ."
+  ". comment comment comment comment ."
+  ;
+  text-align: center;
+}
+
+.div-ab-comments-block{
+  grid-area: comment;
+  margin-bottom: 10em;
+
+}
+
+.span-ab-comments-title{
+  grid-area: title;
+  font-family: "Raleway", sans-serif;
+  /* font-family: roboto,sans-serif; */
+  font-size: 37px;
+  font-weight: 600;
+  margin-bottom: 0.7em;
+}
+
+.span-ab-comments-text{
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 400;  
+  grid-area: textA;
+  line-height: 30px;
+  margin-bottom: 4em;
+}
+
+.div-ab-comments-item{
+  background: #fff;
+  /* padding: 30px; */
+  padding-bottom: 5em;
+  border-radius: 15px;
+  display: inline-block;
+  height: 284px;
+  width: 367px;
+  box-shadow: 0 0 10px rgba(219, 219, 219, 0.767);
+  margin-right: 25px;
+}
+

@@ -7,9 +7,10 @@ import MyMarker from "./MyMarker";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Modal } from "react-bootstrap";
-import "bootstrap-icons/font/bootstrap-icons.css";
+// import "bootstrap-icons/font/bootstrap-icons.css";
 import "./contact.css";
-
+{/* <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"></link> */}
+// import { faAddressBook } from '@fortawesome/free-solid-svg-icons'
 const distanceToMouse = (pt, mp) => {
   if (pt && mp) {
     return Math.sqrt(
