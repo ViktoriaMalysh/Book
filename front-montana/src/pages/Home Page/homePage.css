@@ -48,7 +48,7 @@
   font-weight: 200;
   color: rgb(0, 0, 0);
   font-family: "Raleway";
-  line-height: 28px;
+  /* line-height: 28px; */
 }
 
 .img-hotel1 {
@@ -87,13 +87,24 @@
   transition-duration: 0.8s;
 } */
 
+/* .fa{
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+} */
+
+
+
 .p-name1 {
   margin-right: 0.5em;
   font-size: 40px;
   color: rgb(0, 0, 0);
   font-weight: 300;
   font-family: "Raleway", 300;
-  line-height: 60px;
+  /* line-height: 60px; */
 }
 
 /* transform: scale(1.1);

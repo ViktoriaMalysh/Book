@@ -8,7 +8,7 @@
   ". . textA textA . ."
   ". comment comment comment comment ."
   ;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .div-ab-comments-block{
@@ -37,7 +37,6 @@
 
 .div-ab-comments-item{
   background: #fff;
-  /* padding: 30px; */
   padding-bottom: 5em;
   border-radius: 15px;
   display: inline-block;
@@ -47,3 +46,40 @@
   margin-right: 25px;
 }
 
+.bnm{
+  position: absolute;
+  /* right: 60px; */
+  /* top: -2px; */
+  margin-top: -20px;
+  margin-left: 290px;
+  /* float: right; */
+
+  font-size: 50px;
+  color: rgb(34, 156, 255);
+}
+
+
+.bnm{
+  position: absolute;
+  /* right: 60px; */
+  /* top: -2px; */
+  /* margin-top: -20px; */
+  /* margin-left: 290px; */
+  /* float: right; */
+
+  font-size: 50px;
+  color: rgb(34, 156, 255);
+}
+
+.div-ab-comments-item-title{
+  margin-left: 30px;
+  margin-right: 60px;
+
+  margin-top: 20px;
+}
+
+.span-ab-comment{
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+
+}
