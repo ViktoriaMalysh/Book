@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+
+.link-team{
+  text-decoration: none;
+}
+
+
+.div-ab-team {
+  margin-top: 150px;
+  margin-bottom: 180px;
+  display: grid;
+  grid-template-columns: 15% 1fr 1fr 1fr 1fr 15%;
+  grid-template-areas:
+    ". . titleTeam titleTeam . ."
+    ". . textTeam textTeam . ."
+    ". teams teams teams teams .";
+  text-align: center;
+}
+
+.span-ab-team-title {
+  grid-area: titleTeam;
+  font-family: "Raleway", sans-serif;
+  font-size: 37px;
+  font-weight: 600;
+  margin-bottom: 0.7em;
+}
+
+.span-ab-team-text {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  grid-area: textTeam;
+  line-height: 30px;
+  margin-bottom: 4em;
+}
+
+.div-ab-team-block {
+  grid-area: teams;
+}
+
+.div-ab-team-item {
+  display: inline-block;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.img-ab-team-item-img {
+  width: 272px;
+  border-radius: 15px;
+  height: 363px;
+}
+
+.div-ab-team-item-block2 {
+  position: absolute;
+  background: #fff;
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
+  margin-top: -110px;
+  margin-left: 19.5px;
+  width: 233px;
+  box-shadow: 0 3px 24px rgb(0 0 0 / 10%);
+}
+
+.span-ab-team-item-title {
+  color: #051242;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+  grid-area: titleTeam;
+}
+
+.span-ab-team-item-title:hover {
+  color: rgb(34, 156, 255);
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.div-ab-team-item-icons {
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+.span-ab-team-item-text {
+  color: rgb(34, 156, 255);
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 10px;
+  grid-area: textTeam;
+}
+
+.icon-ab-team {
+  color: rgb(34, 156, 255);
+  transition: all 0.5s ease-in-out;
+  margin: 8px;
+  font-size: 18px;
+}
+
+.icon-ab-team:hover {
+  color: #051242;
+  cursor: pointer;
+}
+
+.div-ab-team-item-text {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "titleTeam" "textTeam";
+}

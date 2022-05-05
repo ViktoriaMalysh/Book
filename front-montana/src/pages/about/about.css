@@ -9,6 +9,7 @@
     ". info info info info ."
     "comments comments comments comments comments comments"
     "counter counter counter counter counter counter"
+    "team team team team team team"
     "link link link link link link"
     "footer footer footer footer footer footer";
 }
@@ -101,4 +102,9 @@
   font-size: 18px;
   letter-spacing: -1px;
   font-weight: 600;
+}
+
+
+.div-about-team{
+  grid-area: team;
 }

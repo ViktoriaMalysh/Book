@@ -3,7 +3,8 @@ import { styles } from "../../animation/styles";
 import Footer from "../../components/footer/Footer";
 import AboutUs from "../Home Page/components/About";
 import Links from "../Home Page/components/Links";
-import Comments from "../about/Comments";
+import Comments from "./Comments";
+import Team from "./Team";
 import "./about.css";
 
 function About() {
@@ -56,7 +57,6 @@ function About() {
           ].map((item) => (
             <div className="div-about-counter-item">
               <i className={item.icon}></i>
-              {/* <br /> */}
               <span
                 className="span-about-counter-item-count"
                 data-count="+"
@@ -66,12 +66,15 @@ function About() {
                 {item.count}
               
               </span>
-              {/* <br /> */}
               <span className="span-about-counter-item-title">
                 {item.title}
               </span>
             </div>
           ))}
+        </div>
+
+        <div className="div-about-team">
+          <Team/>
         </div>
 
         {/* footer */}

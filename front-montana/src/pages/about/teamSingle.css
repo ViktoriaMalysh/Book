@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+
+.div-team-single{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  "header header header header header header"
+  "user user user user user user"
+  "footer footer footer footer footer footer"
+  ;
+}
+
+.div-team-single-user{
+  grid-area: user;
+}
+
+.div-team-single-header {
+  text-align: center;
+  padding-top: 10%;
+  grid-area: header;
+  background-size: 100% 400px;
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/bradcam.png");
+  height: 40vh;
+}
+
+.div-team-single-footer {
+  grid-area: footer;
+  /* margin-top: 5%; */
+} 
+
+.p-team-single-title {
+  font-family: "Raleway", sans-serif;
+  font-style: initial;
+  font-size: 60px;
+  color: #fff;
+}

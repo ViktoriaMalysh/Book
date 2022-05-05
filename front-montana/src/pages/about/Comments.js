@@ -1,9 +1,6 @@
-import { Segment } from "semantic-ui-react";
 import "./comments.css";
 import "font-awesome/css/font-awesome.min.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
-import { faHome, quoteRight } from "@fortawesome/free-solid-svg-icons";
+
 const comments = [
   {
     id: 1,
@@ -69,22 +66,29 @@ function Comments() {
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout.
       </span>
-      <FontAwesomeIcon icon="fa-brands fa-twitter" />
 
       <div className="div-ab-comments-block">
         {comments.map((item) => (
           <div className="div-ab-comments-item">
-            {/* {item.userName} */}
-
             <span className="bnm">
               <i className="fa fa-quote-right"></i>
             </span>
             <div className="div-ab-comments-item-title">
-            <span className="bnm1">
-              <i class="fa fa-star"></i>
-            </span>
+              <span className="bnm1">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </span>
               <span className="span-ab-comment">{item.comment}</span>
-
+              <div className="div-ab-comments-user">
+                <img className="img-ab-comments-avatar" src={item.avatar} />
+                <span className="span-ab-comments-userName">
+                  {item.userName}
+                </span>
+                <span className="span-ab-comments-status">{item.status}</span>
+              </div>
             </div>
           </div>
         ))}

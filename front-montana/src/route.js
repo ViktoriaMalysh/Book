@@ -20,6 +20,8 @@ import FirstPage from "./pages/FirstPage";
 import HomePage from "./pages/Home Page/HomePage";
 import Contact from "./pages/contact/Contact";
 
+import TeamSingle from "./pages/about/TeamSingle";
+
 import Account from "./settings/Account";
 import PublicEmail from "./settings/PublicEmail";
 import Basket from "./settings/basket/Basket";
@@ -61,6 +63,8 @@ export default function AppNav() {
         <Route path="/delete_ccount" element={<DeleteAccount />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+
+        <Route path="/team_single/:id" element={<TeamSingle />} />
 
 
         <Route path="/settings/*" element={<ProfileSettings />} />

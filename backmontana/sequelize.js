@@ -35,6 +35,23 @@ const HotelRooms = sequelize.define("hotel_rooms", {
   }
 );
 
+const Team = sequelize.define("team", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  userName: DataTypes.TEXT,
+  avatar: DataTypes.TEXT,
+  position: DataTypes.TEXT,
+  email: DataTypes.TEXT,
+  phoneNumber: DataTypes.TEXT,
+  }, 
+  { 
+    timestamps: false
+  }
+);
+
 const User = sequelize.define("users", { 
   id: {
     type: DataTypes.INTEGER,
@@ -109,5 +126,6 @@ module.exports = {
   SaleRooms: SaleRooms,
   UserRooms: UserRooms,
   UserPaymentCards: UserPaymentCards,
+  Team: Team,
 };
        
