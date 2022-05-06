@@ -21,7 +21,7 @@ const requestSuccessAdmin = () => {
   return (dispatch) => {
     dispatch({ type: REQUESTED_SUCCEEDED_ADMIN });
   };
-}; 
+};
 
 const requestErrorAdmin = (err, message) => {
   return (dispatch) => {
@@ -43,14 +43,13 @@ export const alert = (message) => {
 export const adminShowMyAviaTickets = () => {
   return (dispatch) => {
     dispatch(requestAdmin());
-    dispatch({ type: FIND, payload: false })
+    dispatch({ type: FIND, payload: false });
     axios
-      .post(`${API_URL}admin/showAviaTicketsAdmin`, {
+      .post(`${API_URL}admin/showAviaTicketsAdmin`, {})
+      .then((res) => {
+        if (res.data.length === 0) dispatch({ type: FIND, payload: true });
+        else dispatch({ type: AVIA_SHOW_MY_TICKETS, payload: res.data });
       })
-    .then((res) => {
-      if(res.data.length===0) dispatch({ type: FIND, payload: true })
-      else dispatch({ type: AVIA_SHOW_MY_TICKETS, payload: res.data })
-    })
       .then(
         (data) => dispatch(requestSuccessAdmin()),
         dispatch({ type: SHOW_LOADER }),
@@ -58,7 +57,7 @@ export const adminShowMyAviaTickets = () => {
           dispatch({ type: HIDE_LOADER });
         }, 300),
         dispatch({ type: REQUESTED_SUCCEEDED_CLOSE_ADMIN }),
-        (err) => dispatch(requestErrorAdmin(err, 'Project not found'))
+        (err) => dispatch(requestErrorAdmin(err, "Project not found"))
       );
   };
 };
@@ -66,14 +65,12 @@ export const adminShowMyAviaTickets = () => {
 export const adminShowMyTickets = () => {
   return (dispatch) => {
     dispatch(requestAdmin());
-    dispatch({ type: FIND, payload: false })
+    dispatch({ type: FIND, payload: false });
     axios
-      .post(`${API_URL}admin/showTicketsAdmin`, {
-        
-      })
+      .post(`${API_URL}admin/showTicketsAdmin`, {})
       .then((res) => {
-        if(res.data.length===0) dispatch({ type: FIND, payload: true })
-        else dispatch({ type: SHOW_MY_TICKETS, payload: res.data })
+        if (res.data.length === 0) dispatch({ type: FIND, payload: true });
+        else dispatch({ type: SHOW_MY_TICKETS, payload: res.data });
       })
       .then(
         (data) => dispatch(requestSuccessAdmin()),
@@ -82,7 +79,7 @@ export const adminShowMyTickets = () => {
           dispatch({ type: HIDE_LOADER });
         }, 300),
         dispatch({ type: REQUESTED_SUCCEEDED_CLOSE_ADMIN }),
-        (err) => dispatch(requestErrorAdmin(err, 'Project not found'))
+        (err) => dispatch(requestErrorAdmin(err, "Project not found"))
       );
   };
 };

@@ -18,6 +18,8 @@ app.use(require('morgan')('dev'))
 const rooms = require('./route/rooms')
 const users = require('./route/users')
 const admin = require('./route/admin')
+const team = require('./route/team')
+
 
 // app.use(cors())
 
@@ -51,5 +53,6 @@ app.post("/payment", async (req, res) => {
 app.use('/rooms', rooms)
 app.use('/users', users)
 app.use('/admin', admin)
+app.use('/team', team)
    
 module.exports = app

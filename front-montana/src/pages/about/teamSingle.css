@@ -1,17 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
 
-.div-team-single{
+.div-team-single {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-  "header header header header header header"
-  "user user user user user user"
-  "footer footer footer footer footer footer"
-  ;
+  grid-template-areas:
+    "header header header header header header"
+    "user user user user user user"
+    "biography biography biography biography biography biography"
+    "footer footer footer footer footer footer";
 }
 
-.div-team-single-user{
+.div-team-single-user {
+  margin-top: 120px;
+  margin-bottom: 80px;
   grid-area: user;
+  display: grid;
+  grid-template-columns: 20% 17% 43% 20%;
+  grid-template-areas: ". photo block2 .";
 }
 
 .div-team-single-header {
@@ -25,12 +30,155 @@
 
 .div-team-single-footer {
   grid-area: footer;
-  /* margin-top: 5%; */
-} 
+}
 
 .p-team-single-title {
   font-family: "Raleway", sans-serif;
   font-style: initial;
   font-size: 60px;
   color: #fff;
+}
+
+.img-team-single-avatar {
+  border-radius: 15px;
+  grid-area: photo;
+}
+
+.div-team-single-user-block1 {
+  padding: 30px;
+  box-shadow: 0 3px 24px rgb(0 0 0 / 10%);
+  border-radius: 15px;
+  grid-area: block2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "name"
+    "position"
+    "textS"
+    "email"
+    "phoneNumber"
+    "icons";
+}
+
+.span-team-single-user-block1-title {
+  grid-area: name;
+  font-size: 30px;
+  color: #1b1b1b;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.2;
+}
+
+.span-team-single-user-block1-position {
+  grid-area: position;
+  margin-top: -20px;
+
+  font-style: normal;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(34, 156, 255);
+  line-height: 1.8;
+}
+
+.span-team-single-user-block1-text {
+  grid-area: textS;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  color: #14212b;
+  line-height: 1.8;
+}
+
+.div-team-single-user-block1-email {
+  grid-area: email;
+  display: inline-block;
+}
+
+.span-team-single-user-block1-email {
+  margin-left: 15px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  color: #14212b;
+  line-height: 1.8;
+}
+
+.div-team-single-user-block1-phone {
+  grid-area: phoneNumber;
+  display: inline-block;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  color: #14212b;
+  line-height: 1.8;
+  margin-top: -10px;
+}
+
+.span-team-single-user-block1-phone {
+  margin-left: 15px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  color: #14212b;
+  line-height: 1.8;
+}
+
+.span-team-single-user-block1-email-icon,
+.span-team-single-user-block1-phone-icon {
+  color: rgb(34, 156, 255);
+}
+
+.div-team-single-user-block2 {
+  margin-bottom: 150px;
+
+  grid-area: biography;
+  display: grid;
+  grid-template-columns: 20% 35% 23% 20%;
+  grid-template-areas:
+    ". titleBlock2 imgBlock1 ."
+    ". textBlock21 imgBlock1 ."
+    ". textBlock22 imgBlock1 .";
+}
+
+.span-team-single-user-block2-title {
+  grid-area: titleBlock2;
+  font-family: "Raleway", sans-serif;
+  color: #1b1b1b;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 25px;
+}
+
+.span-team-single-user-block2-text1,
+.span-team-single-user-block2-text2 {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  color: #14212b;
+  line-height: 1.8;
+  margin-top: 18px;
+  margin-right: 40px;
+}
+
+.span-team-single-user-block2-text1 {
+  grid-area: textBlock21;
+}
+
+.span-team-single-user-block2-text2 {
+  margin-top: 10px;
+  grid-area: textBlock22;
+}
+
+.img-team-single-user-block2 {
+  grid-area: imgBlock1;
+  width: 470px;
+  height: 352px;
+  border-radius: 15px;
 }

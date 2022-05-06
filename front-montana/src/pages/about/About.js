@@ -6,8 +6,11 @@ import Links from "../Home Page/components/Links";
 import Comments from "./Comments";
 import Team from "./Team";
 import "./about.css";
+import { useEffect } from "react";
 
 function About() {
+
+
   return (
     <StyleRoot>
       <div className="div-about">

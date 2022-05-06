@@ -13,6 +13,7 @@ import "react-multi-carousel/lib/styles.css";
 // import { showSaleTickets } from "../redux/actionTickets";
 import "./header.css";
 import { styles } from "../animation/styles";
+import { showTeam } from "../redux/actionTeam";
 
 function Header() {
   const store = useSelector((state) => state);
@@ -34,7 +35,8 @@ function Header() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    dispatch(fetchVerifyToken(token));
+    dispatch(fetchVerifyToken(token)); 
+    dispatch(showTeam());
     // dispatch(showMyTickets(store.users.userId));
     // dispatch(showSaleTickets());
   }, []);

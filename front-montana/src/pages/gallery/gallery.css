@@ -1,0 +1,53 @@
+.div-gallery {
+  margin-top: 400px;
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 1fr 10%;
+  grid-template-areas:
+    ". div2 div1 div3 ."
+    ". div4 div1 div6 ."
+    ". div4 div5 div6 ."
+
+    ;
+}
+
+.div1 {
+  background-color: aqua;
+  grid-area: div1;
+  padding: 20px;
+  height: 100%;
+}
+.div2 {
+  background-color: rgb(0, 89, 255);
+  padding: 20px;
+  grid-area: div2;
+  height: 100%;
+
+}
+.div3 {
+  background-color: rgb(255, 145, 0);
+  padding: 20px;
+  grid-area: div3;
+  height: 100%;
+
+}
+.div4 {
+  background-color: rgb(255, 0, 191);
+  padding: 20px;
+  grid-area: div4;
+  height: 100%;
+
+}
+.div5 {
+  background-color: rgb(255, 0, 13);
+  padding: 20px;
+  grid-area: div5;
+  height: 100%;
+
+}
+.div6 {
+  background-color: rgb(208, 255, 0);
+  padding: 20px;
+ 
+  height: 100%;
+  grid-area: div6;
+}
