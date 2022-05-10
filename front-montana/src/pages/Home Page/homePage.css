@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+
+
 .div-home {
   background-color: rgba(180, 242, 253, 0.445);
 }
@@ -175,7 +178,7 @@
   border-radius: 50%;
 }
 
-.fa {
+.fal {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;

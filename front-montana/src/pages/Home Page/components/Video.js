@@ -8,7 +8,7 @@ function Video() {
         href="https://www.youtube.com/watch?v=cCSkv62weI0"
         className="button-video"
       >
-        <i className="fa fa-play">&#9658;</i>
+        <i className="fal fa-play"></i>
       </a>
     </div>
   );

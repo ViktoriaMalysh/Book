@@ -29,33 +29,6 @@ const comments = [
     stars: 5,
     status: "Traveller",
   },
-  // {
-  //   id: 4,
-  //   userName: "Sylvia H Green",
-  //   avatar: "https://live.themewild.com/travelox/assets/img/testimonial/2.jpg",
-  //   comment:
-  //     "There are many variations of passages available but the majority have suffered alteration in some form.",
-  //   stars: 5,
-  //   status: "Traveller",
-  // },
-  // {
-  //   id: 5,
-  //   userName: "Sylvia H Green",
-  //   avatar: "https://live.themewild.com/travelox/assets/img/testimonial/2.jpg",
-  //   comment:
-  //     "There are many variations of passages available but the majority have suffered alteration in some form.",
-  //   stars: 5,
-  //   status: "Traveller",
-  // },
-  // {
-  //   id: 6,
-  //   userName: "Sylvia H Green",
-  //   avatar: "https://live.themewild.com/travelox/assets/img/testimonial/2.jpg",
-  //   comment:
-  //     "There are many variations of passages available but the majority have suffered alteration in some form.",
-  //   stars: 5,
-  //   status: "Traveller",
-  // },
 ];
 
 function Comments() {

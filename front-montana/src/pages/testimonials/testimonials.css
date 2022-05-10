@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+
+.div-testimonials{
+  display: grid;
+  grid-template-columns: 15% 1fr 1fr 1fr 1fr 15%;
+  grid-template-areas:
+    "header header header header header header"
+    ". testimonials testimonials testimonials testimonials ."
+    "footer footer footer footer footer footer";
+}
+
+.div-testimonials-header {
+  text-align: center;
+  padding-top: 10%;
+  grid-area: header;
+  background-size: 100% 400px;
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/bradcam.png");
+  height: 40vh;
+}
+
+.p-testimonials-title {
+  font-family: "Raleway", sans-serif;
+  font-style: initial;
+  font-size: 60px;
+  color: #fff;
+}
+
+.div-testimonials-block{
+  text-align: center;
+  margin-top: 9em;
+  margin-bottom: 9em;
+  grid-area: testimonials;
+}
+
+.div-testimonials-footer {
+  grid-area: footer;
+}

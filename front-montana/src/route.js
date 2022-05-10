@@ -28,6 +28,7 @@ import Basket from "./settings/basket/Basket";
 import { styles } from "./animation/styles";
 import About from "./pages/about/About";
 import Gallery from "./pages/gallery/Gallery";
+import Testimonials from "./pages/testimonials/Testimonials";
 // import StripeCheckoutButton from '../src/components/stripe.button.component';
 
 export default function AppNav() {
@@ -66,7 +67,9 @@ export default function AppNav() {
         <Route path="/about" element={<About />} />
 
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/testimonials" element={<Testimonials />} />
 
+        
         <Route path="/team_single/:id" element={<TeamSingle />} />
 
 

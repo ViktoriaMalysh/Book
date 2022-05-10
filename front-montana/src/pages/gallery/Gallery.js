@@ -19,6 +19,15 @@ function Gallery() {
                 className="img-gallery"
                 src="https://live.themewild.com/travelox/assets/img/gallery/gallery-1.jpg"
               />
+              {/* <base target="_blank"></base> */}
+              <a
+                href="#"
+                src="photo/gallery-1.jpg"
+                className="a-gallery-change1"
+                style={{ color: "white" }}
+              >
+                <i className="fa fa-plus" />
+              </a>
             </div>
           </div>
           <div className="div2">
@@ -27,6 +36,13 @@ function Gallery() {
                 className="img-gallery"
                 src="https://live.themewild.com/travelox/assets/img/gallery/gallery-2.jpg"
               />
+              <a
+                href="https://www.youtube.com/watch?v=cCSkv62weI0"
+                className="a-gallery-change1"
+                style={{ color: "white" }}
+              >
+                <i className="fa fa-plus" />
+              </a>
             </div>
           </div>
 
@@ -36,6 +52,13 @@ function Gallery() {
                 className="img-gallery"
                 src="https://live.themewild.com/travelox/assets/img/gallery/gallery-3.jpg"
               />
+              <a
+                href="https://www.youtube.com/watch?v=cCSkv62weI0"
+                className="a-gallery-change1"
+                style={{ color: "white" }}
+              >
+                <i className="fa fa-plus" />
+              </a>
             </div>
           </div>
 
@@ -45,6 +68,13 @@ function Gallery() {
                 className="img-gallery"
                 src="https://live.themewild.com/travelox/assets/img/gallery/gallery-4.jpg"
               />
+              <a
+                href="https://www.youtube.com/watch?v=cCSkv62weI0"
+                className="a-gallery-change1"
+                style={{ color: "white" }}
+              >
+                <i className="fa fa-plus" />
+              </a>
             </div>
           </div>
 
@@ -54,6 +84,13 @@ function Gallery() {
                 className="img-gallery"
                 src="https://live.themewild.com/travelox/assets/img/gallery/gallery-6.jpg"
               />
+              <a
+                href="https://www.youtube.com/watch?v=cCSkv62weI0"
+                className="a-gallery-change1"
+                style={{ color: "white" }}
+              >
+                <i className="fa fa-plus" />
+              </a>
             </div>{" "}
           </div>
 
@@ -63,6 +100,13 @@ function Gallery() {
                 className="img-gallery"
                 src="https://live.themewild.com/travelox/assets/img/gallery/gallery-5.jpg"
               />
+              <a
+                href="https://www.youtube.com/watch?v=cCSkv62weI0"
+                className="a-gallery-change1"
+                style={{ color: "white" }}
+              >
+                <i className="fa fa-plus" />
+              </a>
             </div>{" "}
           </div>
         </div>

@@ -8,6 +8,37 @@
     "footer footer footer footer footer footer";
 }
 
+.div7:hover .a-gallery-change1 {
+  visibility: visible;
+}
+
+
+.a-gallery-change1 {
+  visibility: hidden;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50px;
+  background: #fca702;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  outline: none;
+  /* -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease; */
+  transition: all 0.1s ease;
+}
+
+/* a:hover{
+  text-decoration: none;
+  color: #fff;
+} */
+
 .div-gallery-header {
   text-align: center;
   padding-top: 10%;
@@ -17,7 +48,7 @@
   height: 40vh;
 }
 
-.p-gallery-title{
+.p-gallery-title {
   font-family: "Raleway", sans-serif;
   font-style: initial;
   font-size: 60px;
@@ -47,9 +78,11 @@
   border-radius: 15px;
 }
 
-.div7{
+.div7 {
   border-radius: 15px;
   transition: all 0.3s ease-out 0s;
+  position: relative;
+  text-decoration: none;
 }
 
 .div7:hover {
@@ -64,7 +97,7 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.div7:hover .img-gallery   {
+.div7:hover .img-gallery {
   opacity: 0.3;
 }
 
