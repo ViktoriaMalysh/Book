@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
 
+
 .div-about {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -16,6 +17,33 @@
 
 .div-about-comments{
   grid-area: comments;
+  margin-bottom: 8em;
+  text-align: center;
+}
+
+.button-comments-more{
+  margin-top: 3em;
+  border: 1px solid rgb(34, 156, 255);
+  color: rgb(34, 156, 255);
+  background-color: aliceblue;
+  text-align: center;
+  border-radius: 2px;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 500;
+  height: 3em;
+  width: 9em;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button-comments-more:hover{
+  border: 1px solid rgb(34, 156, 255);
+  background-color: rgb(34, 156, 255);
+  color: #fff;
 }
 
 .div-about-header {

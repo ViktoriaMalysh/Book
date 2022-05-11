@@ -1,0 +1,81 @@
+.div-not-found {
+  display: grid;
+  grid-template-columns: 30% 1fr 30%;
+  grid-template-areas:
+    "header header header"
+    ". message ."
+    "footer footer footer";
+}
+
+.div-not-found-header {
+  grid-area: header;
+  height: 125px;
+  background-color: #212529;
+}
+
+.div-not-found-message {
+  grid-area: message;
+  text-align: center;
+  margin-top: 6em;
+  margin-bottom: 9em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "img404"
+    "title404"
+    "text404"
+    "button404"
+;
+}
+
+.div-not-found-footer {
+  grid-area: footer;
+}
+
+.img-not-found {
+  grid-area: img404;
+}
+
+.span-not-found-title {
+  margin-top: 1em;
+  font-size: 36px;
+  font-weight: 800;
+  grid-area: title404;
+}
+
+.span-not-found-text {
+  margin-top: 1.5em;
+  font-size: 16px;
+  font-weight: 500;
+  grid-area: text404;
+}
+
+.button-not-found-back-home {
+  grid-area: button404;
+  /* margin-top: 3em; */
+  border: 1px solid rgb(34, 156, 255);
+  background-color: rgb(34, 156, 255);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 500;
+  height: 3em;
+  width: 9em;
+  margin: 2.5em auto 0 auto;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; 
+}
+
+.button-not-found-back-home:hover {
+  border: 1px solid rgb(34, 156, 255);
+  color: rgb(34, 156, 255);
+  background-color: aliceblue;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}

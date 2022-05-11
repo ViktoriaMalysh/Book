@@ -7,9 +7,10 @@ import Comments from "./Comments";
 import Team from "./Team";
 import "./about.css";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function About() {
-
+const navigate = useNavigate()
 
   return (
     <StyleRoot>
@@ -28,7 +29,9 @@ function About() {
         </div>
 
         <div className="div-about-comments">
-          <Comments/>
+          <Comments />
+          <button onClick={()=> navigate('/testimonials')} className="button-comments-more">More...</button>
+
         </div>
 
         <div className="div-about-counter">

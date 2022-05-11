@@ -82,36 +82,13 @@
   transition-duration: 0.8s;
 }
 
-/* .img-hotel2:hover {
-  grid-area: img2;
-  padding-top: 15em;
-  height: 610px;
-  transform: scale(1.2);
-  transition-duration: 0.8s;
-} */
-
-/* .fa{
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 1;
-  font-family: 'Font Awesome 5 Pro';
-  font-weight: 300;
-} */
-
-
-
 .p-name1 {
   margin-right: 0.5em;
   font-size: 40px;
   color: rgb(0, 0, 0);
   font-weight: 300;
   font-family: "Raleway", 300;
-  /* line-height: 60px; */
 }
-
-/* transform: scale(1.1);
-  transition-duration: 0.8s; */
 
 .div-3-video {
   grid-area: video1;
@@ -414,45 +391,10 @@
 }
 
 .img-7:hover {
-  width: 100%;
-  /* opacity: 0.5; */
-  /* background: #f00; */
-  /* z-index: -1; */
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
-
-
-  /* content: '';
-  /* top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; */
-    /* position: absolute; */
-
-  /* background: rgba(0, 0, 0, 0.719); */
-  /* z-index: 2; */
 }
 
-/* .img-7:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,.5);
-  z-index: 2;
-} */
-
-
-/* .dfghjkl:hover {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0; left: 0;
-  background: linear-gradient(to bottom, transparent 0%,  rgba(0,0,0,0.9) 100%);
-} */
 .div-7-img1, .div-7-img2, .div-7-img3, .div-7-img4, .div-7-img5 {
   overflow: hidden;
 }
@@ -460,7 +402,6 @@
 .div-7-img1, .div-7-img2, .div-7-img3, .div-7-img4, .div-7-img5:hover {
   opacity: 1;
 }
-
 
 .div-7-img2 {
   overflow: hidden;
@@ -487,7 +428,6 @@
 
 .div-8-end {
   padding-top: 9em;
-  /* padding-bottom: 2%; */
   background-color: black;
   color: white;
   grid-area: endBlock;

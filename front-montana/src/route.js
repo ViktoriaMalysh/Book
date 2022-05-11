@@ -29,6 +29,8 @@ import { styles } from "./animation/styles";
 import About from "./pages/about/About";
 import Gallery from "./pages/gallery/Gallery";
 import Testimonials from "./pages/testimonials/Testimonials";
+import NotFound from "./pages/404/404";
+import TermsOfService from "./pages/Terms Of Service/TermsOfService";
 // import StripeCheckoutButton from '../src/components/stripe.button.component';
 
 export default function AppNav() {
@@ -68,6 +70,8 @@ export default function AppNav() {
 
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="/terms_of_service" element={<TermsOfService />} />
 
         
         <Route path="/team_single/:id" element={<TeamSingle />} />
