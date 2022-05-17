@@ -1,0 +1,32 @@
+.div-faq{
+  display: grid;
+  grid-template-columns: 15% 1fr 1fr 1fr 1fr 15%;
+  grid-template-areas:
+    "header header header header header header"
+    ". . faq faq faq ."
+    "footer footer footer footer footer footer";
+}
+
+.div-faq-header {
+  text-align: center;
+  padding-top: 10%;
+  grid-area: header;
+  background-size: 100% 400px;
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/bradcam.png");
+  height: 40vh;
+}
+
+.p-faq-title {
+  font-family: "Raleway", sans-serif;
+  font-style: initial;
+  font-size: 60px;
+  color: #fff;
+}
+
+.div-faq-block{
+  grid-area: faq;
+}
+
+.div-faq-footer {
+  grid-area: footer;
+}

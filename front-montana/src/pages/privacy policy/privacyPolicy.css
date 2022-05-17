@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
 
-.div-terms {
+.div-privacy {
   display: grid;
   grid-template-columns: 18% 1fr 1fr 1fr 1fr 18%;
   grid-template-areas:
@@ -9,7 +9,7 @@
     "footer footer footer footer footer footer";
 }
 
-.div-terms-header {
+.div-privacy-header {
   text-align: center;
   padding-top: 10%;
   grid-area: header;
@@ -18,13 +18,13 @@
   height: 40vh;
 }
 
-.div-terms-block {
+.div-privacy-block {
   grid-area: terms;
   margin-top: 2.5em;
   margin-bottom: 5em;
 }
 
-.div-terms-block-item{
+.div-privacy-block-item{
   margin: 4em;
   display: grid;
   grid-template-columns: 1fr;
@@ -32,7 +32,7 @@
   "textItem";
 }
 
-.div-terms-title{
+.div-privacy-title{
   grid-area: titleItem;
   margin-bottom: 1.5em;
 
@@ -44,14 +44,14 @@
   padding-right: 0.5em;
 }
 
-.span-terms-title{
+.span-privacy-title{
   font-size: 30px;
   font-weight: 700;
   line-height: 1.2;
   font-family: "Raleway", sans-serif;
 }
 
-.span-terms-text{
+.span-privacy-text{
   grid-area: textItem;
   font-size: 16px;
   font-weight: 500;
@@ -59,7 +59,7 @@
   font-family: "Raleway", sans-serif;
 }
 
-.p-terms-title {
+.p-privacy-title {
   font-family: "Raleway", sans-serif;
   font-style: initial;
   font-size: 60px;
@@ -67,6 +67,6 @@
   /* width: 670%; */
 }
 
-.div-terms-footer {
+.div-privacy-footer {
   grid-area: footer;
 }

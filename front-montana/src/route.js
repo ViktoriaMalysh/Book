@@ -12,7 +12,6 @@ import CountrySpain from "./pages/countries/spain";
 import SignIn from "./user/SignIn";
 import Logout from "./user/Logout";
 import SignUp from "./user/SignUp";
-import Tickets from "./rooms/HotelTicket";
 import Profile from "./settings/Profile";
 import DeleteAccount from "./user/DeleteAccount";
 import ProfileSettings from "./settings/ProfileSettings";
@@ -31,6 +30,9 @@ import Gallery from "./pages/gallery/Gallery";
 import Testimonials from "./pages/testimonials/Testimonials";
 import NotFound from "./pages/404/404";
 import TermsOfService from "./pages/Terms Of Service/TermsOfService";
+import PrivacyPolicy from "./pages/privacy policy/PrivacyPolicy";
+import Faq from "./pages/FAQ/Faq";
+import Rooms from "./pages/rooms/Rooms";
 // import StripeCheckoutButton from '../src/components/stripe.button.component';
 
 export default function AppNav() {
@@ -72,6 +74,9 @@ export default function AppNav() {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="/terms_of_service" element={<TermsOfService />} />
+        <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+        <Route path="/faq" element={<Faq />} />
+
 
         
         <Route path="/team_single/:id" element={<TeamSingle />} />
@@ -81,7 +86,7 @@ export default function AppNav() {
 
         {/* profileSettings */}
         {/* <Route path="/ticket/hotelTicket" element={<HotelTicket />} /> */}
-        {/* <Route path="/ticket/aviaTicket" element={<AviaTicket />} /> */}
+        <Route path="/rooms" element={<Rooms />} />
 
         {/* <Route path="/tickets" element={<Tickets />} /> */}
         <Route path="/profile" element={<Profile />} />

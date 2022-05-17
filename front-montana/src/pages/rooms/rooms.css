@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+
+.div-rooms {
+  display: grid;
+  grid-template-columns: 15% 1fr 1fr 1fr 1fr 15%;
+  grid-template-areas:
+    "header header header header header header"
+    ". rooms rooms rooms rooms ."
+    "footer footer footer footer footer footer";
+}
+
+.div-rooms-header {
+  text-align: center;
+  padding-top: 10%;
+  grid-area: header;
+  background-size: 100% 400px;
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/bradcam.png");
+  height: 40vh;
+}
+
+.p-rooms-title {
+  font-family: "Raleway", sans-serif;
+  font-style: initial;
+  font-size: 60px;
+  color: #fff;
+}
+
+.div-rooms-block {
+  margin-top: 8em;
+  grid-area: rooms;
+  display: grid;
+  grid-template-columns: 30% 35% 35%;
+  grid-template-areas:
+    "search title sort"
+    "category cards cards"
+    "price cards cards"
+    "rating cards cards"
+    "advertising cards cards";
+}
+
+.div-rooms-search {
+  grid-area: search;
+}
+
+.div-rooms-search,
+.div-rooms-category,
+.div-rooms-price-range,
+.div-rooms-rating,
+.div-rooms-advertising 
+{
+  margin-bottom: 30px;
+  box-shadow: 0 3px 24px rgb(0 0 0 / 10%);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.span-rooms-title {
+  font-size: 24px;
+  color: #1b1b1b;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.2;
+}
+
+.div-rooms-title {
+  grid-area: title;
+}
+
+.div-rooms-search-block1 {
+  padding-top: 15px;
+  width: 100%;
+}
+
+.label-block1 {
+  color: #6c7592;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+}
+
+.input-block1 {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  background-clip: padding-box;
+  border: 1px solid #6c7592;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.label-block1-checkbox {
+  margin-left: 10px;
+  color: #6c7592;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+}
+
+.div-rooms-title {
+  color: #1b1b1b;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.2;
+  margin-left: 30px;
+}
+
+.div-rooms-sort {
+  grid-area: sort;
+}
+
+.div-rooms-category {
+  grid-area: category;
+}
+
+.div-rooms-price-range {
+  grid-area: price;
+}
+
+.div-rooms-rating {
+  grid-area: rating;
+}
+
+.div-rooms-advertising {
+  grid-area: advertising;
+}
+
+.div-rooms-cards {
+  grid-area: cards;
+}
+
+.div-rooms-footer {
+  grid-area: footer;
+}
+
+
+
+
+
+
+input[type="range"] {
+  --minRangePercent: 0%;
+  --maxRangePercent: 0%;
+  height: 0.4rem;
+}
+input[type="range"]:invalid {
+  box-shadow: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+}
+
+.min-max-slider {
+  position: relative;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.min-max-slider::focus {
+  oultine: none;
+}
+
+input::focus {
+  outline: none;
+}
+
+.min-max-slider > label {
+  display: none;
+}
+
+.min-max-slider > input {
+  cursor: pointer;
+  position: absolute;
+}
+
+/* webkit specific styling */
+.min-max-slider > input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none !important;
+  background: transparent;
+}
+.min-max-slider > input.min {
+  background-image: linear-gradient(
+    to right,
+    silver 0%,
+    silver var(--minRangePercent),
+    orange var(--minRangePercent),
+    orange 100%
+  );
+}
+
+.min-max-slider > input.max {
+  background-image: linear-gradient(
+    to right,
+    orange 0%,
+    orange var(--maxRangePercent),
+    silver var(--maxRangePercent),
+    silver 100%
+  );
+}
+
+.min-max-slider > input::-webkit-slider-runnable-track,
+.min-max-slider > input::-moz-range-track,
+.min-max-slider > input::-ms-track {
+  box-sizing: border-box;
+  border: none;
+  height: 4px;
+  background: orange;
+  border-radius: 8px;
+  height: 10px;
+  background-color: transparent;
+  background-image: linear-gradient(orange, orange),
+    linear-gradient(orange, orange);
+  background-size: var(--sx) 10px, calc(100% - var(--sx)) 4px;
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+}
+
+.min-max-slider > input::focus {
+  outline: none;
+}
+
+.min-max-slider > input.max::-moz-range-progress {
+  background: orange;
+  border-radius: 4px;
+}
+
+.min-max-slider > input.min::-moz-range-progress {
+  height: 0.6em;
+  background: silver;
+  border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none; /* Override default look */
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: orange; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border: none;
+  color: 1px solid orange;
+  border-radius: 50%;
+  /* box-shadow: -205px 0 0 200px hsl(100, 100%, 40%); */
+}
+
+.min-max-slider > input::-webkit-slider-runnable-track {
+  cursor: pointer;
+}
+

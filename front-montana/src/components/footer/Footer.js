@@ -14,16 +14,20 @@ function Footer() {
       </div>
       <div className="div-8-block3">
         <p className="p-8-title">Navigation</p>
-        <Link className="p-8-text-link" to="/">
-          Home
+        <Link className="p-8-text-link" to="/about">
+          About Us
         </Link>
         <br />
-        <Link className="p-8-text-link" to="/tickets">
-          Rooms
+        <Link className="p-8-text-link" to="/faq">
+          FAQ's
         </Link>
         <br />
-        <Link className="p-8-text-link" to="/">
-          Sale
+        <Link className="p-8-text-link" to="/terms_of_service">
+          Terms Of Service
+        </Link>
+        <br />
+        <Link className="p-8-text-link" to="/privacy_policy">
+          Privacy policy
         </Link>
       </div>
 
@@ -34,7 +38,7 @@ function Footer() {
         />
       </div>
       <FooterLine />
-      </>
+    </>
   );
 }
 
