@@ -14,6 +14,7 @@ import "react-multi-carousel/lib/styles.css";
 import "./header.css";
 import { styles } from "../animation/styles";
 import { showTeam } from "../redux/actionTeam";
+import { SHOW_ROOMS } from "../redux/types";
 
 function Header() {
   const store = useSelector((state) => state);
@@ -37,7 +38,7 @@ function Header() {
     const token = localStorage.getItem("token");
     dispatch(fetchVerifyToken(token)); 
     dispatch(showTeam());
-    // dispatch(showMyTickets(store.users.userId));
+    // dispatch(SHOW_ROOMS(store.users.userId));
     // dispatch(showSaleTickets());
   }, []);
 

@@ -1,0 +1,126 @@
+input[type="range"] {
+  --minRangePercent: 0%;
+  --maxRangePercent: 0%;
+  height: 0.4rem;
+}
+input[type="range"]:invalid {
+  box-shadow: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+}
+
+.min-max-slider {
+  position: relative;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 25px;
+}
+
+.min-max-slider::focus {
+  oultine: none;
+}
+
+input::focus {
+  outline: none;
+}
+
+.min-max-slider > label {
+  display: none;
+}
+
+.min-max-slider > input {
+  cursor: pointer;
+  position: absolute;
+}
+
+/* webkit specific styling */
+.min-max-slider > input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none !important;
+  background: transparent;
+}
+.min-max-slider > input.min {
+  /* border-radius: 15px; */
+
+  background-image: linear-gradient(
+    to right,
+    #c5c5c5 0%,
+    #c5c5c5 var(--minRangePercent),
+    rgb(34, 156, 255) var(--minRangePercent),
+    rgb(34, 156, 255) 100%
+  );
+}
+
+.min-max-slider > input.max {
+  /* border-radius: 15px; */
+
+  background-image: linear-gradient(
+    to right,
+    rgb(34, 156, 255) 0%,
+    rgb(34, 156, 255) var(--maxRangePercent),
+    #c5c5c5 var(--maxRangePercent),
+    #c5c5c5 100%
+  );
+}
+
+.min-max-slider > input::-webkit-slider-runnable-track,
+.min-max-slider > input::-moz-range-track,
+.min-max-slider > input::-ms-track {
+  box-sizing: border-box;
+  border: none;
+  height: 4px;
+  background: rgb(34, 156, 255);
+  border-radius: 8px;
+  height: 10px;
+  background-color: transparent;
+  background-image: linear-gradient(rgb(34, 156, 255), rgb(34, 156, 255)),
+    linear-gradient(rgb(34, 156, 255), rgb(34, 156, 255));
+  background-size: var(--sx) 10px, calc(100% - var(--sx)) 4px;
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+}
+
+.min-max-slider > input::focus {
+  outline: none;
+}
+
+.min-max-slider > input.max::-moz-range-progress {
+  background: rgb(34, 156, 255);
+  border-radius: 4px;
+}
+
+.min-max-slider > input.min::-moz-range-progress {
+  height: 0.6em;
+  background: #c5c5c5;
+  border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none; /* Override default look */
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: rgb(34, 156, 255); /* Green background */
+  cursor: pointer; 
+  border: none;
+  color: 1px solid rgb(34, 156, 255);
+  border-radius: 50%;
+}
+
+.min-max-slider > input::-webkit-slider-runnable-track {
+  cursor: pointer;
+}
+
+.span-price{
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  /* margin-bottom: 20px; */
+  padding-bottom: 30px;
+  width: 100% ;
+  font-weight: 500;
+}
