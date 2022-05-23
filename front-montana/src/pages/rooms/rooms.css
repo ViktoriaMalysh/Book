@@ -2,7 +2,7 @@
 
 .div-rooms {
   display: grid;
-  grid-template-columns: 15% 1fr 1fr 1fr 1fr 15%;
+  grid-template-columns: 18% 1fr 1fr 1fr 1fr 18%;
   grid-template-areas:
     "header header header header header header"
     ". rooms rooms rooms rooms ."
@@ -25,21 +25,41 @@
   color: #fff;
 }
 
-.div-rooms-block {
+.div-rooms-block{
   margin-top: 8em;
   grid-area: rooms;
   display: grid;
-  grid-template-columns: 30% 35% 35%;
+  grid-template-columns: 30% 70%;
   grid-template-areas:
-    "search title sort"
-    "category cards cards"
-    "price cards cards"
-    "rating cards cards"
-    "advertising cards cards";
+    "filter cards"
+    ". cards";
+}
+
+.div-rooms-filter {
+  grid-area: filter;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "search"
+    "category"
+    "price"
+    "rating"
+    "advertising";
 }
 
 .div-rooms-search {
   grid-area: search;
+}
+
+.button-room-search{
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #fca702;
+  color: #fff;
+  border-radius: 8px;
+  padding: 9px 0;
+  transition: all .5s ease-in-out;
 }
 
 .div-rooms-search,
@@ -64,11 +84,6 @@
   font-weight: 700;
   font-family: "Raleway", sans-serif;
   line-height: 1.2;
-}
-
-.div-rooms-title {
-  grid-area: title;
-  height: 50px;
 }
 
 .div-rooms-search-block1 {
@@ -107,22 +122,6 @@
   margin-left: 10px;
 }
 
-.div-rooms-title {
-  color: #1b1b1b;
-  margin: 0;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: "Raleway", sans-serif;
-  line-height: 1.2;
-  margin-left: 30px;
-}
-
-.div-rooms-sort {
-  grid-area: sort;
-  height: 50px;
-
-}
-
 .div-rooms-category {
   grid-area: category;
 }
@@ -142,6 +141,7 @@
 .div-rooms-cards {
   grid-area: cards;
   background-color: aqua;
+  /* color: #1b1b1b; */
 }
 
 .div-rooms-footer {

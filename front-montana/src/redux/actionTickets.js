@@ -71,7 +71,7 @@ export const showRooms = (options) => {
           type: SHOW_ROOMS,
           payload: result.data.data.body.searchResults.results,
         });
-        dispatch({ type: SHOW, payload: true });
+        // dispatch({ type: SHOW, payload: true });
         // dispatch({ type: SHOW_LOADER }),
         //   setTimeout(() => {
         //     dispatch({ type: HIDE_LOADER });

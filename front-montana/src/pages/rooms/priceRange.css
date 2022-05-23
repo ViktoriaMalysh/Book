@@ -121,6 +121,6 @@ input[type="range"]::-moz-range-thumb {
   font-family: "Raleway", sans-serif;
   /* margin-bottom: 20px; */
   padding-bottom: 30px;
-  width: 100% ;
+  max-width: 100% ;
   font-weight: 500;
 }
