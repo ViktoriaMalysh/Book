@@ -1,9 +1,13 @@
 // import "./searchTours.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { Dropdown } from "semantic-ui-react";
+import { Button, Dropdown, Icon, Input } from "semantic-ui-react";
 import { showRooms } from "../../redux/actionTickets";
 import CardsRoom from "./Cards";
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import { DAYS, NIGHTS } from "../../redux/types";
+dayjs.extend(relativeTime)
 
 const countryOptions = [
   { key: "tr", value: "tr_TR", flag: "tr", text: "Turkey" },
@@ -29,20 +33,27 @@ function SearchTours() {
   const dispatch = useDispatch();
   const store = useSelector((state) => state);
 
-
   const [search, setSearch] = useState("en_MX");
   const [checkIn, setCheckIn] = useState("2020-01-08");
   const [checkOut, setCheckOut] = useState("2020-01-15");
   const [adults, setAdults] = useState("1");
 
-  // useEffect(() => {
-  //   console.log("search", search);
-  //   if (search != "") {
-  //   }
-  // }, [search]);
+  useEffect(() => {
+    handleSearch();
+  }, []);
+
+  useEffect(() => {
+    const dateIn = dayjs(checkIn).format("YYYY-MM-DD");
+    const dateOut = dayjs(checkOut).format("YYYY-MM-DD");
+
+    const daysStr = dayjs(dateIn).to(dateOut, true);    
+    const daysParse = parseInt(daysStr.match(/\d+/))
+  
+    dispatch({ type: DAYS, payload: daysParse })
+    dispatch({ type: NIGHTS, payload: daysParse -1 })
+  }, [store.tickets.showRooms]);
 
   const handleSearch = () => {
-    console.log('options', search, ":", checkIn, ":", checkOut, ":", adults)
     const options = {
       method: "GET",
       url: "https://hotels4.p.rapidapi.com/properties/list",
@@ -59,16 +70,16 @@ function SearchTours() {
       },
       headers: {
         "x-rapidapi-host": "hotels4.p.rapidapi.com",
-        "x-rapidapi-key": "41c8a73cc0msh36005253ddf9396p1a020ajsn71ab7eb472c5",
+        "x-rapidapi-key": "9dac91a6d8msha622f503c32b6abp134209jsnecbaf079fac6",
       },
     };
     dispatch(showRooms(options));
-    console.log('state', store.tickets.showRooms)
+    console.log("state", store.tickets.showRooms);
   };
 
   useEffect(() => {
-    <CardsRoom/>
-  }, [store.tickets.showRooms])
+    <CardsRoom />;
+  }, [store.tickets.showRooms]);
 
   return (
     <>
@@ -79,42 +90,38 @@ function SearchTours() {
           fluid
           search
           selection
+          className="dfghjkl"
           options={countryOptions}
           placeholder="Select Country"
           onChange={(e, data) => setSearch(data.value)}
-          // selectedLabel
         />
       </div>
       <div className="div-rooms-search-block1">
         <label className="label-block1">Check In</label>
         <input
-          className="input-block1"
+          className="input-check"
           type="date"
           placeholder="MM / DD / YY"
-          onChange={(e) => setCheckIn(e.value)}
+          onChange={(e) => setCheckIn(dayjs(e.target.value).format("YYYY-MM-DD"))}
         ></input>
       </div>
       <div className="div-rooms-search-block1">
         <label className="label-block1">Check Out</label>
         <input
-          className="input-block1"
+          className="input-check"
           type="date"
           placeholder="MM / DD / YY"
-          onChange={(e) => setCheckOut(e.value)}
+          onChange={(e) => setCheckOut(dayjs(e.target.value).format("YYYY-MM-DD"))}
         ></input>
       </div>
       <div className="div-rooms-search-block1">
-        <label className="label-block1">Travel Type</label>
-        <input className="input-block1" placeholder="Travel Type"></input>
+        <label className="label-block1">Number of Adults</label>
+        <input className="input-adults" type="number" placeholder="1" />
       </div>
 
-      <div className="div-rooms-search-block1">
-        <label className="label-block1">Number of Adults</label>
-        <input className="input-block1" type="number" placeholder="1"></input>
-      </div>
-      <button className="button-room-search" onClick={() => handleSearch()}>
-        Find Now
-      </button>
+      <Button className="button-room-search" onClick={() => handleSearch()}>
+        <Icon name="search" /> Find Now
+      </Button>
     </>
   );
 }

@@ -2,7 +2,7 @@
 
 .div-rooms {
   display: grid;
-  grid-template-columns: 18% 1fr 1fr 1fr 1fr 18%;
+  grid-template-columns: 20% 1fr 1fr 1fr 1fr 20%;
   grid-template-areas:
     "header header header header header header"
     ". rooms rooms rooms rooms ."
@@ -25,11 +25,11 @@
   color: #fff;
 }
 
-.div-rooms-block{
+.div-rooms-block {
   margin-top: 8em;
   grid-area: rooms;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 32% 68%;
   grid-template-areas:
     "filter cards"
     ". cards";
@@ -51,15 +51,32 @@
   grid-area: search;
 }
 
-.button-room-search{
+.ui.button.button-room-search {
   cursor: pointer;
   width: 100%;
-  border: none;
-  background: #fca702;
+  border: 1px solid rgb(34, 156, 255);
+  /* border-radius: 1px; */
+  color: rgb(34, 156, 255);
+  background-color: aliceblue;
+  border-radius: 8px;
+  padding: 9px 0;
+  height: 50px;
+  margin-top: 25px;
+  transition: all 0.5s ease-in-out;
+}
+
+.ui.button.button-room-search:hover {
+  cursor: pointer;
+  width: 100%;
+  border: 1px solid rgb(34, 156, 255);
+  /* border-radius: 1px; */
+  background-color: rgb(34, 156, 255);
   color: #fff;
   border-radius: 8px;
   padding: 9px 0;
-  transition: all .5s ease-in-out;
+  height: 50px;
+  margin-top: 25px;
+  transition: all 0.5s ease-in-out;
 }
 
 .div-rooms-search,
@@ -97,18 +114,27 @@
   font-family: "Raleway", sans-serif;
 }
 
-.input-block1 {
+.input-check {
+  background: url(../icons/calendar-week.svg) no-repeat 9px 9px ;
+  background-size: 20px;
+}
+
+.input-adults {
+  background: url(../icons/people-fill.svg) no-repeat 9px 9px ;
+  background-size: 20px;
+}
+
+.input-check, .input-country, .input-adults{
   margin-top: 5px;
   width: 100%;
-  padding: 10px 10px 10px 35px;
+  padding: 10px 10px 10px 45px;
   height: 40px;
-  background-color: #fff;
   border-radius: 8px;
-  background-clip: padding-box;
   border: 1px solid #6c7592;
-  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  opacity: 0.6;
+  color: black;
 }
 
 .label-block1-checkbox {
@@ -140,8 +166,7 @@
 
 .div-rooms-cards {
   grid-area: cards;
-  background-color: aqua;
-  /* color: #1b1b1b; */
+  /* background-color: aqua; */
 }
 
 .div-rooms-footer {
@@ -151,4 +176,9 @@
 .img-advertising {
   width: 100%;
   border-radius: 10px;
+}
+
+.cards-spinner{
+  text-align: center;
+  margin-top: 10em;
 }

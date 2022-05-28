@@ -33,6 +33,7 @@ import TermsOfService from "./pages/Terms Of Service/TermsOfService";
 import PrivacyPolicy from "./pages/privacy policy/PrivacyPolicy";
 import Faq from "./pages/FAQ/Faq";
 import Rooms from "./pages/rooms/Rooms";
+import SingleRoom from "./pages/rooms/SingleRoom/SingleRoom";
 // import StripeCheckoutButton from '../src/components/stripe.button.component';
 
 export default function AppNav() {
@@ -76,6 +77,7 @@ export default function AppNav() {
         <Route path="/terms_of_service" element={<TermsOfService />} />
         <Route path="/privacy_policy" element={<PrivacyPolicy />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/single_room/:id" element={<SingleRoom />} />
 
 
         

@@ -12,13 +12,16 @@ export const ROOM_DATA = 'SALE/ROOM_DATA'
 
 //------------------HOTEL---------------------
 export const BOOK = 'ROOMS/BOOK'
+export const DAYS = 'ROOMS/DAYS'
+export const NIGHTS = 'ROOMS/NIGHTS'
+
 export const CANCEL = 'ROOMS/CANCEL'
 export const SHOW_MY_BOOKED_ROOMS = 'ROOMS/SHOW_MY_BOOKED_ROOMS'
 export const SHOW_MY_BOUGHT_ROOMS = 'ROOMS/SHOW_MY_BOUGHT_ROOMS'
 export const SHOW_SALE = 'ROOMS/SHOW_SALE'
 export const SHOW_ROOMS = 'ROOMS/SHOW_ROOMS'
 export const SHOW = 'ROOMS/SHOW'
-
+export const SHOW_SINGLE_ROOMS = 'ROOMS/SHOW_SINGLE_ROOMS'
 
 //------------------MESSAGE---------------------
 // export const SHOW_MODAL_MESSAGE = 'MESSAGE/SHOW_MODAL_MESSAGE'

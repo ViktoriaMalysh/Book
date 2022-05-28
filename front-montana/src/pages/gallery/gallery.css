@@ -28,16 +28,8 @@
   transform: translate(-50%, -50%);
   text-decoration: none;
   outline: none;
-  /* -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease; */
   transition: all 0.1s ease;
 }
-
-/* a:hover{
-  text-decoration: none;
-  color: #fff;
-} */
 
 .div-gallery-header {
   text-align: center;
@@ -95,6 +87,7 @@
   opacity: 1;
   border-radius: 15px;
   transition: all 0.3s ease-out 0s;
+  width: 100%;
 }
 
 .div7:hover .img-gallery {

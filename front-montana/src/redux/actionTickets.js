@@ -11,6 +11,7 @@ import {
   SHOW_MY_BOUGHT_ROOMS,
   SHOW_ROOMS,
   SHOW,
+  SHOW_SINGLE_ROOMS,
 } from "./types";
 
 export const alert = (message) => {
@@ -70,6 +71,27 @@ export const showRooms = (options) => {
         dispatch({
           type: SHOW_ROOMS,
           payload: result.data.data.body.searchResults.results,
+        });
+        // dispatch({ type: SHOW, payload: true });
+        // dispatch({ type: SHOW_LOADER }),
+        //   setTimeout(() => {
+        //     dispatch({ type: HIDE_LOADER });
+        //   }, 300);
+      }
+    } catch (err) {
+      console.log("Error", err);
+    }
+  };
+};
+
+export const showSingleRooms = (options) => {
+  return async (dispatch) => {
+    try {
+      const result = await axios.request(options);
+      if (result.status === 200) {
+        dispatch({
+          type: SHOW_SINGLE_ROOMS,
+          payload: result.data.data.body,
         });
         // dispatch({ type: SHOW, payload: true });
         // dispatch({ type: SHOW_LOADER }),

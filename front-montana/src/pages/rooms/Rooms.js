@@ -10,6 +10,8 @@ import StarRating from "./Rating";
 import Advertising from "./Advertising";
 import CardsRoom from "./Cards";
 import { useDispatch, useSelector } from "react-redux";
+import { Spinner } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Rooms() {
   const dispatch = useDispatch();
@@ -39,7 +41,7 @@ function Rooms() {
             <div className="div-rooms-price-range">
               <span className="span-rooms-title">Price Range</span>
               <div className="div-rooms-search-block1">
-                <Slider min={1} max={150} />
+                <Slider min={1} max={500} />
               </div>
             </div>
             <div className="div-rooms-rating">
@@ -51,7 +53,16 @@ function Rooms() {
           </div>
 
           <div className="div-rooms-cards">
-            {store.tickets.showRooms.length !== 1 ? <CardsRoom /> : <></>}
+            {store.tickets.showRooms.length !== 1 ? (
+              <CardsRoom />
+            ) : (
+              <>
+                {" "}
+                <div className="cards-spinner">
+                  <Spinner animation="border" variant="info" />
+                </div>
+              </>
+            )}
           </div>
         </div>
 
