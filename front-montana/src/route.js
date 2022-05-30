@@ -34,6 +34,7 @@ import PrivacyPolicy from "./pages/privacy policy/PrivacyPolicy";
 import Faq from "./pages/FAQ/Faq";
 import Rooms from "./pages/rooms/Rooms";
 import SingleRoom from "./pages/rooms/SingleRoom/SingleRoom";
+import BookRoom from "./pages/rooms/book room/BookRoom";
 // import StripeCheckoutButton from '../src/components/stripe.button.component';
 
 export default function AppNav() {
@@ -78,6 +79,7 @@ export default function AppNav() {
         <Route path="/privacy_policy" element={<PrivacyPolicy />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/single_room/:id" element={<SingleRoom />} />
+        <Route path="/book_room/:id" element={<BookRoom />} />
 
 
         

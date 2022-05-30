@@ -214,6 +214,73 @@ const DetailBlock = () => {
 
       <div className="details-block6">
         <h2 className="details-block6-title">Reviews (20)</h2>
+        <div className="details-reviews">
+          <img
+            src="https://live.themewild.com/travelox/assets/img/blog/com-1.jpg"
+            className="img-reviews"
+          />
+          <div className="details-reviews-content">
+            <h3 className="details-reviews-autor">Name Surname</h3>
+            <div>
+              <span className="details-reviews-posted-on">
+                <Icon name="clock outline" />
+                10 August 2021
+              </span>
+            </div>
+            <span className="details-reviews-summary">
+              Absolutely loved this place and it’s location as it was easy to
+              commute. I would definitely recommend staying here, the front desk
+              was polite and helpful as we got there earlier then our check in
+              time and assist us with our luggage accommodations and later
+              return to check in at a later time as well. Overall it was an
+              excellent stay.
+            </span>
+            <div>
+              <Rating
+                icon="star"
+                className="detail-reviews-star-rating"
+                size="large"
+                defaultRating={4}
+                maxRating={5}
+                disabled
+              />{" "}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="details-leave-review">
+        <h1 className="details-leave-review-title">Leave Your Review</h1>
+        <div className="details-leave-review-text">
+          Your Rate:
+          <Rating
+            icon="star"
+            className="detail-leave-review-star-rating"
+            size="large"
+            defaultRating={0}
+            maxRating={5}
+          />{" "}
+        </div>
+
+        <div className="details-form">
+          <input
+            className="input-details-left"
+            type="text"
+            placeholder="Your Name*"
+          />
+
+          <input
+            className="input-details-right"
+            type="email"
+            placeholder="Your Email*"
+          />
+        </div>
+        <input
+          className="input-details1"
+          type="text"
+          placeholder="Your Review*"
+        />
+        <button className="details-leave-review-button">Submit Review</button>
       </div>
     </>
   );

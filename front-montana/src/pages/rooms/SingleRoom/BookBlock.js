@@ -1,9 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
 
-const BookBlock = () => {
+const BookBlock = (data) => {
   const dispatch = useDispatch();
   const store = useSelector((state) => state);
+  const navigate = useNavigate();
+
+  const handleBook = () => {
+    navigate(`/book_room/${data.id}`);
+  };
 
   return (
     <>
@@ -55,7 +61,10 @@ const BookBlock = () => {
           </div>
         ))}
       </div>
-      <button className="button-additional-service">
+      <button
+        className="button-additional-service"
+        onClick={() => handleBook()}
+      >
         {" "}
         <Icon name="check circle outline" /> Book Now
       </button>

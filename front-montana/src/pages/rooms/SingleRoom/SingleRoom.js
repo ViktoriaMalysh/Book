@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -15,10 +15,11 @@ import DetailBlock from "./DetailBlock";
 const SingleRoom = () => {
   const dispatch = useDispatch();
   const store = useSelector((state) => state);
+  const [prodId, setProdId] = useState(0);
   const params = useParams();
 
   useEffect(() => {
-    const prodId = params.id;
+    setProdId(params.id)
     const options = {
       method: "GET",
       url: "https://hotels4.p.rapidapi.com/properties/get-details",
@@ -60,10 +61,10 @@ const SingleRoom = () => {
           </div>
           <div className="single-room-block">
             <div className="single-room-book">
-              <BookBlock />
+              <BookBlock id={prodId} />
             </div>
             <div className="single-room-detail">
-              <DetailBlock/>
+              <DetailBlock />
             </div>
           </div>
 
