@@ -40,13 +40,13 @@ const SingleRoom = () => {
     // dispatch(showSingleRooms(options));
   }, []);
 
-  // useEffect(() => {
-  //   if (store.tickets.showSingleRoom.length !== 0) {
-  //     let a = store.tickets.showSingleRoom.atAGlance.travellingOrInternet.travelling;
-  //     console.log(Object.keys(a))
-  //     // const d = a.map((item)=> console.log(item.keys))
-  //   }
-  // }, [store.tickets.showSingleRoom])
+  useEffect(() => {
+    if (store.tickets.showSingleRoom.length !== 0) {
+      let a = store.tickets.showSingleRoom.atAGlance.travellingOrInternet.travelling;
+      console.log(Object.keys(a))
+      // const d = a.map((item)=> console.log(item.keys))
+    }
+  }, [store.tickets.showSingleRoom])
 
   return (
     <>

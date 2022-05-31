@@ -1,0 +1,136 @@
+.profile {
+  display: grid;
+  grid-template-columns: 25% 1fr 1fr 1fr 1fr 25%;
+  grid-template-areas:
+    "header header header header header header"
+    ". block1 block1 block1 block1 ."
+    "footer footer footer footer footer footer";
+}
+
+.p-profile-title {
+  font-family: "Raleway", sans-serif;
+  font-style: initial;
+  font-size: 60px;
+  color: #fff;
+}
+
+.profile-header {
+  text-align: center;
+  padding-top: 10%;
+  grid-area: header;
+  background-size: 100% 400px;
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/bradcam.png");
+  height: 40vh;
+}
+
+.profile-block {
+  margin: 100px 0 100px 0;
+  grid-area: block1;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-areas: "avatar block2";
+}
+
+.profile-footer {
+  grid-area: footer;
+}
+
+.img-profile-avatar {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.profile-block1 {
+  grid-area: block2;
+  box-shadow: 0 3px 24px rgb(0 0 0 / 10%);
+  padding: 30px 50px 30px 50px;
+  border-radius: 15px;
+  margin-left: 25px;
+}
+
+.profile-avatar {
+  grid-area: avatar;
+}
+
+.profile-block1-name {
+  color: #1b1b1b;
+  margin: 0;
+  font-weight: 600;
+  font-family: sans-serif;
+  line-height: 1.2;
+  font-size: 30px;
+  margin-bottom: 20px;
+  width: max-content;
+}
+
+.profile-block1-gender {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: sans-serif;
+  line-height: 1.2;
+  color: rgb(34, 156, 255);
+}
+
+.profile-block1-comment {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: sans-serif;
+  line-height: 1.2;
+  color: rgba(148, 146, 146, 0.774);
+}
+
+.text {
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  color: #14212b;
+  line-height: 1.8;
+  width: max-content;
+  /* background-color: aqua; */
+}
+
+.text:hover {
+  color: rgb(34, 156, 255);
+  cursor: pointer;
+}
+
+.custom-icon {
+  color: rgb(34, 156, 255);
+  margin-right: 10px;
+  font-size: 19px;
+}
+
+.button-profile-edit {
+  margin-top: 20px;
+
+  cursor: pointer;
+  /* width: 45%; */
+  border: 1px solid rgb(34, 156, 255);
+  color: #fff;
+  font-size: 16px;
+  background-color: rgb(34, 156, 255);
+  border-radius: 8px;
+  padding: 9px 25px;
+  height: 45px;
+  transition: all 0.5s ease-in-out;
+}
+
+.button-profile-edit:hover {
+  border: 1px solid rgb(34, 156, 255);
+  color: rgb(34, 156, 255);
+  background-color: aliceblue;
+}
+
+.fl-r {
+  float: right;
+}
+
+.fs-20{
+  font-size: 20px;
+}
+
+.delete-button{
+  background-color: transparent;
+  border: none;
+}

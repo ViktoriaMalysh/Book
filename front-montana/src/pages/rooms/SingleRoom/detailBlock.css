@@ -268,13 +268,10 @@
 
 .details-leave-review-button:hover{
   cursor: pointer;
-  /* width: 100%; */
   border: 1px solid rgb(34, 156, 255);
-  /* border-radius: 1px; */
   color: rgb(34, 156, 255);
   background-color: aliceblue;
   font-size: 16px;
-  /* background-color: rgb(34, 156, 255); */
   border-radius: 8px;
   padding: 9px 0;
   height: 50px;

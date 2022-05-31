@@ -12,7 +12,7 @@ import CountrySpain from "./pages/countries/spain";
 import SignIn from "./user/SignIn";
 import Logout from "./user/Logout";
 import SignUp from "./user/SignUp";
-import Profile from "./settings/Profile";
+// import Profile from "./settings/Profile";
 import DeleteAccount from "./user/DeleteAccount";
 import ProfileSettings from "./settings/ProfileSettings";
 import FirstPage from "./pages/FirstPage";
@@ -21,7 +21,7 @@ import Contact from "./pages/contact/Contact";
 
 import TeamSingle from "./pages/about/TeamSingle";
 
-import Account from "./settings/Account";
+import Profile from "./pages/profile/Profile";
 import PublicEmail from "./settings/PublicEmail";
 import Basket from "./settings/basket/Basket";
 import { styles } from "./animation/styles";
@@ -35,6 +35,7 @@ import Faq from "./pages/FAQ/Faq";
 import Rooms from "./pages/rooms/Rooms";
 import SingleRoom from "./pages/rooms/SingleRoom/SingleRoom";
 import BookRoom from "./pages/rooms/book room/BookRoom";
+import TourCart from "./pages/profile/tour cart/TourCart";
 // import StripeCheckoutButton from '../src/components/stripe.button.component';
 
 export default function AppNav() {
@@ -72,6 +73,9 @@ export default function AppNav() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
 
+        <Route path="/profile" element={<Profile />} />
+
+
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/404" element={<NotFound />} />
@@ -80,6 +84,7 @@ export default function AppNav() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/single_room/:id" element={<SingleRoom />} />
         <Route path="/book_room/:id" element={<BookRoom />} />
+        <Route path="/tour_cart" element={<TourCart />} />
 
 
         

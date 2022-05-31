@@ -1,0 +1,36 @@
+.tour-cart {
+  display: grid;
+  grid-template-columns: 25% 1fr 1fr 1fr 1fr 25%;
+  grid-template-areas:
+    "header header header header header header"
+    ". block1 block1 block1 block1 ."
+    "footer footer footer footer footer footer";
+}
+
+.p-tour-cart-title {
+  font-family: "Raleway", sans-serif;
+  font-style: initial;
+  font-size: 60px;
+  color: #fff;
+}
+
+.tour-cart-header {
+  text-align: center;
+  padding-top: 10%;
+  grid-area: header;
+  background-size: 100% 400px;
+  background-image: url("https://preview.colorlib.com/theme/montana/img/banner/bradcam.png");
+  height: 40vh;
+}
+
+.tour-cart-block {
+  margin: 100px 0 100px 0;
+  grid-area: block1;
+  display: grid;
+  /* grid-template-columns: 40% 60%; */
+  /* grid-template-areas: "avatar block2"; */
+}
+
+.tour-cart-footer {
+  grid-area: footer;
+}
