@@ -19,12 +19,14 @@ const SingleRoom = () => {
   const params = useParams();
 
   useEffect(() => {
-    setProdId(params.id)
+    setProdId(params.id);
+    console.log('prodId',params.id)
+
     const options = {
       method: "GET",
       url: "https://hotels4.p.rapidapi.com/properties/get-details",
       params: {
-        id: "424023",
+        id: params.id,
         checkIn: "2020-01-08",
         checkOut: "2020-01-15",
         adults1: "1",
@@ -37,20 +39,21 @@ const SingleRoom = () => {
       },
     };
 
-    // dispatch(showSingleRooms(options));
+    dispatch(showSingleRooms(options));
   }, []);
 
   useEffect(() => {
     if (store.tickets.showSingleRoom.length !== 0) {
-      let a = store.tickets.showSingleRoom.atAGlance.travellingOrInternet.travelling;
-      console.log(Object.keys(a))
+      let a =
+        store.tickets.showSingleRoom.atAGlance.travellingOrInternet.travelling;
+      console.log(Object.keys(a));
       // const d = a.map((item)=> console.log(item.keys))
     }
-  }, [store.tickets.showSingleRoom])
+  }, [store.tickets.showSingleRoom]);
 
   return (
     <>
-      {/* {store.tickets.showSingleRoom.length !== 0 ? ( */}
+      {store.tickets.showSingleRoom.length !== 0 ? (
       <StyleRoot>
         <div className="single-room">
           <div className="div-rooms-header">
@@ -73,15 +76,15 @@ const SingleRoom = () => {
           </div>
         </div>
       </StyleRoot>
-      {/* // ) : (
-      //   <>
-      //     <div className="single-room-loading-header" />
+      ) : (
+      <>
+        <div className="single-room-loading-header" />
 
-      //     <div className="single-room-loading">
-      //       <Spinner animation="border" variant="info" />
-      //     </div>
-      //   </>
-      // )} */}
+        <div className="single-room-loading">
+          <Spinner animation="border" variant="info" />
+        </div>
+      </>
+      )}
     </>
   );
 };

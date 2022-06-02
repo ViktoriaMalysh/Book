@@ -3,8 +3,42 @@ import { styles } from "../../../animation/styles";
 import { StyleRoot } from "radium";
 import "./bookRoom.css";
 import { Icon } from "semantic-ui-react";
+import StripeContainer from "../../../payment/StripeContainer";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { showSingleRooms } from "../../../redux/actionTickets";
 
 const BookRoom = () => {
+  const store = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  const [prodId, setProdId] = useState(0);
+  const params = useParams();
+
+
+  useEffect(() => {
+    setProdId(params.id);
+    const options = {
+      method: "GET",
+      url: "https://hotels4.p.rapidapi.com/properties/get-details",
+      params: {
+        id: params.id,
+        checkIn: "2020-01-08",
+        checkOut: "2020-01-15",
+        adults1: "1",
+        currency: "USD",
+        locale: "en_US",
+      },
+      headers: {
+        "X-RapidAPI-Host": "hotels4.p.rapidapi.com",
+        "X-RapidAPI-Key": "9dac91a6d8msha622f503c32b6abp134209jsnecbaf079fac6",
+      },
+    };
+    dispatch(showSingleRooms(options));
+
+  }, [])
+
   return (
     <StyleRoot>
       <div className="book-room">
@@ -71,22 +105,28 @@ const BookRoom = () => {
             <h4 className="book-block2-title">Booking Summary</h4>
             <div>
               <strong className="left">Packages Cost:</strong>
-              <span className="right">$400</span>
+              <span className="right">
+                  
+                {
+                  store.tickets.showSingleRoom.propertyDescription.featuredPrice
+                    .currentPrice.formatted
+                }
+              </span>
             </div>
 
             <div className="mt-20">
               <strong className="left">Tour Guide:</strong>
-              <span className="right">$400</span>
+              <span className="right">$30</span>
             </div>
 
             <div className="mt-20p">
               <strong className="left">Discount:</strong>
-              <span className="right">$400</span>
+              <span className="right">$0</span>
             </div>
 
             <div>
               <strong className="left">Vat:</strong>
-              <span className="right">$400</span>
+              <span className="right">$25</span>
             </div>
 
             <div>
@@ -106,7 +146,9 @@ const BookRoom = () => {
           <div className="book-room-block3">
             <h4 className="book-block2-title">Payment Info</h4>
 
-            <div>
+            <StripeContainer />
+
+            {/* <div>
               <div className="left">
                 <label>Card Holder Name</label>
                 <br />
@@ -125,9 +167,9 @@ const BookRoom = () => {
                   placeholder="Your Card Number"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <div className="left">
                 <label>Expire Date</label>
                 <br />
@@ -146,7 +188,7 @@ const BookRoom = () => {
                   placeholder="CCV"
                 />
               </div>
-            </div>
+            </div>*/}
           </div>
           <div className="book-room-block4">
             <h4 className="book-block2-title">Billing Address</h4>
@@ -226,12 +268,12 @@ const BookRoom = () => {
               </div>
 
               <label>Flat</label>
-                  <br />
-                  <input
-                    className="book-room-input"
-                    type="text"
-                    placeholder="Your Flat Number"
-                  />
+              <br />
+              <input
+                className="book-room-input"
+                type="text"
+                placeholder="Your Flat Number"
+              />
             </div>
           </div>
         </div>

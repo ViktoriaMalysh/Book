@@ -103,7 +103,7 @@ function CardsRoom() {
               /per person
               <button
                 className="button-cards-item-book"
-                onClick={()=>navigate(`/single_room/${item.id}`)}
+                onClick={() => navigate(`/single_room/${item.id}`)}
               >
                 Book Now <Icon name="arrow right" />
               </button>

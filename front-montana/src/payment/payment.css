@@ -1,46 +1,50 @@
-
-  
 .FormGroup {
-	margin: 0 15px 20px;
-	padding: 0;
-	border-style: none;
-	background-color: #7795f8;
-	will-change: opacity, transform;
-	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #829fff;
-	border-radius: 4px;
+  margin: 0 15px 20px;
+  padding: 0;
+  border-style: none;
+  /* background-color: #7795f8; */
+  will-change: opacity, transform;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #829fff;
+  border-radius: 4px;
 }
 
 .FormRow {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-align: center;
-	align-items: center;
-	margin-left: 15px;
-	border-top: 1px solid #819efc;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 15px;
+  border-top: 1px solid #819efc;
 }
 
 .StripeElement--webkit-autofill {
-	background: transparent !important;
+  background: transparent !important;
 }
 
 .StripeElement {
-	width: 100%;
-	padding: 11px 15px 11px 0;
+  width: 100%;
+  padding: 11px 15px 11px 0;
 }
 
-
-.buttom-payment{
-  margin-left: 32%;
+.buttom-payment {
+  float: right;
   margin-top: 1em;
   margin-bottom: 1.5em;
-  height: 3em;
+  /* height: 3em; */
   width: 10em;
-  background-color: white;
-  border-color: rgb(0, 140, 255);
-  color:rgb(0, 140, 255);
+  cursor: pointer;
+  border: 1px solid rgb(34, 156, 255);
+  color: #fff;
+  font-size: 16px;
+  background-color: rgb(34, 156, 255);
+  border-radius: 8px;
+  padding: 9px 25px;
+  height: 45px;
+  transition: all 0.5s ease-in-out;
 }
 
-.p-payment-price{
+.p-payment-price {
   font-size: 2em;
   font-weight: 300;
   font-family: "Raleway";
@@ -48,49 +52,42 @@
   padding-top: 0.5em;
 }
 
-.span-payment-title{
+.span-payment-title {
   font-family: "Raleway";
   font-size: 1.5em;
 }
 
-.span-payment{
-	font-family: "Raleway";
-	padding-left: 0.5em;
+.span-payment {
+  font-family: "Raleway";
+  padding-left: 0.5em;
 }
 
-.button-copy{
+.button-copy {
   margin-left: 1em;
 }
 
-.p-payment-title{
+.p-payment-title {
   text-align: center;
-  
 }
 
-.p-payment-title1{
+.p-payment-title1 {
   font-size: 1.6em;
-	font-family: "Raleway";
-
+  font-family: "Raleway";
 }
 
-.span-title{
+.span-title {
   padding-inline-end: 1em;
   font-family: "Raleway";
   font-size: 1.2em;
 }
 
-.div-payment{
-	/* padding-left: 1.2em; */
-	text-align: center;
+.div-payment {
+  /* padding-left: 1.2em; */
+  text-align: center;
 }
 
-.buttom-payment:hover{
-  margin-left: 32%;
-  margin-top: 1em;
-  margin-bottom: 1.5em;
-  height: 3em;
-  width: 10em;
-  color: white;
-  background-color: rgb(0, 140, 255);
-  border-color: rgb(0, 140, 255);
+.buttom-payment:hover {
+  border: 1px solid rgb(34, 156, 255);
+  color: rgb(34, 156, 255);
+  background-color: aliceblue;
 }

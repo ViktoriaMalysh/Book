@@ -49,11 +49,11 @@ const BookBlock = (data) => {
       <div className="div-rooms-search-additional-service">
         <span className="span-title-item">Additional Service</span>
         {[
-          { key: 1, value: "Tour Guide" },
-          { key: 1, value: "Insurance" },
-          { key: 1, value: "Dinner" },
-          { key: 1, value: "Car Rent" },
-          { key: 1, value: "With Pets" },
+          { key: 'Tour Guide', value: "Tour Guide" },
+          { key: "Insurance", value: "Insurance" },
+          { key: "Dinner", value: "Dinner" },
+          { key: "Car Rent", value: "Car Rent" },
+          { key: "With Pets", value: "With Pets" },
         ].map((item) => (
           <div className="additional-service-item">
             <input type="checkbox" className="additional-service-input"></input>

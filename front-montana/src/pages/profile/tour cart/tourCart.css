@@ -1,6 +1,6 @@
 .tour-cart {
   display: grid;
-  grid-template-columns: 25% 1fr 1fr 1fr 1fr 25%;
+  grid-template-columns: 20% 1fr 1fr 1fr 1fr 20%;
   grid-template-areas:
     "header header header header header header"
     ". block1 block1 block1 block1 ."
@@ -33,4 +33,136 @@
 
 .tour-cart-footer {
   grid-area: footer;
+}
+
+.ui.table.custom-table {
+  background-color: aqua;
+}
+
+.tr-header {
+  background-color: rgb(34, 156, 255);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 15px 10px 15px 10px;
+}
+
+.td-header {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+
+  font-family: sans-serif;
+}
+
+.tr-header {
+  padding: 15px 10px 15px 10px;
+}
+
+.line {
+  background-color: grey;
+
+  height: 1px;
+  width: 100%;
+}
+
+.ui.table.header.fghjk {
+  background-color: aqua;
+  color: blue;
+}
+
+.table-wrap {
+  /* text-align: center; */
+  display: inline-block;
+  background-color: #fff;
+  padding: 2rem 2rem;
+  color: #000;
+}
+
+table {
+  /* border: 1px solid #ccc; */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /* border-collapse: collapse; */
+  /* border-spacing: 0; */
+}
+
+table tr {
+  border-top: 1px solid #ddd;
+  /* padding: 5px; */
+}
+
+table th,
+table td {
+  padding: 15px 10px 15px 10px;
+  /* text-align: center; */
+  /* border-right: 1px solid #ddd; */
+}
+
+.imgc {
+  /* padding: 15px 10px 15px 10px; */
+  /* text-align: center; */
+  /* width: 50%; */
+  padding: 0;
+  /* background-color: aqua; */
+  /* border-right: 1px solid #ddd; */
+  width: max-content;
+}
+
+table th {
+  color: #fff;
+  background-color: rgb(34, 156, 255);
+  /* text-transform: uppercase; */
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.img-card {
+  /* width: 40%; */
+  height: 120px;
+  margin: 15px;
+  border-radius: 8px;
+}
+
+.delete {
+  border: none;
+  background-color: transparent;
+  /* font-weight: 200; */
+}
+
+.button-count {
+  color: #383838;
+  border: 0;
+  border-radius: 5px;
+  padding: 4px 13px;
+  font-size: 26px;
+}
+
+.input-count {
+  margin: 0 5px 0 5px;
+  background: #efefef;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px 13px;
+  width: 50px;
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.name{
+  color: #1b1b1b;
+  margin: 0;
+  font-weight: 600;
+  font-family: sans-serif;
+  line-height: 1.2;
+  font-size: 18px;
+}
+
+.price{
+  color: #383838;
+  font-size: 16px;
+  font-weight: 400;
 }

@@ -27,21 +27,30 @@ const DetailBlock = () => {
       />
       {/* <div className="detail-block1"> */}
       <div className="detail-block-left">
-        <span className="span-left-title">Norway Lake Tour</span>
+        <span className="span-left-title">
+          {store.tickets.showSingleRoom.propertyDescription.name}
+        </span>
         <div className="detail-left-rating">
           <Rating
             icon="star"
             className="detail-star-rating"
             size="huge"
             defaultRating={4}
-            maxRating={5}
+            maxRating={
+              store.tickets.showSingleRoom.propertyDescription.starRating
+            }
             disabled
           />{" "}
           (25 Reviews)
         </div>
       </div>
       <div className="detail-block-right">
-        <span className="detail-right-price">$154</span>
+        <span className="detail-right-price">
+          {
+            store.tickets.showSingleRoom.propertyDescription.featuredPrice
+              .currentPrice.formatted
+          }
+        </span>
         <div className="detail-right-price-text">Per Person</div>
       </div>
 
@@ -62,7 +71,8 @@ const DetailBlock = () => {
         </span>
         <span className="mr-10">
           {" "}
-          <Icon name="point" color="blue" /> Norway Lake
+          <Icon name="point" color="blue" />{" "}
+          {store.tickets.showSingleRoom.propertyDescription.address.cityName}
         </span>
       </div>
       {detailsFromCard.map((item) => (
